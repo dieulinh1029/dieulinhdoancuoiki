@@ -15,7 +15,7 @@ namespace HOTPIZZA.Controllers
         {
             return View();
         }
-        public ActionResult dsa()
+        public ActionResult DatHang()
             {
             return View();
             }
