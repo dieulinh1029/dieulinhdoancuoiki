@@ -5,3 +5,10 @@
 /.vs/HOTPIZZA/FileContentIndex
 /.gitignore
 /HOTPIZZA/Views/GioHang/dsa.cshtml
+*.cshtml
+/HOTPIZZA/HOTPIZZA.csproj
+/.vs/HOTPIZZA/v17/.suo
+/.vs/HOTPIZZA/v17/DocumentLayout.json
+/.vs/HOTPIZZA/v17/DocumentLayout.backup.json
+/HOTPIZZA/bin/HOTPIZZA.dll
+/HOTPIZZA/bin/HOTPIZZA.pdb
