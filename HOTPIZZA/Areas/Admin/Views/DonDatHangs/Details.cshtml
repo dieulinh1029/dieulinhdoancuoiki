@@ -1,0 +1,99 @@
+﻿@model HOTPIZZA.Models.DonDatHang
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DonDatHang</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayDat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayDat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TriGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TriGia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayGiao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayGiao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenNguoiNhan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNguoiNhan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiaChiNguoiNhan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChiNguoiNhan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DienThoaiNguoiNhan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DienThoaiNguoiNhan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CTDonDatHang.MaMon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CTDonDatHang.MaMon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NguoiDung.HovaTen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguoiDung.HovaTen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TinhTrangDonHang1.tenTTDH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TinhTrangDonHang1.tenTTDH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HinhThucThanhToan1.tenHTTT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HinhThucThanhToan1.tenHTTT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaDon }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

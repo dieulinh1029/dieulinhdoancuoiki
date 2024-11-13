@@ -1,0 +1,58 @@
+﻿@model IEnumerable<HOTPIZZA.Models.TuyenDung>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DiaChiTuyenDung)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ViTriLamViec)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailLienLac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoTacCongViec)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Admin.HovaTen)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChiTuyenDung)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ViTriLamViec)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailLienLac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTacCongViec)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Admin.HovaTen)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdBaiTuyenDung }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdBaiTuyenDung }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdBaiTuyenDung })
+        </td>
+    </tr>
+}
+
+</table>

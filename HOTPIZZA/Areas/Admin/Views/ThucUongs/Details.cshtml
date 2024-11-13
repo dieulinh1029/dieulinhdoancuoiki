@@ -1,0 +1,59 @@
+﻿@model HOTPIZZA.Models.ThucUong
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ThucUong</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenThuocUong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenThuocUong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HinhMinhHoa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HinhMinhHoa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonGia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DanhMucMon.TenDanhMuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DanhMucMon.TenDanhMuc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdThucUong }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

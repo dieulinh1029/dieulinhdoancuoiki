@@ -1,0 +1,36 @@
+﻿@model IEnumerable<HOTPIZZA.Models.DanhMucMon>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenDanhMuc)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenDanhMuc)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdDanhMuc }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdDanhMuc }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdDanhMuc })
+        </td>
+    </tr>
+}
+
+</table>
