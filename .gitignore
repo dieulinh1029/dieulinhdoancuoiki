@@ -12,3 +12,4 @@
 /.vs/HOTPIZZA/v17/DocumentLayout.backup.json
 /HOTPIZZA/bin/HOTPIZZA.dll
 /HOTPIZZA/bin/HOTPIZZA.pdb
+/HOTPIZZA/Views/GioHang/Index.cshtml
