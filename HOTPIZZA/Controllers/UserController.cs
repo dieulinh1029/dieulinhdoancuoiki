@@ -66,6 +66,7 @@ namespace HOTPIZZA.Controllers
         public ActionResult DangNhap(Login lg)
         {
             _nd = (NguoiDung)Session["user"];
+            
             if (_nd != null)
             {
                 return RedirectToAction("Index", "Home");
@@ -73,10 +74,18 @@ namespace HOTPIZZA.Controllers
             if (ModelState.IsValid)
             {
                 _nd = db.NguoiDungs.SingleOrDefault(n => n.TenDN == lg.TenDN && n.MatKhau == lg.MatKhau);
+               
                 if (_nd != null)
                 {
                     Session.Add("user", _nd);
-                    return RedirectToAction("Index", "Home");
+                    if (_nd.IdPhanQuyen == 2)
+                    {
+                        return RedirectToAction("Index", "DonDatHangs", new { area = "Admin" });
+                    }
+                    else 
+                    { 
+                        return RedirectToAction("Index", "Home");
+                    }
                 }
                 ViewBag.Fail = "Đăng nhập thất bại";
                 return View("DangNhap");
