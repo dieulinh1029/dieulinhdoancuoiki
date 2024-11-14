@@ -141,6 +141,7 @@
     <Compile Include="Areas\Admin\Controllers\TrangMiengsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TuyenDungsController.cs" />
     <Compile Include="Areas\Admin\PhanQuyensController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -562,6 +563,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="images\MONCHINH&amp;MIY\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
