@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -44,10 +45,28 @@ namespace HOTPIZZA.Controllers
             _nd.Email = khh.Email;
             _nd.TenDN = khh.TenDN;
             _nd.MatKhau = khh.MatKhau;
+            _nd.IdPhanQuyen = 1;
 
-            db.NguoiDungs.Add(_nd);
-            db.SaveChanges();
-            Session.Add("user", _nd);
+
+            try
+            {
+                db.NguoiDungs.Add(_nd);
+                db.SaveChanges();
+                return RedirectToAction("Index","Home");
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var validationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        ModelState.AddModelError(validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+            //db.NguoiDungs.Add(_nd);
+            //db.SaveChanges();
+            //Session.Add("user", _nd);
             return RedirectToAction("Index", "Home");
         }
 
