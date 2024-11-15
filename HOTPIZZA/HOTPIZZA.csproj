@@ -508,6 +508,7 @@
     <Content Include="styles\categories_styles.css" />
     <Content Include="styles\contact_responsive.css" />
     <Content Include="styles\contact_styles.css" />
+    <Content Include="styles\dathang.css" />
     <Content Include="styles\main_styles.css" />
     <Content Include="styles\responsive.css" />
     <Content Include="styles\single_responsive.css" />
@@ -534,6 +535,8 @@
     <Content Include="Views\DatHang\Index.cshtml" />
     <Content Include="Views\DatHang\Chitiet.cshtml" />
     <Content Include="Views\Shared\_LayoutProduct.cshtml" />
+    <Content Include="Views\DatHang\DanhMuc.cshtml" />
+    <Content Include="Views\DatHang\SXDanhMuc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

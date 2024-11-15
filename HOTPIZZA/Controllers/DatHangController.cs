@@ -41,5 +41,19 @@ namespace HOTPIZZA.Controllers
                       select s;
             return View(mon.Single());
         }
+        public ActionResult DanhMuc()
+        {
+            var dm = from d in db.DanhMucMons
+                     select d;
+            return PartialView(dm);
+        }
+        public ActionResult SXDanhMuc(string id)
+        {
+            var mon = from d in db.MonAns
+                     where d.IdDanhMuc == id
+                     select d;
+            return PartialView(mon);
+        }
+
     }
 }
