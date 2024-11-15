@@ -1,0 +1,10 @@
+﻿@model IEnumerable<HOTPIZZA.Models.TuyenDung>
+
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("ycTuyenDung","TuyenDung",new {id = item.IdBaiTuyenDung})" class="list-group-item">
+            @item.DiaChiTuyenDung
+        </a>
+    }
+</div>
