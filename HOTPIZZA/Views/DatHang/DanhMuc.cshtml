@@ -1,0 +1,11 @@
+﻿@model IEnumerable<HOTPIZZA.Models.DanhMucMon>
+<p class="lead"> Danh mục món</p>
+<div class="list-group">
+    @foreach (var item in Model)
+            {
+                <a href="@Url.Action("SXDanhMuc","DatHang",new {id = item.IdDanhMuc})" class="list-group-item">
+                    @item.TenDanhMuc
+                </a>
+            }
+</div>
+
