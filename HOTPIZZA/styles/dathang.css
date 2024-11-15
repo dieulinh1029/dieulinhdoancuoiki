@@ -86,3 +86,27 @@ section {
     font-weight: bold;
     color: #e74c3c; /* Màu đỏ nhấn mạnh giá */
 }
+.product-item::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 300px;
+    height: 500px;
+    pointer-events: none;
+    content: '';
+    border: solid 2px rgb(0, 0, 0);
+    border-radius: 3px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.product-item:hover::after {
+    width: 300px;
+    height: 500px;
+    box-shadow: 0 25px 29px rgba(63, 78, 100, 0.15);
+    border: solid 2px #FFFFFF;
+}

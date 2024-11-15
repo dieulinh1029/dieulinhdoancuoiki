@@ -167,7 +167,7 @@
 	}
 	.product-item
 	{
-		width: 25%;
+		width: 100%;
 	}
 	.deal_ofthe_week_col
 	{
@@ -654,7 +654,7 @@
 		font-size: 12px !important;
 		padding-left: 0px;
 	}
-	#newsletter_email::input-placeholder
+	#newsletter_email :input-placeholder
 	{
 		font-size: 12px !important;
 		padding-left: 0px;
