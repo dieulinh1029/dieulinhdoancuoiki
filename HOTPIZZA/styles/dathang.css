@@ -59,7 +59,7 @@ section {
     padding: 0px;
 }
 
-    section > p {
+.section > p {
         background: linear-gradient(#a5b4c4, #206AB5, #206AB5);
         border-top-left-radius: 2px;
         border-top-right-radius: 2px;
@@ -71,3 +71,18 @@ section {
         padding-top: 5px;
     }
 
+
+.product-item {
+    margin-bottom: 30px; /* Tạo khoảng cách giữa các sản phẩm */
+    text-align: center; /* Căn giữa nội dung sản phẩm */
+}
+
+.product_info {
+    margin-top: 10px; /* Khoảng cách giữa hình ảnh và thông tin sản phẩm */
+}
+
+.product_price {
+    font-size: 1.2rem; /* Kích thước chữ cho giá sản phẩm */
+    font-weight: bold;
+    color: #e74c3c; /* Màu đỏ nhấn mạnh giá */
+}
