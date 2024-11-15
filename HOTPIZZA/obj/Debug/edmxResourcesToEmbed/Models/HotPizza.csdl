@@ -46,12 +46,7 @@
     <Property Name="TenDanhMuc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="CTDonDatHangs" Relationship="Self.FK_CTDonDatHang_ToTable_1" FromRole="DanhMucMon" ToRole="CTDonDatHang" />
     <NavigationProperty Name="Giohang" Relationship="Self.FK_Giohang_ToTable" FromRole="DanhMucMon" ToRole="Giohang" />
-    <NavigationProperty Name="KhaiVivaSalads" Relationship="Self.FK_KhaiVivaSalad_ToTable" FromRole="DanhMucMon" ToRole="KhaiVivaSalad" />
-    <NavigationProperty Name="MonAnKems" Relationship="Self.FK_MonAnKem_ToTable" FromRole="DanhMucMon" ToRole="MonAnKem" />
-    <NavigationProperty Name="MonChinhvaMiYs" Relationship="Self.FK_MonChinhvaMiY_ToTable" FromRole="DanhMucMon" ToRole="MonChinhvaMiY" />
-    <NavigationProperty Name="Pizzas" Relationship="Self.FK_Pizza_ToTable" FromRole="DanhMucMon" ToRole="Pizza" />
-    <NavigationProperty Name="ThucUongs" Relationship="Self.FK_ThucUong_ToTable" FromRole="DanhMucMon" ToRole="ThucUong" />
-    <NavigationProperty Name="TrangMiengs" Relationship="Self.FK_TrangMieng_ToTable" FromRole="DanhMucMon" ToRole="TrangMieng" />
+    <NavigationProperty Name="MonAns" Relationship="HOTPIZZAModel.FK_Pizza_ToTable1" FromRole="DanhMucMon" ToRole="MonAn" />
   </EntityType>
   <EntityType Name="DonDatHang">
     <Key>
@@ -103,18 +98,6 @@
     <Property Name="tenHTTT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="DonDatHangs" Relationship="Self.FK_DonDatHang_ToTable_2" FromRole="HinhThucThanhToan" ToRole="DonDatHang" />
   </EntityType>
-  <EntityType Name="KhaiVivaSalad">
-    <Key>
-      <PropertyRef Name="IdKhaiVivaSalad" />
-    </Key>
-    <Property Name="IdKhaiVivaSalad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="TenKhaiVivaSalad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="IdDanhMuc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="HinhMinhHoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
-    <NavigationProperty Name="DanhMucMon" Relationship="Self.FK_KhaiVivaSalad_ToTable" FromRole="KhaiVivaSalad" ToRole="DanhMucMon" />
-  </EntityType>
   <EntityType Name="Login">
     <Key>
       <PropertyRef Name="TenDN" />
@@ -123,29 +106,6 @@
     <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Admins" Relationship="Self.FK_Admin_ToTable_1" FromRole="Login" ToRole="Admin" />
     <NavigationProperty Name="NguoiDungs" Relationship="Self.FK_NguoiDung_ToTable_1" FromRole="Login" ToRole="NguoiDung" />
-  </EntityType>
-  <EntityType Name="MonAnKem">
-    <Key>
-      <PropertyRef Name="IdMonAnKem" />
-    </Key>
-    <Property Name="IdMonAnKem" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="TenMonAnKem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="IdDanhMuc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="HinhMinhHoa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
-    <NavigationProperty Name="DanhMucMon" Relationship="Self.FK_MonAnKem_ToTable" FromRole="MonAnKem" ToRole="DanhMucMon" />
-  </EntityType>
-  <EntityType Name="MonChinhvaMiY">
-    <Key>
-      <PropertyRef Name="IdMonChinhvaMiY" />
-    </Key>
-    <Property Name="IdMonChinhvaMiY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="TenMonChinhvaMiY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="IdDanhMuc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="HinhMinhHoa" Type="Binary" MaxLength="50" FixedLength="false" />
-    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
-    <NavigationProperty Name="DanhMucMon" Relationship="Self.FK_MonChinhvaMiY_ToTable" FromRole="MonChinhvaMiY" ToRole="DanhMucMon" />
   </EntityType>
   <EntityType Name="NguoiDung">
     <Key>
@@ -173,19 +133,6 @@
     <NavigationProperty Name="Admins" Relationship="Self.FK_Admin_ToTable" FromRole="PhanQuyen" ToRole="Admin" />
     <NavigationProperty Name="NguoiDungs" Relationship="Self.FK_NguoiDung_ToTable" FromRole="PhanQuyen" ToRole="NguoiDung" />
   </EntityType>
-  <EntityType Name="Pizza">
-    <Key>
-      <PropertyRef Name="IdPizza" />
-    </Key>
-    <Property Name="IdPizza" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="TenPizza" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="IdDanhMuc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="HinhMinhHoa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Size" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
-    <NavigationProperty Name="DanhMucMon" Relationship="Self.FK_Pizza_ToTable" FromRole="Pizza" ToRole="DanhMucMon" />
-  </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -196,18 +143,6 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
-  <EntityType Name="ThucUong">
-    <Key>
-      <PropertyRef Name="IdThucUong" />
-    </Key>
-    <Property Name="IdThucUong" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="TenThuocUong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="IdDanhMuc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="HinhMinhHoa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
-    <NavigationProperty Name="DanhMucMon" Relationship="Self.FK_ThucUong_ToTable" FromRole="ThucUong" ToRole="DanhMucMon" />
-  </EntityType>
   <EntityType Name="TinhTrangDonHang">
     <Key>
       <PropertyRef Name="IdTTDH" />
@@ -215,18 +150,6 @@
     <Property Name="IdTTDH" Type="Int32" Nullable="false" />
     <Property Name="tenTTDH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="DonDatHangs" Relationship="Self.FK_DonDatHang_ToTable_1" FromRole="TinhTrangDonHang" ToRole="DonDatHang" />
-  </EntityType>
-  <EntityType Name="TrangMieng">
-    <Key>
-      <PropertyRef Name="IdTrangMieng" />
-    </Key>
-    <Property Name="IdTrangMieng" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="TenTrangMieng" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="IdDanhMuc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="HinhMinhHoa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
-    <NavigationProperty Name="DanhMucMon" Relationship="Self.FK_TrangMieng_ToTable" FromRole="TrangMieng" ToRole="DanhMucMon" />
   </EntityType>
   <EntityType Name="TuyenDung">
     <Key>
@@ -324,78 +247,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_KhaiVivaSalad_ToTable">
-    <End Role="DanhMucMon" Type="Self.DanhMucMon" Multiplicity="0..1" />
-    <End Role="KhaiVivaSalad" Type="Self.KhaiVivaSalad" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DanhMucMon">
-        <PropertyRef Name="IdDanhMuc" />
-      </Principal>
-      <Dependent Role="KhaiVivaSalad">
-        <PropertyRef Name="IdDanhMuc" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_MonAnKem_ToTable">
-    <End Role="DanhMucMon" Type="Self.DanhMucMon" Multiplicity="0..1" />
-    <End Role="MonAnKem" Type="Self.MonAnKem" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DanhMucMon">
-        <PropertyRef Name="IdDanhMuc" />
-      </Principal>
-      <Dependent Role="MonAnKem">
-        <PropertyRef Name="IdDanhMuc" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_MonChinhvaMiY_ToTable">
-    <End Role="DanhMucMon" Type="Self.DanhMucMon" Multiplicity="0..1" />
-    <End Role="MonChinhvaMiY" Type="Self.MonChinhvaMiY" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DanhMucMon">
-        <PropertyRef Name="IdDanhMuc" />
-      </Principal>
-      <Dependent Role="MonChinhvaMiY">
-        <PropertyRef Name="IdDanhMuc" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Pizza_ToTable">
-    <End Role="DanhMucMon" Type="Self.DanhMucMon" Multiplicity="0..1" />
-    <End Role="Pizza" Type="Self.Pizza" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DanhMucMon">
-        <PropertyRef Name="IdDanhMuc" />
-      </Principal>
-      <Dependent Role="Pizza">
-        <PropertyRef Name="IdDanhMuc" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ThucUong_ToTable">
-    <End Role="DanhMucMon" Type="Self.DanhMucMon" Multiplicity="0..1" />
-    <End Role="ThucUong" Type="Self.ThucUong" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DanhMucMon">
-        <PropertyRef Name="IdDanhMuc" />
-      </Principal>
-      <Dependent Role="ThucUong">
-        <PropertyRef Name="IdDanhMuc" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TrangMieng_ToTable">
-    <End Role="DanhMucMon" Type="Self.DanhMucMon" Multiplicity="0..1" />
-    <End Role="TrangMieng" Type="Self.TrangMieng" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DanhMucMon">
-        <PropertyRef Name="IdDanhMuc" />
-      </Principal>
-      <Dependent Role="TrangMieng">
-        <PropertyRef Name="IdDanhMuc" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_DonDatHang_ToTable">
     <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="1" />
     <End Role="DonDatHang" Type="Self.DonDatHang" Multiplicity="*" />
@@ -477,17 +328,11 @@
     <EntitySet Name="Giohangs" EntityType="Self.Giohang" />
     <EntitySet Name="GopYKhachHangs" EntityType="Self.GopYKhachHang" />
     <EntitySet Name="HinhThucThanhToans" EntityType="Self.HinhThucThanhToan" />
-    <EntitySet Name="KhaiVivaSalads" EntityType="Self.KhaiVivaSalad" />
     <EntitySet Name="Logins" EntityType="Self.Login" />
-    <EntitySet Name="MonAnKems" EntityType="Self.MonAnKem" />
-    <EntitySet Name="MonChinhvaMiYs" EntityType="Self.MonChinhvaMiY" />
     <EntitySet Name="NguoiDungs" EntityType="Self.NguoiDung" />
     <EntitySet Name="PhanQuyens" EntityType="Self.PhanQuyen" />
-    <EntitySet Name="Pizzas" EntityType="Self.Pizza" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <EntitySet Name="ThucUongs" EntityType="Self.ThucUong" />
     <EntitySet Name="TinhTrangDonHangs" EntityType="Self.TinhTrangDonHang" />
-    <EntitySet Name="TrangMiengs" EntityType="Self.TrangMieng" />
     <EntitySet Name="TuyenDungs" EntityType="Self.TuyenDung" />
     <AssociationSet Name="FK_Admin_ToTable" Association="Self.FK_Admin_ToTable">
       <End Role="PhanQuyen" EntitySet="PhanQuyens" />
@@ -517,30 +362,6 @@
       <End Role="DanhMucMon" EntitySet="DanhMucMons" />
       <End Role="Giohang" EntitySet="Giohangs" />
     </AssociationSet>
-    <AssociationSet Name="FK_KhaiVivaSalad_ToTable" Association="Self.FK_KhaiVivaSalad_ToTable">
-      <End Role="DanhMucMon" EntitySet="DanhMucMons" />
-      <End Role="KhaiVivaSalad" EntitySet="KhaiVivaSalads" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MonAnKem_ToTable" Association="Self.FK_MonAnKem_ToTable">
-      <End Role="DanhMucMon" EntitySet="DanhMucMons" />
-      <End Role="MonAnKem" EntitySet="MonAnKems" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MonChinhvaMiY_ToTable" Association="Self.FK_MonChinhvaMiY_ToTable">
-      <End Role="DanhMucMon" EntitySet="DanhMucMons" />
-      <End Role="MonChinhvaMiY" EntitySet="MonChinhvaMiYs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Pizza_ToTable" Association="Self.FK_Pizza_ToTable">
-      <End Role="DanhMucMon" EntitySet="DanhMucMons" />
-      <End Role="Pizza" EntitySet="Pizzas" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ThucUong_ToTable" Association="Self.FK_ThucUong_ToTable">
-      <End Role="DanhMucMon" EntitySet="DanhMucMons" />
-      <End Role="ThucUong" EntitySet="ThucUongs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TrangMieng_ToTable" Association="Self.FK_TrangMieng_ToTable">
-      <End Role="DanhMucMon" EntitySet="DanhMucMons" />
-      <End Role="TrangMieng" EntitySet="TrangMiengs" />
-    </AssociationSet>
     <AssociationSet Name="FK_DonDatHang_ToTable" Association="Self.FK_DonDatHang_ToTable">
       <End Role="NguoiDung" EntitySet="NguoiDungs" />
       <End Role="DonDatHang" EntitySet="DonDatHangs" />
@@ -565,5 +386,34 @@
       <End Role="PhanQuyen" EntitySet="PhanQuyens" />
       <End Role="NguoiDung" EntitySet="NguoiDungs" />
     </AssociationSet>
+    <EntitySet Name="MonAns" EntityType="HOTPIZZAModel.MonAn" />
+    <AssociationSet Name="FK_Pizza_ToTable1" Association="HOTPIZZAModel.FK_Pizza_ToTable1">
+      <End Role="DanhMucMon" EntitySet="DanhMucMons" />
+      <End Role="MonAn" EntitySet="MonAns" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="MonAn">
+    <Key>
+      <PropertyRef Name="IdMon" />
+    </Key>
+    <Property Name="IdMon" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TenMon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdDanhMuc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HinhMinhHoa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="DanhMucMon" Relationship="HOTPIZZAModel.FK_Pizza_ToTable1" FromRole="MonAn" ToRole="DanhMucMon" />
+  </EntityType>
+  <Association Name="FK_Pizza_ToTable1">
+    <End Type="HOTPIZZAModel.DanhMucMon" Role="DanhMucMon" Multiplicity="0..1" />
+    <End Type="HOTPIZZAModel.MonAn" Role="MonAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanhMucMon">
+        <PropertyRef Name="IdDanhMuc" />
+      </Principal>
+      <Dependent Role="MonAn">
+        <PropertyRef Name="IdDanhMuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

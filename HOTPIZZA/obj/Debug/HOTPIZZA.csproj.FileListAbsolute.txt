@@ -247,3 +247,6 @@ C:\Users\Admin\Documents\DL\HOTPIZZA\obj\Debug\HOTPIZZA.csproj.CoreCompileInputs
 C:\Users\Admin\Documents\DL\HOTPIZZA\obj\Debug\HOTPIZZA.csproj.Up2Date
 C:\Users\Admin\Documents\DL\HOTPIZZA\obj\Debug\HOTPIZZA.dll
 C:\Users\Admin\Documents\DL\HOTPIZZA\obj\Debug\HOTPIZZA.pdb
+C:\Users\LAPTOP\source\repos\dieulinhdoancuoiki\HOTPIZZA\bin\System.Linq.Dynamic.Core.dll
+C:\Users\LAPTOP\source\repos\dieulinhdoancuoiki\HOTPIZZA\bin\System.Linq.Dynamic.Core.pdb
+C:\Users\LAPTOP\source\repos\dieulinhdoancuoiki\HOTPIZZA\bin\System.Linq.Dynamic.Core.xml

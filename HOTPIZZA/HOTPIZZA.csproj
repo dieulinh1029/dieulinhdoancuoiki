@@ -56,6 +56,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic.Core, Version=1.4.8.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.4.8\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -132,13 +135,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DanhMucMonsController.cs" />
     <Compile Include="Areas\Admin\Controllers\DonDatHangsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\KhaiVivaSaladsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\MonAnKemsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\MonChinhvaMiYsController.cs" />
     <Compile Include="Areas\Admin\Controllers\NguoiDungsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\PizzasController.cs" />
-    <Compile Include="Areas\Admin\Controllers\ThucUongsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\TrangMiengsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TuyenDungsController.cs" />
     <Compile Include="Areas\Admin\PhanQuyensController.cs" />
     <Compile Include="Controllers\DatHangController.cs" />
@@ -281,15 +278,34 @@
     <Content Include="images\desc_1.jpg" />
     <Content Include="images\desc_2.jpg" />
     <Content Include="images\desc_3.jpg" />
-    <Content Include="images\DRINK\drink1.png" />
-    <Content Include="images\DRINK\drink2.png" />
-    <Content Include="images\DRINK\NATURALSAKE.jpg" />
-    <Content Include="images\DRINK\RED.jpg" />
-    <Content Include="images\DRINK\WHEYCINDER.jpg" />
-    <Content Include="images\DRINK\WHITE.jpg" />
-    <Content Include="images\DRINK\YUZU.jfif" />
     <Content Include="images\map_marker.png" />
     <Content Include="images\menu.jpg" />
+    <Content Include="images\Menu\dr_1.jpg" />
+    <Content Include="images\Menu\dr_2.jpg" />
+    <Content Include="images\Menu\dr_3.jpg" />
+    <Content Include="images\Menu\dr_4.jpg" />
+    <Content Include="images\Menu\dr_5.jpg" />
+    <Content Include="images\Menu\dr_6.jpg" />
+    <Content Include="images\Menu\kv_1.jpg" />
+    <Content Include="images\Menu\kv_2.jpg" />
+    <Content Include="images\Menu\kv_3.jpg" />
+    <Content Include="images\Menu\my_1.jpg" />
+    <Content Include="images\Menu\my_2.jpg" />
+    <Content Include="images\Menu\my_3.jpg" />
+    <Content Include="images\Menu\my_4.jpg" />
+    <Content Include="images\Menu\pz_1.jpg" />
+    <Content Include="images\Menu\pz_2.jpg" />
+    <Content Include="images\Menu\pz_3.jpg" />
+    <Content Include="images\Menu\pz_4.jpg" />
+    <Content Include="images\Menu\pz_5.jpg" />
+    <Content Include="images\Menu\pz_6.jpg" />
+    <Content Include="images\Menu\sl_1.jpg" />
+    <Content Include="images\Menu\sl_2.jpg" />
+    <Content Include="images\Menu\sl_3.jpg" />
+    <Content Include="images\Menu\tm_1.jpg" />
+    <Content Include="images\Menu\tm_2.jpg" />
+    <Content Include="images\Menu\tm_3.jpg" />
+    <Content Include="images\Menu\tm_4.jpg" />
     <Content Include="images\pizzabox.jpg" />
     <Content Include="images\PIZZA\4che.png" />
     <Content Include="images\PIZZA\arrabbiatawithguanciale.png" />
@@ -414,46 +430,16 @@
     <Content Include="Areas\Admin\Views\TuyenDungs\Details.cshtml" />
     <Content Include="Areas\Admin\Views\TuyenDungs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\TuyenDungs\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\MonAnKems\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\MonAnKems\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\MonAnKems\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\MonAnKems\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\MonAnKems\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\MonChinhvaMiYs\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\MonChinhvaMiYs\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\MonChinhvaMiYs\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\MonChinhvaMiYs\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\MonChinhvaMiYs\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\KhaiVivaSalads\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\KhaiVivaSalads\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\KhaiVivaSalads\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\KhaiVivaSalads\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\KhaiVivaSalads\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\ThucUongs\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\ThucUongs\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\ThucUongs\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\ThucUongs\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\ThucUongs\Index.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMucMons\Create.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMucMons\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMucMons\Details.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMucMons\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMucMons\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\TrangMiengs\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\TrangMiengs\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\TrangMiengs\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\TrangMiengs\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\TrangMiengs\Index.cshtml" />
     <Content Include="Areas\Admin\Views\PhanQuyens\Create.cshtml" />
     <Content Include="Areas\Admin\Views\PhanQuyens\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\PhanQuyens\Details.cshtml" />
     <Content Include="Areas\Admin\Views\PhanQuyens\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\PhanQuyens\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Pizzas\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Pizzas\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Pizzas\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Pizzas\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Pizzas\Index.cshtml" />
     <EntityDeploy Include="Models\HotPizza.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HotPizza.Designer.cs</LastGenOutput>
@@ -502,11 +488,13 @@
     <Content Include="plugins\themify-icons\fonts\themify.eot" />
     <Content Include="plugins\themify-icons\fonts\themify.ttf" />
     <Content Include="plugins\themify-icons\fonts\themify.woff" />
-    <None Include="Scripts\jquery-3.7.0.intellisense.js" />
-    <Content Include="Scripts\jquery-3.7.0.js" />
-    <Content Include="Scripts\jquery-3.7.0.min.js" />
-    <Content Include="Scripts\jquery-3.7.0.slim.js" />
-    <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
+    <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.1.js" />
+    <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -544,11 +532,12 @@
     <Content Include="Views\User\DangXuat.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\DatHang\Index.cshtml" />
+    <Content Include="Views\DatHang\Chitiet.cshtml" />
+    <Content Include="Views\Shared\_LayoutProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="images\MONCHINH&amp;MIY\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -574,8 +563,6 @@
     <Content Include="Scripts\bootstrap.esm.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
-    <Content Include="Scripts\jquery-3.7.0.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
