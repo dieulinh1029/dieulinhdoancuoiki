@@ -187,16 +187,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HotPizza.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\KhaiVivaSalad.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Login.cs">
       <DependentUpon>HotPizza.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\MonAnKem.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\MonChinhvaMiY.cs">
+    <Compile Include="Models\MonAn.cs">
       <DependentUpon>HotPizza.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NguoiDung.cs">
@@ -205,19 +199,10 @@
     <Compile Include="Models\PhanQuyen.cs">
       <DependentUpon>HotPizza.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Pizza.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>HotPizza.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ThucUong.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\TinhTrangDonHang.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TrangMieng.cs">
       <DependentUpon>HotPizza.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TuyenDung.cs">

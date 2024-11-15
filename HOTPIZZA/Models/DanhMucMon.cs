@@ -18,12 +18,7 @@ namespace HOTPIZZA.Models
         public DanhMucMon()
         {
             this.CTDonDatHangs = new HashSet<CTDonDatHang>();
-            this.KhaiVivaSalads = new HashSet<KhaiVivaSalad>();
-            this.MonAnKems = new HashSet<MonAnKem>();
-            this.MonChinhvaMiYs = new HashSet<MonChinhvaMiY>();
-            this.Pizzas = new HashSet<Pizza>();
-            this.ThucUongs = new HashSet<ThucUong>();
-            this.TrangMiengs = new HashSet<TrangMieng>();
+            this.MonAns = new HashSet<MonAn>();
         }
     
         public string IdDanhMuc { get; set; }
@@ -33,16 +28,6 @@ namespace HOTPIZZA.Models
         public virtual ICollection<CTDonDatHang> CTDonDatHangs { get; set; }
         public virtual Giohang Giohang { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KhaiVivaSalad> KhaiVivaSalads { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MonAnKem> MonAnKems { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MonChinhvaMiY> MonChinhvaMiYs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pizza> Pizzas { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThucUong> ThucUongs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TrangMieng> TrangMiengs { get; set; }
+        public virtual ICollection<MonAn> MonAns { get; set; }
     }
 }

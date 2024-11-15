@@ -11,19 +11,13 @@
         <EntityTypeShape EntityType="HOTPIZZAModel.DanhMucMon" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
         <EntityTypeShape EntityType="HOTPIZZAModel.DonDatHang" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HOTPIZZAModel.Giohang" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="HOTPIZZAModel.GopYKhachHang" Width="1.5" PointX="3.75" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTPIZZAModel.GopYKhachHang" Width="1.5" PointX="4.625" PointY="31.375" IsExpanded="true" />
         <EntityTypeShape EntityType="HOTPIZZAModel.HinhThucThanhToan" Width="1.5" PointX="1.5" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="HOTPIZZAModel.KhaiVivaSalad" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
         <EntityTypeShape EntityType="HOTPIZZAModel.Login" Width="1.5" PointX="1.5" PointY="35.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="HOTPIZZAModel.MonAnKem" Width="1.5" PointX="3" PointY="14.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="HOTPIZZAModel.MonChinhvaMiY" Width="1.5" PointX="3" PointY="17.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="HOTPIZZAModel.NguoiDung" Width="1.5" PointX="1.5" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTPIZZAModel.NguoiDung" Width="1.5" PointX="2.75" PointY="30.875" IsExpanded="true" />
         <EntityTypeShape EntityType="HOTPIZZAModel.PhanQuyen" Width="1.5" PointX="1.5" PointY="37.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="HOTPIZZAModel.Pizza" Width="1.5" PointX="3" PointY="20.5" IsExpanded="true" />
         <EntityTypeShape EntityType="HOTPIZZAModel.sysdiagram" Width="1.5" PointX="3.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="HOTPIZZAModel.ThucUong" Width="1.5" PointX="3" PointY="23.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HOTPIZZAModel.TinhTrangDonHang" Width="1.5" PointX="1.5" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="HOTPIZZAModel.TrangMieng" Width="1.5" PointX="3" PointY="26.875" IsExpanded="true" />
         <EntityTypeShape EntityType="HOTPIZZAModel.TuyenDung" Width="1.5" PointX="6" PointY="36.25" IsExpanded="true" />
         <AssociationConnector Association="HOTPIZZAModel.FK_Admin_ToTable" ManuallyRouted="false" />
         <AssociationConnector Association="HOTPIZZAModel.FK_Admin_ToTable_1" ManuallyRouted="false" />
@@ -32,18 +26,14 @@
         <AssociationConnector Association="HOTPIZZAModel.FK_CTDonDatHang_ToTable" ManuallyRouted="false" />
         <AssociationConnector Association="HOTPIZZAModel.FK_CTDonDatHang_ToTable_1" ManuallyRouted="false" />
         <AssociationConnector Association="HOTPIZZAModel.FK_Giohang_ToTable" ManuallyRouted="false" />
-        <AssociationConnector Association="HOTPIZZAModel.FK_KhaiVivaSalad_ToTable" ManuallyRouted="false" />
-        <AssociationConnector Association="HOTPIZZAModel.FK_MonAnKem_ToTable" ManuallyRouted="false" />
-        <AssociationConnector Association="HOTPIZZAModel.FK_MonChinhvaMiY_ToTable" ManuallyRouted="false" />
-        <AssociationConnector Association="HOTPIZZAModel.FK_Pizza_ToTable" ManuallyRouted="false" />
-        <AssociationConnector Association="HOTPIZZAModel.FK_ThucUong_ToTable" ManuallyRouted="false" />
-        <AssociationConnector Association="HOTPIZZAModel.FK_TrangMieng_ToTable" ManuallyRouted="false" />
         <AssociationConnector Association="HOTPIZZAModel.FK_DonDatHang_ToTable" ManuallyRouted="false" />
         <AssociationConnector Association="HOTPIZZAModel.FK_DonDatHang_ToTable_1" ManuallyRouted="false" />
         <AssociationConnector Association="HOTPIZZAModel.FK_DonDatHang_ToTable_2" ManuallyRouted="false" />
         <AssociationConnector Association="HOTPIZZAModel.FK_GopYKhachHang_ToTable" ManuallyRouted="false" />
         <AssociationConnector Association="HOTPIZZAModel.FK_NguoiDung_ToTable_1" ManuallyRouted="false" />
         <AssociationConnector Association="HOTPIZZAModel.FK_NguoiDung_ToTable" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="HOTPIZZAModel.MonAn" Width="1.5" PointX="3" PointY="43.5" />
+        <AssociationConnector Association="HOTPIZZAModel.FK_Pizza_ToTable1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

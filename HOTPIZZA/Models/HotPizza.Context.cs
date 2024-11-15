@@ -33,17 +33,12 @@ namespace HOTPIZZA.Models
         public virtual DbSet<Giohang> Giohangs { get; set; }
         public virtual DbSet<GopYKhachHang> GopYKhachHangs { get; set; }
         public virtual DbSet<HinhThucThanhToan> HinhThucThanhToans { get; set; }
-        public virtual DbSet<KhaiVivaSalad> KhaiVivaSalads { get; set; }
         public virtual DbSet<Login> Logins { get; set; }
-        public virtual DbSet<MonAnKem> MonAnKems { get; set; }
-        public virtual DbSet<MonChinhvaMiY> MonChinhvaMiYs { get; set; }
         public virtual DbSet<NguoiDung> NguoiDungs { get; set; }
         public virtual DbSet<PhanQuyen> PhanQuyens { get; set; }
-        public virtual DbSet<Pizza> Pizzas { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<ThucUong> ThucUongs { get; set; }
         public virtual DbSet<TinhTrangDonHang> TinhTrangDonHangs { get; set; }
-        public virtual DbSet<TrangMieng> TrangMiengs { get; set; }
         public virtual DbSet<TuyenDung> TuyenDungs { get; set; }
+        public virtual DbSet<MonAn> MonAns { get; set; }
     }
 }

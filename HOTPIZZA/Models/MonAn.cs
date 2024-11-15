@@ -12,13 +12,13 @@ namespace HOTPIZZA.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ThucUong
+    public partial class MonAn
     {
-        public string IdThucUong { get; set; }
-        public string TenThuocUong { get; set; }
+        public string IdMon { get; set; }
+        public string TenMon { get; set; }
         public string IdDanhMuc { get; set; }
-        public string HinhMinhHoa { get; set; }
         public string MoTa { get; set; }
+        public string HinhMinhHoa { get; set; }
         public Nullable<decimal> DonGia { get; set; }
     
         public virtual DanhMucMon DanhMucMon { get; set; }
