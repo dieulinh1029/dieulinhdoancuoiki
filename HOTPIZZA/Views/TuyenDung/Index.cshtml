@@ -1,8 +1,182 @@
-﻿
+﻿@model IEnumerable<HOTPIZZA.Models.TuyenDung>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
 
-<h2>Index</h2>
+<style>
+    h2 {
+        font-size: 36px; /* Kích thước chữ */
+        font-weight: bold; /* Làm đậm chữ */
+        color: #2c3e50; /* Màu chữ */
+        text-align: center; /* Canh giữa nội dung */
+        margin-top: 20px; /* Khoảng cách trên */
+        margin-bottom: 20px; /* Khoảng cách dưới */
+        font-family: 'Arial', sans-serif; /* Font chữ */
+        text-transform: uppercase; /* Chữ hoa */
+        border-bottom: 2px solid #e74c3c; /* Thêm đường viền dưới */
+        padding-bottom: 10px; /* Khoảng cách dưới chữ */
+    }
+
+
+    .post-area {
+        display: flex;
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        flex-direction: column; /* Sắp xếp theo cột */
+        padding: 50px 0;
+        background-color: #f9f9f9;
+        min-height: 100vh; /* Chiều cao tối thiểu = toàn màn hình */
+        margin: 0 auto;
+    }
+
+
+    .single-post {
+        display: flex;
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .single-post .thumb {
+            width: 150px;
+            margin-right: 20px;
+        }
+
+            .single-post .thumb img {
+                width: 100%;
+                border-radius: 8px;
+            }
+
+            .single-post .thumb .tags {
+                display: flex;
+                margin-top: 10px;
+                flex-wrap: wrap;
+                list-style: none;
+                padding: 0;
+            }
+
+                .single-post .thumb .tags li {
+                    margin-right: 8px;
+                }
+
+                .single-post .thumb .tags a {
+                    display: inline-block;
+                    padding: 5px 10px;
+                    font-size: 0.9em;
+                    color: #fff;
+                    background-color: #d9534f;
+                    border-radius: 4px;
+                    text-decoration: none;
+                }
+
+        .single-post .details {
+            flex: 1;
+        }
+
+        .single-post .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .single-post .title .titles h4 {
+                font-size: 1.5em;
+                margin: 0;
+                color: #333;
+            }
+
+            .single-post .title .titles h6 {
+                font-size: 1em;
+                color: #888;
+                margin-top: 5px;
+            }
+
+            .single-post .title .btns {
+                list-style: none;
+                display: flex;
+                align-items: center;
+                padding: 0;
+            }
+
+                .single-post .title .btns li {
+                    margin-left: 10px;
+                }
+
+                .single-post .title .btns a {
+                    color: #d9534f;
+                    font-size: 1.2em;
+                    text-decoration: none;
+                }
+
+        .single-post .details p {
+            margin: 10px 0;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .single-post .details h5 {
+            font-size: 1em;
+            font-weight: bold;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .single-post .details .address {
+            display: flex;
+            align-items: center;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+            .single-post .details .address span {
+                margin-right: 8px;
+                color: #d9534f;
+            }
+</style>
+<main>
+    <div class="column">
+        <h2>Tuyển dụng</h2>
+        @foreach (var item in Model)
+        {
+            <!-- Start post Area -->
+            <section class="post-area section-gap">
+                <div class="container">
+                    <div class="row justify-content-center d-flex">
+                        <div class="col-lg-8 post-list">
+                            <div class="single-post d-flex flex-row">
+                                <div class="thumb">
+                                    <img src="~/images/tuyendung.jpg" alt="">
+
+                                </div>
+                                <div class="details">
+                                    <div class="title d-flex flex-row justify-content-between">
+                                        <div class="titles">
+                                            <h4>@item.ViTriLamViec</h4>
+                                            <br />
+                                            <h5>@item.MoTacCongViec</h5>
+                                        </div>
+                                        <ul class="btns">
+                                            <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
+                                            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdMDcfSLTgCHHv_zshdJxwO8KwDGwuHQvuSv813Rg5IScG5bg/viewform?vc=0&c=0&w=1&flr=0" target="_blank">Apply</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <h5>Tính chất công việc: Full time</h5>
+                                    <p class="address"><span class="lnr lnr-map"></span> Yêu cầu: Có kinh nghiệm</p>
+                                    <p class="address"><span class="lnr lnr-database"></span> Lương Thỏa Thuận</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        }
+    </div>
+</main>
+
 

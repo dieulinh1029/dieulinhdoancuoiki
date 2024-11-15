@@ -141,6 +141,7 @@
     <Compile Include="Controllers\DatHangController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TuyenDungController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -537,6 +538,9 @@
     <Content Include="Views\Shared\_LayoutProduct.cshtml" />
     <Content Include="Views\DatHang\DanhMuc.cshtml" />
     <Content Include="Views\DatHang\SXDanhMuc.cshtml" />
+    <Content Include="Views\TuyenDung\Index.cshtml" />
+    <Content Include="Views\TuyenDung\ycTuyenDung.cshtml" />
+    <Content Include="Views\TuyenDung\Tuyendung.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

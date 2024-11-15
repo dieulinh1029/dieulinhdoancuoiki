@@ -11,7 +11,24 @@ namespace HOTPIZZA.Controllers
     {
         private HOTPIZZAEntities1 db= new HOTPIZZAEntities1();
         // GET: TuyenDung
+        private List<TuyenDung> Show(int count)
+        {
+            return db.TuyenDungs.OrderByDescending(a => a.IdBaiTuyenDung).Take(count).ToList();
+        }
+
         public ActionResult Index()
+        {
+            var gg = Show(4);
+            if (gg != null)
+            {
+                return View(gg);
+            }
+            else
+            {
+                return View();
+            }
+        } 
+        public ActionResult Tuyendung()
         {
             var c = from s in db.TuyenDungs
                     
