@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace HOTPIZZA.Controllers
 {
-    public class DefaultController : Controller
+    public class DatHangController : Controller
     {
-        // GET: Default
+        // GET: DatHang
         public ActionResult Index()
         {
             return View();

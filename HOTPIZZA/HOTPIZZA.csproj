@@ -141,10 +141,9 @@
     <Compile Include="Areas\Admin\Controllers\TrangMiengsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TuyenDungsController.cs" />
     <Compile Include="Areas\Admin\PhanQuyensController.cs" />
-    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\DatHangController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ROISERController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -559,13 +558,12 @@
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\User\DangXuat.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\DatHang\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="images\MONCHINH&amp;MIY\" />
-    <Folder Include="Views\Default\" />
-    <Folder Include="Views\ROISER\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
