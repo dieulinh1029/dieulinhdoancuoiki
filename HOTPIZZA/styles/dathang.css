@@ -95,7 +95,7 @@ section {
     height: 500px;
     pointer-events: none;
     content: '';
-    border: solid 2px rgb(0, 0, 0);
+    border: solid 2px #fff;
     border-radius: 3px;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
