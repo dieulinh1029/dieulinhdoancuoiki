@@ -50,16 +50,16 @@
                             </div>
                             <nav class="navbar">
                                 <ul class="navbar_menu">
-                                    <li><a href="#">Trang Chủ</a></li>
+                                    <li><a href="@Url.Action("Index", "Home")">Trang chủ</a></li>
                                     <li><a href="#">menu</a></li>
-                                    <li><a href="#">Đặt Hàng</a></li>
+                                    <li><a href="@Url.Action("Index", "DatHang")">Đặt hàng</a></li>
 
-                                    <li><a href="tuyendung.html">Tuyển dụng</a></li>
+                                    <li><a href="@Url.Action("Index", "TuyenDung")">Tuyển dụng</a></li>
                                     <li><a href="contact.html">liên hệ</a></li>
                                 </ul>
                                 <ul class="navbar_user">
                                     <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                                    <li><a href="@Url.Action("DangNhap","User")"><i class="fa fa-user" aria-hidden="true"></i></a></li>
                                     <li class="checkout">
                                         <a href="#">
                                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
