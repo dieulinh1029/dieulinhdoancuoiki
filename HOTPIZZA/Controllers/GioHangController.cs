@@ -11,7 +11,7 @@ namespace HOTPIZZA.Controllers
     {
         HOTPIZZAEntities1 db = new HOTPIZZAEntities1();
         // GET: GioHang
-        public ActionResult Index()
+        public ActionResult GioHang()
         {
             return View();
         }

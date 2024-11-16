@@ -336,6 +336,7 @@
     <Content Include="images\single_3.jpg" />
     <Content Include="images\single_3_thumb.jpg" />
     <Content Include="images\slider_1.jpg" />
+    <Content Include="images\truck.png" />
     <Content Include="images\tuyendung.jpg" />
     <Content Include="images\tuyendunggggg.jpg" />
     <Content Include="js\categories_custom.js" />
@@ -527,7 +528,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\DangKy.cshtml" />
-    <Content Include="Views\GioHang\Index.cshtml" />
     <Content Include="Views\GioHang\DatHang.cshtml" />
     <Content Include="Views\User\DangNhap.cshtml" />
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
