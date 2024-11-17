@@ -11,16 +11,27 @@ namespace HOTPIZZA.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Web;
+    using System.Linq;
+
     public partial class Giohang
     {
+        HOTPIZZAEntities1 db = new HOTPIZZAEntities1();
         public string IdMon { get; set; }
         public string TenMon { get; set; }
         public string HinhMinhHoa { get; set; }
-        public Nullable<decimal> SoLuong { get; set; }
+        public Nullable<short> SoLuong { get; set; }
         public Nullable<decimal> DonGia { get; set; }
         public Nullable<decimal> ThanhTien { get; set; }
-    
+        public Giohang(string maMon)
+        {
+           maMon = IdMon;
+            MonAn sp = db.MonAns.Single(n => n.IdMon == maMon);
+            TenMon= sp.TenMon;
+            HinhMinhHoa = sp.HinhMinhHoa;
+            DonGia = decimal.Parse(sp.DonGia.ToString());
+            SoLuong = 1;
+        }
         public virtual DanhMucMon DanhMucMon { get; set; }
     }
 }

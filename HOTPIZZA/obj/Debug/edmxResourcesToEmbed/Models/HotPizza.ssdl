@@ -60,7 +60,7 @@
     <Property Name="IdMon" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="TenMon" Type="nvarchar" MaxLength="50" />
     <Property Name="HinhMinhHoa" Type="varchar" MaxLength="50" />
-    <Property Name="SoLuong" Type="money" />
+    <Property Name="SoLuong" Type="int" />
     <Property Name="DonGia" Type="money" />
     <Property Name="ThanhTien" Type="money" StoreGeneratedPattern="Computed" />
   </EntityType>

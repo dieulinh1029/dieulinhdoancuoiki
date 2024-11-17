@@ -1,4 +1,4 @@
-﻿
+﻿@using HOTPIZZA.Models
 @{
     ViewBag.Title = "Chitiet";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
@@ -32,23 +32,27 @@
                 <div style=" background:#e1e1e1; text-align:center">
                     <span><img src="~/images/truck.png">Miễn phí giao hàng</span>
                 </div>
-               
-                
+
+
                 <div class="product_price">
                     <p style="text-align:left;margin-left:10px; color:red; font-size:20px">@String.Format("{0:#,##0} VNĐ", @Model.DonGia)</p>
                 </div>
                 <ul class="star_rating" style=" color: #ffd800;">
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                    </ul>
-                
-                
-              
-                
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                </ul>
+
+                <a href="@Url.Action("ThemGioHang", "GioHang", new { IdMon = @Model.IdMon})">Đặt Món</a>
+
             </div>
+                @*@using (@Html.BeginForm("ThemGioHang", "GioHang", new { @IdMon = @Model.IdMon, @strURL = Request.Url.ToString() }))
+                {
+                    <input style="color: red; font-weight: bold" type="submit" value="Mua hàng" />
+                }*@
+           
         </div>
     </div>
 
