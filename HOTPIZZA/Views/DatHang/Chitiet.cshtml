@@ -45,13 +45,13 @@
                     <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
                 </ul>
 
-                <a href="@Url.Action("ThemGioHang", "GioHang", new { IdMon = @Model.IdMon})">Đặt Món</a>
+                @*<a href="@Url.Action("ThemGioHang", "GioHang", new { maMon = @Model.IdMon})">Đặt Món</a>*@
 
             </div>
-                @*@using (@Html.BeginForm("ThemGioHang", "GioHang", new { @IdMon = @Model.IdMon, @strURL = Request.Url.ToString() }))
+                @using (@Html.BeginForm("ThemGioHang", "GioHang", new { @IdMon = @Model.IdMon, @strURL = Request.Url.ToString() }))
                 {
                     <input style="color: red; font-weight: bold" type="submit" value="Mua hàng" />
-                }*@
+                }
            
         </div>
     </div>

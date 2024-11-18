@@ -10,7 +10,7 @@
         <EntityTypeShape EntityType="HOTPIZZAModel.CTDonDatHang" Width="1.5" PointX="6" PointY="14.375" IsExpanded="true" />
         <EntityTypeShape EntityType="HOTPIZZAModel.DanhMucMon" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
         <EntityTypeShape EntityType="HOTPIZZAModel.DonDatHang" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HOTPIZZAModel.Giohang" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTPIZZAModel.Giohang" Width="1.5" PointX="5.125" PointY="8.125" IsExpanded="true" />
         <EntityTypeShape EntityType="HOTPIZZAModel.GopYKhachHang" Width="1.5" PointX="4.625" PointY="31.375" IsExpanded="true" />
         <EntityTypeShape EntityType="HOTPIZZAModel.HinhThucThanhToan" Width="1.5" PointX="1.5" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="HOTPIZZAModel.Login" Width="1.5" PointX="1.5" PointY="35.25" IsExpanded="true" />
@@ -25,7 +25,6 @@
         <AssociationConnector Association="HOTPIZZAModel.FK_TuyenDung_ToTable" ManuallyRouted="false" />
         <AssociationConnector Association="HOTPIZZAModel.FK_CTDonDatHang_ToTable" ManuallyRouted="false" />
         <AssociationConnector Association="HOTPIZZAModel.FK_CTDonDatHang_ToTable_1" ManuallyRouted="false" />
-        <AssociationConnector Association="HOTPIZZAModel.FK_Giohang_ToTable" ManuallyRouted="false" />
         <AssociationConnector Association="HOTPIZZAModel.FK_DonDatHang_ToTable" ManuallyRouted="false" />
         <AssociationConnector Association="HOTPIZZAModel.FK_DonDatHang_ToTable_1" ManuallyRouted="false" />
         <AssociationConnector Association="HOTPIZZAModel.FK_DonDatHang_ToTable_2" ManuallyRouted="false" />
@@ -34,6 +33,7 @@
         <AssociationConnector Association="HOTPIZZAModel.FK_NguoiDung_ToTable" ManuallyRouted="false" />
         <EntityTypeShape EntityType="HOTPIZZAModel.MonAn" Width="1.5" PointX="3" PointY="43.5" />
         <AssociationConnector Association="HOTPIZZAModel.FK_Pizza_ToTable1" />
+        <AssociationConnector Association="HOTPIZZAModel.FK_CTDonDatHang_ToTable_11" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="/styles/dathang.css">
     <link rel="stylesheet" type="text/css" href="~/styles/single_styles.css"> 
     <link rel="stylesheet" type="text/css" href="~/styles/single_responsive.css">
+    <link rel="stylesheet" type="text/css" href="~/styles/cart_style.css">
 
 
 </head>
@@ -51,9 +52,9 @@
                                 <li class="checkout">
                                     @Html.Action("GioHangPartial", "GioHang", new { @class = "giohang" })
 
-                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                    <span id="checkout_items" class="checkout_items">(@ViewBag.TongSoLuong)</span>
-                                    </a>
+                                    @*<i class="fa fa-shopping-cart" aria-hidden="true"></i>*@
+                                    @*<span id="checkout_items" class="checkout_items">(@ViewBag.TongSoLuong)</span>*@
+                                    
                                 </li>
                             </ul>
                             <div class="hamburger_container">

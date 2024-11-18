@@ -1,5 +1,5 @@
 ﻿body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f7f7f7;
     margin: 0;
     padding: 0;
@@ -12,6 +12,7 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
 }
 
 h1 {
@@ -27,7 +28,7 @@ h1 {
 }
 
     .cart-table thead {
-        background-color: #4CAF50;
+        background-color: #960b1e;
         color: #fff;
     }
 

@@ -27,7 +27,7 @@
     </Key>
     <Property Name="MaDon" Type="int" Nullable="false" />
     <Property Name="MaMon" Type="nvarchar" MaxLength="20" />
-    <Property Name="SoLuong" Type="money" />
+    <Property Name="SoLuong" Type="int" />
     <Property Name="DonGia" Type="money" />
     <Property Name="ThanhTien" Type="money" StoreGeneratedPattern="Computed" />
   </EntityType>
@@ -195,11 +195,11 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CTDonDatHang_ToTable_1">
-    <End Role="DanhMucMon" Type="Self.DanhMucMon" Multiplicity="0..1" />
+    <End Role="MonAn" Type="Self.MonAn" Multiplicity="0..1" />
     <End Role="CTDonDatHang" Type="Self.CTDonDatHang" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="DanhMucMon">
-        <PropertyRef Name="IdDanhMuc" />
+      <Principal Role="MonAn">
+        <PropertyRef Name="IdMon" />
       </Principal>
       <Dependent Role="CTDonDatHang">
         <PropertyRef Name="MaMon" />
@@ -239,18 +239,6 @@
       </Principal>
       <Dependent Role="DonDatHang">
         <PropertyRef Name="HinhThucThanhToan" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Giohang_ToTable">
-    <End Role="DanhMucMon" Type="Self.DanhMucMon" Multiplicity="1" />
-    <End Role="Giohang" Type="Self.Giohang" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="DanhMucMon">
-        <PropertyRef Name="IdDanhMuc" />
-      </Principal>
-      <Dependent Role="Giohang">
-        <PropertyRef Name="IdMon" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -332,7 +320,7 @@
       <End Role="CTDonDatHang" EntitySet="CTDonDatHang" />
     </AssociationSet>
     <AssociationSet Name="FK_CTDonDatHang_ToTable_1" Association="Self.FK_CTDonDatHang_ToTable_1">
-      <End Role="DanhMucMon" EntitySet="DanhMucMon" />
+      <End Role="MonAn" EntitySet="MonAn" />
       <End Role="CTDonDatHang" EntitySet="CTDonDatHang" />
     </AssociationSet>
     <AssociationSet Name="FK_DonDatHang_ToTable" Association="Self.FK_DonDatHang_ToTable">
@@ -346,10 +334,6 @@
     <AssociationSet Name="FK_DonDatHang_ToTable_2" Association="Self.FK_DonDatHang_ToTable_2">
       <End Role="HinhThucThanhToan" EntitySet="HinhThucThanhToan" />
       <End Role="DonDatHang" EntitySet="DonDatHang" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Giohang_ToTable" Association="Self.FK_Giohang_ToTable">
-      <End Role="DanhMucMon" EntitySet="DanhMucMon" />
-      <End Role="Giohang" EntitySet="Giohang" />
     </AssociationSet>
     <AssociationSet Name="FK_GopYKhachHang_ToTable" Association="Self.FK_GopYKhachHang_ToTable">
       <End Role="NguoiDung" EntitySet="NguoiDung" />

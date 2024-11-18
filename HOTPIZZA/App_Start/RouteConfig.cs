@@ -16,7 +16,7 @@ namespace HOTPIZZA
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "MonAns", action = "MonAns", id = UrlParameter.Optional }
+                defaults: new { controller = "DatHang", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

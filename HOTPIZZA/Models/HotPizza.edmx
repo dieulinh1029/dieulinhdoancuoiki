@@ -32,7 +32,7 @@
           </Key>
           <Property Name="MaDon" Type="int" Nullable="false" />
           <Property Name="MaMon" Type="nvarchar" MaxLength="20" />
-          <Property Name="SoLuong" Type="money" />
+          <Property Name="SoLuong" Type="int" />
           <Property Name="DonGia" Type="money" />
           <Property Name="ThanhTien" Type="money" StoreGeneratedPattern="Computed" />
         </EntityType>
@@ -200,11 +200,11 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_CTDonDatHang_ToTable_1">
-          <End Role="DanhMucMon" Type="Self.DanhMucMon" Multiplicity="0..1" />
+          <End Role="MonAn" Type="Self.MonAn" Multiplicity="0..1" />
           <End Role="CTDonDatHang" Type="Self.CTDonDatHang" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="DanhMucMon">
-              <PropertyRef Name="IdDanhMuc" />
+            <Principal Role="MonAn">
+              <PropertyRef Name="IdMon" />
             </Principal>
             <Dependent Role="CTDonDatHang">
               <PropertyRef Name="MaMon" />
@@ -244,18 +244,6 @@
             </Principal>
             <Dependent Role="DonDatHang">
               <PropertyRef Name="HinhThucThanhToan" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Giohang_ToTable">
-          <End Role="DanhMucMon" Type="Self.DanhMucMon" Multiplicity="1" />
-          <End Role="Giohang" Type="Self.Giohang" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="DanhMucMon">
-              <PropertyRef Name="IdDanhMuc" />
-            </Principal>
-            <Dependent Role="Giohang">
-              <PropertyRef Name="IdMon" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -337,7 +325,7 @@
             <End Role="CTDonDatHang" EntitySet="CTDonDatHang" />
           </AssociationSet>
           <AssociationSet Name="FK_CTDonDatHang_ToTable_1" Association="Self.FK_CTDonDatHang_ToTable_1">
-            <End Role="DanhMucMon" EntitySet="DanhMucMon" />
+            <End Role="MonAn" EntitySet="MonAn" />
             <End Role="CTDonDatHang" EntitySet="CTDonDatHang" />
           </AssociationSet>
           <AssociationSet Name="FK_DonDatHang_ToTable" Association="Self.FK_DonDatHang_ToTable">
@@ -351,10 +339,6 @@
           <AssociationSet Name="FK_DonDatHang_ToTable_2" Association="Self.FK_DonDatHang_ToTable_2">
             <End Role="HinhThucThanhToan" EntitySet="HinhThucThanhToan" />
             <End Role="DonDatHang" EntitySet="DonDatHang" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Giohang_ToTable" Association="Self.FK_Giohang_ToTable">
-            <End Role="DanhMucMon" EntitySet="DanhMucMon" />
-            <End Role="Giohang" EntitySet="Giohang" />
           </AssociationSet>
           <AssociationSet Name="FK_GopYKhachHang_ToTable" Association="Self.FK_GopYKhachHang_ToTable">
             <End Role="NguoiDung" EntitySet="NguoiDung" />
@@ -409,11 +393,12 @@
           </Key>
           <Property Name="MaDon" Type="Int32" Nullable="false" />
           <Property Name="MaMon" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="SoLuong" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SoLuong" Type="Int32" />
           <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="ThanhTien" Type="Decimal" Precision="19" Scale="4" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="DonDatHang" Relationship="Self.FK_CTDonDatHang_ToTable" FromRole="CTDonDatHang" ToRole="DonDatHang" />
           <NavigationProperty Name="DanhMucMon" Relationship="Self.FK_CTDonDatHang_ToTable_1" FromRole="CTDonDatHang" ToRole="DanhMucMon" />
+          <NavigationProperty Name="MonAn" Relationship="HOTPIZZAModel.FK_CTDonDatHang_ToTable_11" FromRole="CTDonDatHang" ToRole="MonAn" />
         </EntityType>
         <EntityType Name="DanhMucMon">
           <Key>
@@ -422,7 +407,6 @@
           <Property Name="IdDanhMuc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TenDanhMuc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CTDonDatHangs" Relationship="Self.FK_CTDonDatHang_ToTable_1" FromRole="DanhMucMon" ToRole="CTDonDatHang" />
-          <NavigationProperty Name="Giohang" Relationship="Self.FK_Giohang_ToTable" FromRole="DanhMucMon" ToRole="Giohang" />
           <NavigationProperty Name="MonAns" Relationship="HOTPIZZAModel.FK_Pizza_ToTable1" FromRole="DanhMucMon" ToRole="MonAn" />
         </EntityType>
         <EntityType Name="DonDatHang">
@@ -454,7 +438,6 @@
           <Property Name="SoLuong" Type="Int16" />
           <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="ThanhTien" Type="Decimal" Precision="19" Scale="4" annotation:StoreGeneratedPattern="Computed" />
-          <NavigationProperty Name="DanhMucMon" Relationship="Self.FK_Giohang_ToTable" FromRole="Giohang" ToRole="DanhMucMon" />
         </EntityType>
         <EntityType Name="GopYKhachHang">
           <Key>
@@ -612,18 +595,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Giohang_ToTable">
-          <End Role="DanhMucMon" Type="Self.DanhMucMon" Multiplicity="1" />
-          <End Role="Giohang" Type="Self.Giohang" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="DanhMucMon">
-              <PropertyRef Name="IdDanhMuc" />
-            </Principal>
-            <Dependent Role="Giohang">
-              <PropertyRef Name="IdMon" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_DonDatHang_ToTable">
           <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="1" />
           <End Role="DonDatHang" Type="Self.DonDatHang" Multiplicity="*" />
@@ -735,10 +706,6 @@
             <End Role="DanhMucMon" EntitySet="DanhMucMons" />
             <End Role="CTDonDatHang" EntitySet="CTDonDatHangs" />
           </AssociationSet>
-          <AssociationSet Name="FK_Giohang_ToTable" Association="Self.FK_Giohang_ToTable">
-            <End Role="DanhMucMon" EntitySet="DanhMucMons" />
-            <End Role="Giohang" EntitySet="Giohangs" />
-          </AssociationSet>
           <AssociationSet Name="FK_DonDatHang_ToTable" Association="Self.FK_DonDatHang_ToTable">
             <End Role="NguoiDung" EntitySet="NguoiDungs" />
             <End Role="DonDatHang" EntitySet="DonDatHangs" />
@@ -768,6 +735,10 @@
             <End Role="DanhMucMon" EntitySet="DanhMucMons" />
             <End Role="MonAn" EntitySet="MonAns" />
           </AssociationSet>
+          <AssociationSet Name="FK_CTDonDatHang_ToTable_11" Association="HOTPIZZAModel.FK_CTDonDatHang_ToTable_11">
+            <End Role="MonAn" EntitySet="MonAns" />
+            <End Role="CTDonDatHang" EntitySet="CTDonDatHangs" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="MonAn">
           <Key>
@@ -780,6 +751,7 @@
           <Property Name="HinhMinhHoa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="DanhMucMon" Relationship="HOTPIZZAModel.FK_Pizza_ToTable1" FromRole="MonAn" ToRole="DanhMucMon" />
+          <NavigationProperty Name="CTDonDatHangs" Relationship="HOTPIZZAModel.FK_CTDonDatHang_ToTable_11" FromRole="MonAn" ToRole="CTDonDatHang" />
         </EntityType>
         <Association Name="FK_Pizza_ToTable1">
           <End Type="HOTPIZZAModel.DanhMucMon" Role="DanhMucMon" Multiplicity="0..1" />
@@ -790,6 +762,18 @@
             </Principal>
             <Dependent Role="MonAn">
               <PropertyRef Name="IdDanhMuc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTDonDatHang_ToTable_11">
+          <End Type="HOTPIZZAModel.MonAn" Role="MonAn" Multiplicity="0..1" />
+          <End Type="HOTPIZZAModel.CTDonDatHang" Role="CTDonDatHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MonAn">
+              <PropertyRef Name="IdMon" />
+            </Principal>
+            <Dependent Role="CTDonDatHang">
+              <PropertyRef Name="MaMon" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

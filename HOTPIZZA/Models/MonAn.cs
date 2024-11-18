@@ -14,6 +14,12 @@ namespace HOTPIZZA.Models
     
     public partial class MonAn
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public MonAn()
+        {
+            this.CTDonDatHangs = new HashSet<CTDonDatHang>();
+        }
+    
         public string IdMon { get; set; }
         public string TenMon { get; set; }
         public string IdDanhMuc { get; set; }
@@ -22,5 +28,7 @@ namespace HOTPIZZA.Models
         public Nullable<decimal> DonGia { get; set; }
     
         public virtual DanhMucMon DanhMucMon { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTDonDatHang> CTDonDatHangs { get; set; }
     }
 }
