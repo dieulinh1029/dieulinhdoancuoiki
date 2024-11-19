@@ -180,6 +180,7 @@ namespace HOTPIZZA.Controllers
                 ModelState.AddModelError("", "Giỏ hàng trống. Vui lòng thêm sản phẩm trước khi đặt hàng.");
                 return RedirectToAction("GioHang");
             }
+            decimal totalValue = lstGioHang.Sum(item => item.DonGia * item.SoLuong).GetValueOrDefault();
             // Create an order object
             DonDatHang order = new DonDatHang
             {
@@ -190,16 +191,15 @@ namespace HOTPIZZA.Controllers
                 DienThoaiNguoiNhan = phone,
                 NgayGiao = ngaygiao,
                 TinhTrangDonHang = 1,
+                TriGia=totalValue,
                 HinhThucThanhToan = payment == "cod" ? 1 : 2, // Assuming 1 is COD, 2 is card
             };
-            decimal totalValue = lstGioHang.Sum(item => item.DonGia * item.SoLuong).GetValueOrDefault();
+           
 
             // Add order to the database
             db.DonDatHangs.Add(order);
             db.SaveChanges(); // Save to generate the MaDon (order ID)
-            ViewBag.TotalValue = totalValue;
-            // Create order details (cart items)
-
+            
             foreach (var item in lstGioHang)
             {
                 // Ensure valid item exists in the database

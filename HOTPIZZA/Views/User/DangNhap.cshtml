@@ -3,6 +3,128 @@
     ViewBag.Title = "DangNhap";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
+<style>
+    /* Thiết lập chung cho phần chính */
+    #main-container {
+        padding: 10px 0;
+        background-color: #f9f9f9; /* Màu nền nhẹ nhàng */
+    }
+
+    /* Container của toàn bộ nội dung */
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    /* Tiêu đề trang */
+    .wrapbox-heading-account {
+        margin-bottom: 20px;
+    }
+
+    .header-page {
+        text-align: center; /* Canh giữa tiêu đề */
+        padding: 10px 0;
+        border-bottom: 2px solid #28a745; /* Đường kẻ màu xanh lá */
+        margin-bottom: 20px;
+    }
+
+        .header-page h1 {
+            font-size: 23px;
+            color: #333;
+            text-transform: uppercase; /* Chữ in hoa */
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            margin: 0;
+        }
+
+    /* Dành cho cột trên thiết bị nhỏ */
+    .col-xs-12 {
+        padding: 10px;
+    }
+    /* Thiết lập form container */
+    .login-form-container {
+        max-width: 400px;
+        margin: 40px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Tiêu đề lỗi và thông báo */
+    .text-danger {
+        color: #dc3545;
+        font-size: 0.875rem;
+        margin-top: 5px;
+    }
+
+    /* Các nhóm form */
+    .form-box__single-group {
+        margin-bottom: 20px;
+    }
+
+    .form-label {
+        display: block;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    /* Input và các trường nhập liệu */
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transition: border-color 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: #28a745;
+            box-shadow: 0 0 5px rgba(40, 167, 69, 0.2);
+            outline: none;
+        }
+
+    /* Nút đăng nhập */
+    .btn {
+        display: inline-block;
+        background-color: #000;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn:hover {
+            background-color: #28a745;
+        }
+
+    /* Checkbox và liên kết */
+    .d-flex.align-items-center {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    .link--gray {
+        color: #6c757d;
+        font-size: 0.875rem;
+        text-decoration: none;
+    }
+
+        .link--gray:hover {
+            color: #28a745;
+        }
+
+
+</style>
 
 @using (Html.BeginForm("DangNhap", "User", FormMethod.Post))
 {
@@ -16,44 +138,47 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-xs-12">
-                    <div class="section-content m-b-40">
-                        <h5 class="section-content__title text-center">Login</h5>
-                    </div>
+                    
 
-                    <div class="col-lg-6 col-12">
-                        <div class="login-form-container">
-                            <div class="login-register-form">
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                <div class="text-danger">@ViewBag.Message</div>
-                                <div class="form-box__single-group">
-                                    @Html.LabelFor(model => model.TenDN, htmlAttributes: new { @class = "form-label" })
-                                    @Html.EditorFor(model => model.TenDN, new { htmlAttributes = new { @class = "form-control", @id = "form-username" } })
-                                    @Html.ValidationMessageFor(model => model.TenDN, "", new { @class = "text-danger" })
-                                </div>
-                                <div class="form-box__single-group">
-                                    @Html.LabelFor(model => model.MatKhau, htmlAttributes: new { @class = "form-label" })
-                                    <div class="password__toggle">
-                                        @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control", @id = "form-username-password", type = "password" } })
-                                        @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+               
+        <div class="login-form-container">
+            <div class="login-register-form">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="text-danger">@ViewBag.Message</div>
 
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between flex-wrap m-tb-20">
-                                    <label for="account-remember">
-                                        <input type="checkbox" name="account-remember" id="account-remember">
-                                        <span>Remember me</span>
-                                    </label>
-                                    <a class="link--gray" href="#">Forgot Password?</a>
-                                </div>
-                                <button class="btn btn--box btn--medium btn--radius btn--black btn--black-hover-green btn--uppercase font--semi-bold" type="submit">LOGIN</button>
-                            </div>
+                <div class="form-box__single-group">
+                    @Html.LabelFor(model => model.TenDN, "Tên đăng nhập", htmlAttributes: new { @class = "form-label" })
+                    @Html.EditorFor(model => model.TenDN, new { htmlAttributes = new { @class = "form-control", @id = "form-username", @placeholder = "Nhập tên đăng nhập" } })
+                    @Html.ValidationMessageFor(model => model.TenDN, "", new { @class = "text-danger" })
+                </div>
 
-                            <br>
-                            <a class="link--gray" href="@Url.Action("DangKy","User")">If you do not have an account, Register here.</a>
-                        </div>
+                <div class="form-box__single-group">
+                    @Html.LabelFor(model => model.MatKhau, "Mật khẩu", htmlAttributes: new { @class = "form-label" })
+                    <div class="password__toggle">
+                        @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control", @id = "form-username-password", type = "password", @placeholder = "Nhập mật khẩu" } })
+                        @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
                     </div>
                 </div>
+
+                <div class="d-flex align-items-center justify-content-between flex-wrap m-tb-20">
+                    <label for="account-remember" class="d-flex align-items-center">
+                        <input type="checkbox" name="account-remember" id="account-remember">
+                        <span style="margin-left: 8px;">Nhớ tài khoản</span>
+                    </label>
+                    <a class="link--gray ml-3" href="#">Quên mật khẩu</a>
+                </div>
+
+                <button class="btn btn--box btn--medium btn--radius btn--black btn--black-hover-green btn--uppercase font--semi-bold" type="submit">
+                    <i class="fa fa-sign-in" aria-hidden="true" style="margin-right: 8px;"></i> Đăng nhập
+                </button>
+
+                <br><br>
+                <a class="link--gray" href="@Url.Action("DangKy","User")">Nếu chưa có tài khoản, đăng ký.</a>
             </div>
         </div>
+    </div>
+</div>
+
+           
     </main>
 }

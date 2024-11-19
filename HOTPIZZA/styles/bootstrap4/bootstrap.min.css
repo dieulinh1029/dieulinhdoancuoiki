@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * Bootstrap v4.0.0-beta.2 (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
  * Copyright 2011-2017 Twitter, Inc.
@@ -117,7 +117,8 @@ html {
 article dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
     display: block
 }
-aside{
+
+aside {
     display: block;
     width: 50%;
 }
@@ -150,7 +151,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     margin-top: inherit;
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
 
 abbr[data-original-title], abbr[title] {
@@ -217,7 +218,8 @@ sup {
 }
 
 a {
-    color: #007bff;
+    font-family: 'Times New Roman', Times, serif;
+    color: #f79b1e;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects
@@ -398,8 +400,8 @@ template {
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-    margin-bottom: .5rem;
-    font-family: inherit;
+    margin-bottom: .1rem;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: 500;
     line-height: 1.2;
     color: inherit
@@ -2998,7 +3000,6 @@ tbody.collapse.show {
 
 .dropdown-menu.show {
     display: block;
-    
 }
 
 .dropdown-header {
@@ -4729,13 +4730,16 @@ tbody.collapse.show {
     flex: 1
 }
 
-.list-group {
-/*    display: flexbox;*/
+
+   .list-group {
     display: flex;
-   
-    flex-direction: row;
-    padding-left: 0;
-    margin-bottom: 0
+    flex-direction: row;  /* Sắp xếp phần tử con theo hàng ngang */
+    margin-bottom: 20px;  /* Khoảng cách dưới giữa các list-group */
+    justify-content: space-evenly;  /* Căn giữa các phần tử con đều đặn */
+    background-color: #f9f9f9;  /* Màu nền nhẹ cho nhóm */
+    border-radius: 8px;  /* Bo tròn các góc của nhóm */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Bóng đổ nhẹ cho nhóm */
+    padding: 15px;  /* Thêm padding xung quanh các phần tử con để tránh bị dính vào viền */
 }
 
 .list-group-item-action {
@@ -4755,13 +4759,16 @@ tbody.collapse.show {
         background-color: #e9ecef
     }
 
-.list-group-item {
-    position: relative;
-    display: block;
-    padding: .75rem 1.25rem;
-    margin-bottom: -1px;
-    background-color: #fff;
-    border: 1px solid rgba(0,0,0,.125)
+.list-item {
+    padding: 10px 20px; /* Tăng padding trong các phần tử con */
+    background-color: #ffffff; /* Màu nền trắng cho các phần tử con */
+    border: 1px solid #ddd; /* Viền mỏng cho các phần tử con */
+    border-radius: 6px; /* Bo tròn các góc của phần tử con */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ cho các phần tử con */
+    font-size: 16px; /* Cỡ chữ dễ đọc */
+    font-weight: 500; /* Nhấn mạnh chữ */
+    color: #961b1e; /* Màu chữ tối */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng khi hover */
 }
 
     .list-group-item:first-child {
@@ -4780,16 +4787,16 @@ tbody.collapse.show {
     }
 
     .list-group-item.disabled, .list-group-item:disabled {
-        color: #868e96;
+        color: #961b1e;
         background-color: #fff
     }
 
-    .list-group-item.active {
-        z-index: 2;
-        color: #fff;
-        background-color: #007bff;
-        border-color: #007bff
-    }
+.list-group-item.active {
+    transform: translateY(2px); /* Di chuyển xuống một chút khi click */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Giảm bóng khi click */
+    background-color: #e0e0e0; /* Thay đổi màu nền khi click vào */
+    color: #000; /* Thay đổi màu chữ khi click vào */
+}
 
 .list-group-flush .list-group-item {
     border-right: 0;
@@ -6070,16 +6077,17 @@ a.bg-dark:focus, a.bg-dark:hover {
 .embed-responsive-1by1::before {
     padding-top: 100%
 }
+
 aside#left {
     width: 240px;
     vertical-align: top;
 }
 
-    aside#left div.menu {
-        border: 1px solid #206AB5;
+/*    aside#left div.menu {
+        border: 1px solid #fff;
         border-radius: 4px;
         margin-bottom: 10px;
-    }
+    }*/
 
         aside#left div.menu > p {
             background-color: #206AB5;
