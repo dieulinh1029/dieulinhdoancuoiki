@@ -34,7 +34,6 @@ namespace HOTPIZZA.Models
         public virtual ICollection<DonDatHang> DonDatHangs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GopYKhachHang> GopYKhachHangs { get; set; }
-        public virtual Login Login { get; set; }
         public virtual PhanQuyen PhanQuyen { get; set; }
     }
 }

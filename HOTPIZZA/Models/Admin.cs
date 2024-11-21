@@ -30,7 +30,6 @@ namespace HOTPIZZA.Models
         public Nullable<int> IdChiNhanh { get; set; }
     
         public virtual PhanQuyen PhanQuyen { get; set; }
-        public virtual Login Login { get; set; }
         public virtual ChiNhanh ChiNhanh { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TuyenDung> TuyenDungs { get; set; }

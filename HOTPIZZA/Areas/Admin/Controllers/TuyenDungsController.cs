@@ -13,7 +13,7 @@ namespace HOTPIZZA.Areas.Admin.Controllers
 {
     public class TuyenDungsController : Controller
     {
-        private HOTPIZZAEntities1 db = new HOTPIZZAEntities1();
+        private HOTPIZZAEntity db = new HOTPIZZAEntity();
 
         // GET: Admin/TuyenDungs
         public async Task<ActionResult> Index()

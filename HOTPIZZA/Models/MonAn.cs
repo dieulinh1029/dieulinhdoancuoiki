@@ -27,8 +27,8 @@ namespace HOTPIZZA.Models
         public string HinhMinhHoa { get; set; }
         public Nullable<decimal> DonGia { get; set; }
     
-        public virtual DanhMucMon DanhMucMon { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTDonDatHang> CTDonDatHangs { get; set; }
+        public virtual DanhMucMon DanhMucMon { get; set; }
     }
 }

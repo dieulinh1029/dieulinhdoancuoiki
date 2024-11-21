@@ -14,11 +14,11 @@ namespace HOTPIZZA.Models
     using System.Linq;
     public partial class Giohang
     {
-        HOTPIZZAEntities1 db = new HOTPIZZAEntities1();
+        HOTPIZZAEntity db = new HOTPIZZAEntity();
         public string IdMon { get; set; }
         public string TenMon { get; set; }
         public string HinhMinhHoa { get; set; }
-        public Nullable<short> SoLuong { get; set; }
+        public Nullable<int> SoLuong { get; set; }
         public Nullable<decimal> DonGia { get; set; }
         public Nullable<decimal> ThanhTien { get { return SoLuong * DonGia; } }
 

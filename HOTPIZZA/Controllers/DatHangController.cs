@@ -16,7 +16,7 @@ namespace HOTPIZZA.Controllers
 {
     public class DatHangController : Controller
     {
-        private HOTPIZZAEntities1 db = new HOTPIZZAEntities1();
+        private HOTPIZZAEntity db = new HOTPIZZAEntity();
         private List<MonAn> ShowMon(int count)
         {
             return db.MonAns.OrderByDescending(a=>a.TenMon).Take(count).ToList();

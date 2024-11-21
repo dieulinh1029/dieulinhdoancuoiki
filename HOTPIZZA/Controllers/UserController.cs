@@ -10,7 +10,7 @@ namespace HOTPIZZA.Controllers
     public class UserController : Controller
     {
         NguoiDung _nd;
-        HOTPIZZAEntities1 db = new HOTPIZZAEntities1();
+        HOTPIZZAEntity db = new HOTPIZZAEntity();
         public ActionResult Index()
         {
             return View();

@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HOTPIZZAModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="MaAdmin" />
+    </Key>
+    <Property Name="MaAdmin" Type="int" Nullable="false" />
+    <Property Name="HovaTen" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nchar" MaxLength="10" />
+    <Property Name="TenDN" Type="nvarchar" MaxLength="50" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="50" />
+    <Property Name="IdPhanQuyen" Type="int" />
+    <Property Name="IdChiNhanh" Type="int" />
+  </EntityType>
+  <EntityType Name="ChiNhanh">
+    <Key>
+      <PropertyRef Name="IdChiNhanh" />
+    </Key>
+    <Property Name="IdChiNhanh" Type="int" Nullable="false" />
+    <Property Name="TenChiNhanh" Type="nvarchar" MaxLength="25" />
+    <Property Name="DiaChiChiNhanh" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CTDonDatHang">
+    <Key>
+      <PropertyRef Name="MaDon" />
+      <PropertyRef Name="MaMon" />
+    </Key>
+    <Property Name="MaDon" Type="int" Nullable="false" />
+    <Property Name="MaMon" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="DonGia" Type="money" />
+    <Property Name="ThanhTien" Type="money" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="DanhMucMon">
+    <Key>
+      <PropertyRef Name="IdDanhMuc" />
+    </Key>
+    <Property Name="IdDanhMuc" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenDanhMuc" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DonDatHang">
+    <Key>
+      <PropertyRef Name="MaDon" />
+    </Key>
+    <Property Name="MaDon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaKH" Type="int" Nullable="false" />
+    <Property Name="NgayDat" Type="smalldatetime" />
+    <Property Name="TriGia" Type="money" />
+    <Property Name="NgayGiao" Type="smalldatetime" />
+    <Property Name="TenNguoiNhan" Type="nvarchar" MaxLength="50" />
+    <Property Name="DiaChiNguoiNhan" Type="nvarchar" MaxLength="50" />
+    <Property Name="DienThoaiNguoiNhan" Type="varchar" MaxLength="10" />
+    <Property Name="TinhTrangDonHang" Type="int" />
+    <Property Name="HinhThucThanhToan" Type="int" />
+  </EntityType>
+  <EntityType Name="Giohang">
+    <Key>
+      <PropertyRef Name="IdMon" />
+    </Key>
+    <Property Name="IdMon" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenMon" Type="nvarchar" MaxLength="50" />
+    <Property Name="HinhMinhHoa" Type="varchar" MaxLength="50" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="DonGia" Type="money" />
+    <Property Name="ThanhTien" Type="money" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="GopYKhachHang">
+    <Key>
+      <PropertyRef Name="IdGopY" />
+    </Key>
+    <Property Name="IdKH" Type="int" Nullable="false" />
+    <Property Name="NoiDung" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailKH" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgayGopY" Type="smalldatetime" />
+    <Property Name="IdGopY" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HinhThucThanhToan">
+    <Key>
+      <PropertyRef Name="idHTTT" />
+    </Key>
+    <Property Name="idHTTT" Type="int" Nullable="false" />
+    <Property Name="tenHTTT" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="TenDN" />
+    </Key>
+    <Property Name="TenDN" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MonAn">
+    <Key>
+      <PropertyRef Name="IdMon" />
+    </Key>
+    <Property Name="IdMon" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenMon" Type="nvarchar" MaxLength="50" />
+    <Property Name="IdDanhMuc" Type="nvarchar" MaxLength="20" />
+    <Property Name="MoTa" Type="ntext" />
+    <Property Name="HinhMinhHoa" Type="varchar" MaxLength="50" />
+    <Property Name="DonGia" Type="money" />
+  </EntityType>
+  <EntityType Name="NguoiDung">
+    <Key>
+      <PropertyRef Name="MaKhachHang" />
+    </Key>
+    <Property Name="MaKhachHang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HovaTen" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="char" MaxLength="10" />
+    <Property Name="NgaySinh" Type="date" />
+    <Property Name="TenDN" Type="nvarchar" MaxLength="50" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="50" />
+    <Property Name="IdPhanQuyen" Type="int" />
+  </EntityType>
+  <EntityType Name="PhanQuyen">
+    <Key>
+      <PropertyRef Name="IdPhanQuyen" />
+    </Key>
+    <Property Name="IdPhanQuyen" Type="int" Nullable="false" />
+    <Property Name="TenPhanQuyen" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Pizza">
+    <Key>
+      <PropertyRef Name="IdMon" />
+    </Key>
+    <Property Name="IdMon" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenMon" Type="nvarchar" MaxLength="50" />
+    <Property Name="IdDanhMuc" Type="nvarchar" MaxLength="20" />
+    <Property Name="MoTa" Type="ntext" />
+    <Property Name="HinhMinhHoa" Type="varchar" MaxLength="50" />
+    <Property Name="DonGia" Type="money" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TinhTrangDonHang">
+    <Key>
+      <PropertyRef Name="IdTTDH" />
+    </Key>
+    <Property Name="IdTTDH" Type="int" Nullable="false" />
+    <Property Name="tenTTDH" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TuyenDung">
+    <Key>
+      <PropertyRef Name="IdBaiTuyenDung" />
+    </Key>
+    <Property Name="IdBaiTuyenDung" Type="int" Nullable="false" />
+    <Property Name="DiaChiTuyenDung" Type="nvarchar" MaxLength="50" />
+    <Property Name="ViTriLamViec" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailLienLac" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoTacCongViec" Type="ntext" />
+    <Property Name="MaAdmin" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Admin_ToTable">
+    <End Role="PhanQuyen" Type="Self.PhanQuyen" Multiplicity="0..1" />
+    <End Role="Admin" Type="Self.Admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhanQuyen">
+        <PropertyRef Name="IdPhanQuyen" />
+      </Principal>
+      <Dependent Role="Admin">
+        <PropertyRef Name="IdPhanQuyen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Admin_ToTable_2">
+    <End Role="ChiNhanh" Type="Self.ChiNhanh" Multiplicity="0..1" />
+    <End Role="Admin" Type="Self.Admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChiNhanh">
+        <PropertyRef Name="IdChiNhanh" />
+      </Principal>
+      <Dependent Role="Admin">
+        <PropertyRef Name="IdChiNhanh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTDonDatHang_ToTable">
+    <End Role="DonDatHang" Type="Self.DonDatHang" Multiplicity="1" />
+    <End Role="CTDonDatHang" Type="Self.CTDonDatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonDatHang">
+        <PropertyRef Name="MaDon" />
+      </Principal>
+      <Dependent Role="CTDonDatHang">
+        <PropertyRef Name="MaDon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTDonDatHang_ToTable_1">
+    <End Role="MonAn" Type="Self.MonAn" Multiplicity="1" />
+    <End Role="CTDonDatHang" Type="Self.CTDonDatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MonAn">
+        <PropertyRef Name="IdMon" />
+      </Principal>
+      <Dependent Role="CTDonDatHang">
+        <PropertyRef Name="MaMon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonDatHang_ToTable">
+    <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="1" />
+    <End Role="DonDatHang" Type="Self.DonDatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NguoiDung">
+        <PropertyRef Name="MaKhachHang" />
+      </Principal>
+      <Dependent Role="DonDatHang">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonDatHang_ToTable_1">
+    <End Role="TinhTrangDonHang" Type="Self.TinhTrangDonHang" Multiplicity="0..1" />
+    <End Role="DonDatHang" Type="Self.DonDatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TinhTrangDonHang">
+        <PropertyRef Name="IdTTDH" />
+      </Principal>
+      <Dependent Role="DonDatHang">
+        <PropertyRef Name="TinhTrangDonHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonDatHang_ToTable_2">
+    <End Role="HinhThucThanhToan" Type="Self.HinhThucThanhToan" Multiplicity="0..1" />
+    <End Role="DonDatHang" Type="Self.DonDatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HinhThucThanhToan">
+        <PropertyRef Name="idHTTT" />
+      </Principal>
+      <Dependent Role="DonDatHang">
+        <PropertyRef Name="HinhThucThanhToan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GopYKhachHang_ToTable">
+    <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="1" />
+    <End Role="GopYKhachHang" Type="Self.GopYKhachHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NguoiDung">
+        <PropertyRef Name="MaKhachHang" />
+      </Principal>
+      <Dependent Role="GopYKhachHang">
+        <PropertyRef Name="IdKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NguoiDung_ToTable">
+    <End Role="PhanQuyen" Type="Self.PhanQuyen" Multiplicity="0..1" />
+    <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhanQuyen">
+        <PropertyRef Name="IdPhanQuyen" />
+      </Principal>
+      <Dependent Role="NguoiDung">
+        <PropertyRef Name="IdPhanQuyen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pizza_ToTable">
+    <End Role="DanhMucMon" Type="Self.DanhMucMon" Multiplicity="0..1" />
+    <End Role="MonAn" Type="Self.MonAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanhMucMon">
+        <PropertyRef Name="IdDanhMuc" />
+      </Principal>
+      <Dependent Role="MonAn">
+        <PropertyRef Name="IdDanhMuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TuyenDung_ToTable">
+    <End Role="Admin" Type="Self.Admin" Multiplicity="1" />
+    <End Role="TuyenDung" Type="Self.TuyenDung" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admin">
+        <PropertyRef Name="MaAdmin" />
+      </Principal>
+      <Dependent Role="TuyenDung">
+        <PropertyRef Name="MaAdmin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HOTPIZZAModel1StoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChiNhanh" EntityType="Self.ChiNhanh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CTDonDatHang" EntityType="Self.CTDonDatHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DanhMucMon" EntityType="Self.DanhMucMon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DonDatHang" EntityType="Self.DonDatHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Giohang" EntityType="Self.Giohang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GopYKhachHang" EntityType="Self.GopYKhachHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HinhThucThanhToan" EntityType="Self.HinhThucThanhToan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MonAn" EntityType="Self.MonAn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NguoiDung" EntityType="Self.NguoiDung" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhanQuyen" EntityType="Self.PhanQuyen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pizza" EntityType="Self.Pizza" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TinhTrangDonHang" EntityType="Self.TinhTrangDonHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TuyenDung" EntityType="Self.TuyenDung" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Admin_ToTable" Association="Self.FK_Admin_ToTable">
+      <End Role="PhanQuyen" EntitySet="PhanQuyen" />
+      <End Role="Admin" EntitySet="Admin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Admin_ToTable_2" Association="Self.FK_Admin_ToTable_2">
+      <End Role="ChiNhanh" EntitySet="ChiNhanh" />
+      <End Role="Admin" EntitySet="Admin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTDonDatHang_ToTable" Association="Self.FK_CTDonDatHang_ToTable">
+      <End Role="DonDatHang" EntitySet="DonDatHang" />
+      <End Role="CTDonDatHang" EntitySet="CTDonDatHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTDonDatHang_ToTable_1" Association="Self.FK_CTDonDatHang_ToTable_1">
+      <End Role="MonAn" EntitySet="MonAn" />
+      <End Role="CTDonDatHang" EntitySet="CTDonDatHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonDatHang_ToTable" Association="Self.FK_DonDatHang_ToTable">
+      <End Role="NguoiDung" EntitySet="NguoiDung" />
+      <End Role="DonDatHang" EntitySet="DonDatHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonDatHang_ToTable_1" Association="Self.FK_DonDatHang_ToTable_1">
+      <End Role="TinhTrangDonHang" EntitySet="TinhTrangDonHang" />
+      <End Role="DonDatHang" EntitySet="DonDatHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonDatHang_ToTable_2" Association="Self.FK_DonDatHang_ToTable_2">
+      <End Role="HinhThucThanhToan" EntitySet="HinhThucThanhToan" />
+      <End Role="DonDatHang" EntitySet="DonDatHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GopYKhachHang_ToTable" Association="Self.FK_GopYKhachHang_ToTable">
+      <End Role="NguoiDung" EntitySet="NguoiDung" />
+      <End Role="GopYKhachHang" EntitySet="GopYKhachHang" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NguoiDung_ToTable" Association="Self.FK_NguoiDung_ToTable">
+      <End Role="PhanQuyen" EntitySet="PhanQuyen" />
+      <End Role="NguoiDung" EntitySet="NguoiDung" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pizza_ToTable" Association="Self.FK_Pizza_ToTable">
+      <End Role="DanhMucMon" EntitySet="DanhMucMon" />
+      <End Role="MonAn" EntitySet="MonAn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TuyenDung_ToTable" Association="Self.FK_TuyenDung_ToTable">
+      <End Role="Admin" EntitySet="Admin" />
+      <End Role="TuyenDung" EntitySet="TuyenDung" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

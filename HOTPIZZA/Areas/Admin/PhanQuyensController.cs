@@ -13,7 +13,7 @@ namespace HOTPIZZA.Areas.Admin
 {
     public class PhanQuyensController : Controller
     {
-        private HOTPIZZAEntities1 db = new HOTPIZZAEntities1();
+        private HOTPIZZAEntity db = new HOTPIZZAEntity();
 
         // GET: Admin/PhanQuyens
         public async Task<ActionResult> Index()

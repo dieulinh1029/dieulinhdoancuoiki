@@ -13,12 +13,12 @@ namespace HOTPIZZA.Areas.Admin.Controllers
 {
     public class DonDatHangsController : Controller
     {
-        private HOTPIZZAEntities1 db = new HOTPIZZAEntities1();
+        private HOTPIZZAEntity   db = new HOTPIZZAEntity();
 
         // GET: Admin/DonDatHangs
         public async Task<ActionResult> Index()
         {
-            var donDatHangs = db.DonDatHangs.Include(d => d.CTDonDatHang).Include(d => d.NguoiDung).Include(d => d.TinhTrangDonHang1).Include(d => d.HinhThucThanhToan1);
+            var donDatHangs = db.DonDatHangs.Include(d => d.CTDonDatHangs).Include(d => d.NguoiDung).Include(d => d.TinhTrangDonHang1).Include(d => d.HinhThucThanhToan1);
             return View(await donDatHangs.ToListAsync());
         }
 

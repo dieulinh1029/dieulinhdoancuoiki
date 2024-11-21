@@ -14,19 +14,8 @@ namespace HOTPIZZA.Models
     
     public partial class Login
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Login()
-        {
-            this.Admins = new HashSet<Admin>();
-            this.NguoiDungs = new HashSet<NguoiDung>();
-        }
-    
+        HOTPIZZAEntity db= new HOTPIZZAEntity();
         public string TenDN { get; set; }
         public string MatKhau { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Admin> Admins { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NguoiDung> NguoiDungs { get; set; }
     }
 }

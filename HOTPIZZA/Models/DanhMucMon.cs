@@ -17,15 +17,12 @@ namespace HOTPIZZA.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DanhMucMon()
         {
-            this.CTDonDatHangs = new HashSet<CTDonDatHang>();
             this.MonAns = new HashSet<MonAn>();
         }
     
         public string IdDanhMuc { get; set; }
         public string TenDanhMuc { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTDonDatHang> CTDonDatHangs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MonAn> MonAns { get; set; }
     }

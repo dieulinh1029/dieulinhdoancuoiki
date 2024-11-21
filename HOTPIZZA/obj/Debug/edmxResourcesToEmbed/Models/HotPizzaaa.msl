@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HOTPIZZAModel1StoreContainer" CdmEntityContainer="HOTPIZZAEntity">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="HOTPIZZAModel1.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="MaAdmin" ColumnName="MaAdmin" />
+          <ScalarProperty Name="HovaTen" ColumnName="HovaTen" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="TenDN" ColumnName="TenDN" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="IdPhanQuyen" ColumnName="IdPhanQuyen" />
+          <ScalarProperty Name="IdChiNhanh" ColumnName="IdChiNhanh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiNhanhs">
+      <EntityTypeMapping TypeName="HOTPIZZAModel1.ChiNhanh">
+        <MappingFragment StoreEntitySet="ChiNhanh">
+          <ScalarProperty Name="IdChiNhanh" ColumnName="IdChiNhanh" />
+          <ScalarProperty Name="TenChiNhanh" ColumnName="TenChiNhanh" />
+          <ScalarProperty Name="DiaChiChiNhanh" ColumnName="DiaChiChiNhanh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CTDonDatHangs">
+      <EntityTypeMapping TypeName="HOTPIZZAModel1.CTDonDatHang">
+        <MappingFragment StoreEntitySet="CTDonDatHang">
+          <ScalarProperty Name="MaDon" ColumnName="MaDon" />
+          <ScalarProperty Name="MaMon" ColumnName="MaMon" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhMucMons">
+      <EntityTypeMapping TypeName="HOTPIZZAModel1.DanhMucMon">
+        <MappingFragment StoreEntitySet="DanhMucMon">
+          <ScalarProperty Name="IdDanhMuc" ColumnName="IdDanhMuc" />
+          <ScalarProperty Name="TenDanhMuc" ColumnName="TenDanhMuc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonDatHangs">
+      <EntityTypeMapping TypeName="HOTPIZZAModel1.DonDatHang">
+        <MappingFragment StoreEntitySet="DonDatHang">
+          <ScalarProperty Name="MaDon" ColumnName="MaDon" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="NgayDat" ColumnName="NgayDat" />
+          <ScalarProperty Name="TriGia" ColumnName="TriGia" />
+          <ScalarProperty Name="NgayGiao" ColumnName="NgayGiao" />
+          <ScalarProperty Name="TenNguoiNhan" ColumnName="TenNguoiNhan" />
+          <ScalarProperty Name="DiaChiNguoiNhan" ColumnName="DiaChiNguoiNhan" />
+          <ScalarProperty Name="DienThoaiNguoiNhan" ColumnName="DienThoaiNguoiNhan" />
+          <ScalarProperty Name="TinhTrangDonHang" ColumnName="TinhTrangDonHang" />
+          <ScalarProperty Name="HinhThucThanhToan" ColumnName="HinhThucThanhToan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Giohangs">
+      <EntityTypeMapping TypeName="HOTPIZZAModel1.Giohang">
+        <MappingFragment StoreEntitySet="Giohang">
+          <ScalarProperty Name="IdMon" ColumnName="IdMon" />
+          <ScalarProperty Name="TenMon" ColumnName="TenMon" />
+          <ScalarProperty Name="HinhMinhHoa" ColumnName="HinhMinhHoa" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GopYKhachHangs">
+      <EntityTypeMapping TypeName="HOTPIZZAModel1.GopYKhachHang">
+        <MappingFragment StoreEntitySet="GopYKhachHang">
+          <ScalarProperty Name="IdKH" ColumnName="IdKH" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="EmailKH" ColumnName="EmailKH" />
+          <ScalarProperty Name="NgayGopY" ColumnName="NgayGopY" />
+          <ScalarProperty Name="IdGopY" ColumnName="IdGopY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HinhThucThanhToans">
+      <EntityTypeMapping TypeName="HOTPIZZAModel1.HinhThucThanhToan">
+        <MappingFragment StoreEntitySet="HinhThucThanhToan">
+          <ScalarProperty Name="idHTTT" ColumnName="idHTTT" />
+          <ScalarProperty Name="tenHTTT" ColumnName="tenHTTT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="HOTPIZZAModel1.Login">
+        <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="TenDN" ColumnName="TenDN" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MonAns">
+      <EntityTypeMapping TypeName="HOTPIZZAModel1.MonAn">
+        <MappingFragment StoreEntitySet="MonAn">
+          <ScalarProperty Name="IdMon" ColumnName="IdMon" />
+          <ScalarProperty Name="TenMon" ColumnName="TenMon" />
+          <ScalarProperty Name="IdDanhMuc" ColumnName="IdDanhMuc" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="HinhMinhHoa" ColumnName="HinhMinhHoa" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NguoiDungs">
+      <EntityTypeMapping TypeName="HOTPIZZAModel1.NguoiDung">
+        <MappingFragment StoreEntitySet="NguoiDung">
+          <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
+          <ScalarProperty Name="HovaTen" ColumnName="HovaTen" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="TenDN" ColumnName="TenDN" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="IdPhanQuyen" ColumnName="IdPhanQuyen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhanQuyens">
+      <EntityTypeMapping TypeName="HOTPIZZAModel1.PhanQuyen">
+        <MappingFragment StoreEntitySet="PhanQuyen">
+          <ScalarProperty Name="IdPhanQuyen" ColumnName="IdPhanQuyen" />
+          <ScalarProperty Name="TenPhanQuyen" ColumnName="TenPhanQuyen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pizzas">
+      <EntityTypeMapping TypeName="HOTPIZZAModel1.Pizza">
+        <MappingFragment StoreEntitySet="Pizza">
+          <ScalarProperty Name="IdMon" ColumnName="IdMon" />
+          <ScalarProperty Name="TenMon" ColumnName="TenMon" />
+          <ScalarProperty Name="IdDanhMuc" ColumnName="IdDanhMuc" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="HinhMinhHoa" ColumnName="HinhMinhHoa" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HOTPIZZAModel1.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TinhTrangDonHangs">
+      <EntityTypeMapping TypeName="HOTPIZZAModel1.TinhTrangDonHang">
+        <MappingFragment StoreEntitySet="TinhTrangDonHang">
+          <ScalarProperty Name="IdTTDH" ColumnName="IdTTDH" />
+          <ScalarProperty Name="tenTTDH" ColumnName="tenTTDH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TuyenDungs">
+      <EntityTypeMapping TypeName="HOTPIZZAModel1.TuyenDung">
+        <MappingFragment StoreEntitySet="TuyenDung">
+          <ScalarProperty Name="IdBaiTuyenDung" ColumnName="IdBaiTuyenDung" />
+          <ScalarProperty Name="DiaChiTuyenDung" ColumnName="DiaChiTuyenDung" />
+          <ScalarProperty Name="ViTriLamViec" ColumnName="ViTriLamViec" />
+          <ScalarProperty Name="EmailLienLac" ColumnName="EmailLienLac" />
+          <ScalarProperty Name="MoTacCongViec" ColumnName="MoTacCongViec" />
+          <ScalarProperty Name="MaAdmin" ColumnName="MaAdmin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

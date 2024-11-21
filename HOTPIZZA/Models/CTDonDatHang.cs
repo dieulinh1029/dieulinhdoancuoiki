@@ -21,7 +21,6 @@ namespace HOTPIZZA.Models
         public Nullable<decimal> ThanhTien { get; set; }
     
         public virtual DonDatHang DonDatHang { get; set; }
-        public virtual DanhMucMon DanhMucMon { get; set; }
         public virtual MonAn MonAn { get; set; }
     }
 }

@@ -46,27 +46,94 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="APIMatic.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\APIMatic.Core.0.4.3\lib\netstandard2.0\APIMatic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CloudrailSI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.Api.1.0.6\lib\CloudrailSI.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.WebHooks.Common, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebHooks.Common.1.2.2\lib\net45\Microsoft.AspNet.WebHooks.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.WebHooks.Receivers, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebHooks.Receivers.1.2.2\lib\net45\Microsoft.AspNet.WebHooks.Receivers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.1\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.8.0.1\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Json.Pointer, Version=2.3.0.0, Culture=neutral, PublicKeyToken=21a5e83f6f5bb844, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Json.Pointer.2.3.0\lib\net461\Microsoft.Json.Pointer.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenSSL.PrivateKeyDecoder, Version=1.2.0.0, Culture=neutral, PublicKeyToken=78f5ba1b024431f9, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenSSL.PrivateKeyDecoder.1.2.0\lib\net45\OpenSSL.PrivateKeyDecoder.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenSSL.X509Certificate2.Provider, Version=1.2.0.0, Culture=neutral, PublicKeyToken=78f5ba1b024431f9, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenSSL.X509Certificate2.Provider.1.2.0\lib\net45\OpenSSL.X509Certificate2.Provider.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPal, Version=1.9.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPalHttp-Dotnet, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPalHttp.1.0.1\lib\netstandard2.0\PayPalHttp-Dotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPalServerSDK, Version=0.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPalServerSDK.0.6.0\lib\netstandard2.0\PayPalServerSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Polly, Version=7.0.0.0, Culture=neutral, PublicKeyToken=c8a3ffc3f8f825cc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Polly.7.2.3\lib\net472\Polly.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.7.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Linq.Dynamic.Core, Version=1.4.8.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Linq.Dynamic.Core.1.4.8\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    <Reference Include="System.Linq.Dynamic.Core, Version=1.4.9.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.4.9\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -134,7 +201,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DonDatHangsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\NguoiDungsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TuyenDungsController.cs" />
     <Compile Include="Areas\Admin\PhanQuyensController.cs" />
     <Compile Include="Controllers\DatHangController.cs" />
@@ -147,64 +213,68 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
+      <DependentUpon>HotPizzaaa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ChiNhanh.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
+      <DependentUpon>HotPizzaaa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CTDonDatHang.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
+      <DependentUpon>HotPizzaaa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DanhMucMon.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
+      <DependentUpon>HotPizzaaa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DonDatHang.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
+      <DependentUpon>HotPizzaaa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Giohang.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
+      <DependentUpon>HotPizzaaa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GopYKhachHang.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
+      <DependentUpon>HotPizzaaa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HinhThucThanhToan.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
+      <DependentUpon>HotPizzaaa.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HotPizza.Context.cs">
+    <Compile Include="Models\HotPizzaaa.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HotPizza.Context.tt</DependentUpon>
+      <DependentUpon>HotPizzaaa.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HotPizza.cs">
+    <Compile Include="Models\HotPizzaaa.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HotPizza.tt</DependentUpon>
+      <DependentUpon>HotPizzaaa.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HotPizza.Designer.cs">
+    <Compile Include="Models\HotPizzaaa.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HotPizza.edmx</DependentUpon>
+      <DependentUpon>HotPizzaaa.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Login.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
+      <DependentUpon>HotPizzaaa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MonAn.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
+      <DependentUpon>HotPizzaaa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NguoiDung.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
+      <DependentUpon>HotPizzaaa.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\PaypalConfiguration.cs" />
     <Compile Include="Models\PhanQuyen.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
+      <DependentUpon>HotPizzaaa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pizza.cs">
+      <DependentUpon>HotPizzaaa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
+      <DependentUpon>HotPizzaaa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TinhTrangDonHang.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
+      <DependentUpon>HotPizzaaa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TuyenDung.cs">
-      <DependentUpon>HotPizza.tt</DependentUpon>
+      <DependentUpon>HotPizzaaa.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -356,15 +426,15 @@
     <Content Include="js\custom.js" />
     <Content Include="js\jquery-3.2.1.min.js" />
     <Content Include="js\single_custom.js" />
-    <Content Include="Models\HotPizza.Context.tt">
+    <Content Include="Models\HotPizzaaa.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HotPizza.edmx</DependentUpon>
-      <LastGenOutput>HotPizza.Context.cs</LastGenOutput>
+      <DependentUpon>HotPizzaaa.edmx</DependentUpon>
+      <LastGenOutput>HotPizzaaa.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\HotPizza.tt">
+    <Content Include="Models\HotPizzaaa.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HotPizza.edmx</DependentUpon>
-      <LastGenOutput>HotPizza.cs</LastGenOutput>
+      <DependentUpon>HotPizzaaa.edmx</DependentUpon>
+      <LastGenOutput>HotPizzaaa.cs</LastGenOutput>
     </Content>
     <Content Include="plugins\easing\easing.js" />
     <Content Include="plugins\font-awesome-4.7.0\css\font-awesome.css" />
@@ -454,13 +524,6 @@
     <Content Include="Areas\Admin\Views\PhanQuyens\Details.cshtml" />
     <Content Include="Areas\Admin\Views\PhanQuyens\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\PhanQuyens\Index.cshtml" />
-    <EntityDeploy Include="Models\HotPizza.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HotPizza.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\HotPizza.edmx.diagram">
-      <DependentUpon>HotPizza.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\DonDatHangs\Create.cshtml" />
     <Content Include="Areas\Admin\Views\DonDatHangs\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\DonDatHangs\Details.cshtml" />
@@ -502,6 +565,13 @@
     <Content Include="plugins\themify-icons\fonts\themify.eot" />
     <Content Include="plugins\themify-icons\fonts\themify.ttf" />
     <Content Include="plugins\themify-icons\fonts\themify.woff" />
+    <EntityDeploy Include="Models\HotPizzaaa.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HotPizzaaa.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\HotPizzaaa.edmx.diagram">
+      <DependentUpon>HotPizzaaa.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
@@ -560,6 +630,8 @@
     <Content Include="Views\GioHang\DonHang.cshtml" />
     <Content Include="Views\GioHang\XacNhanDatHang.cshtml" />
     <Content Include="Views\Home\Menu.cshtml" />
+    <Content Include="Views\GioHang\SuccessView.cshtml" />
+    <Content Include="Views\GioHang\FailureView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

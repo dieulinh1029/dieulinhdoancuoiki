@@ -9,7 +9,7 @@ namespace HOTPIZZA.Controllers
 {
     public class TuyenDungController : Controller
     {
-        private HOTPIZZAEntities1 db= new HOTPIZZAEntities1();
+        private HOTPIZZAEntity db= new HOTPIZZAEntity();
         // GET: TuyenDung
         private List<TuyenDung> Show(int count)
         {

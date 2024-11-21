@@ -14,6 +14,12 @@ namespace HOTPIZZA.Models
     
     public partial class DonDatHang
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DonDatHang()
+        {
+            this.CTDonDatHangs = new HashSet<CTDonDatHang>();
+        }
+    
         public int MaDon { get; set; }
         public int MaKH { get; set; }
         public Nullable<System.DateTime> NgayDat { get; set; }
@@ -25,7 +31,8 @@ namespace HOTPIZZA.Models
         public Nullable<int> TinhTrangDonHang { get; set; }
         public Nullable<int> HinhThucThanhToan { get; set; }
     
-        public virtual CTDonDatHang CTDonDatHang { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTDonDatHang> CTDonDatHangs { get; set; }
         public virtual NguoiDung NguoiDung { get; set; }
         public virtual TinhTrangDonHang TinhTrangDonHang1 { get; set; }
         public virtual HinhThucThanhToan HinhThucThanhToan1 { get; set; }
