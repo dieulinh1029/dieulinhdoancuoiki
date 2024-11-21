@@ -83,23 +83,23 @@
     </div>
 
     <!-- Giỏ hàng -->
-    <div class="checkout-right">
+    <div class="checkout-right" style="font-weight: bold">
         <h2>Giỏ Hàng Của Bạn</h2>
 
         <ul class="cart-items">
-            <li class="cart-item">
+        
                 @foreach (var item in Model)
                 {
-
+                <li class="cart-item">
                     <img src="@Url.Content("~/images/Menu/" + item.HinhMinhHoa)" alt="" class="product-image" />
                     <div class="item-details">
                         <span class="item-name">@item.TenMon x @item.SoLuong</span>
                         <span class="item-price">  @String.Format("{0:#,##0} VNĐ", item.ThanhTien)</span>
                     </div>
-
-                }
-            </li>
-        </ul>
+                </li>
+                    }
+                
+            </ul>
         <div class="cart-total">
             <span>Tổng Cộng:</span>
             <span class="total-price"> @String.Format("{0:#,##0} VNĐ", Model.Sum(item => item.DonGia * item.SoLuong))</span>

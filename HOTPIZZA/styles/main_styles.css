@@ -57,7 +57,7 @@ body {
 	line-height: 23px;
 	font-weight: 400;
 	background: #FFFFFF;
-	color: #1e1e27;
+	color: #111;
 	font-family: 'Times New Roman', Times, serif;
 }
 
@@ -565,9 +565,9 @@ section {
 	display: inline-block;
 }
 
-	.navbar_menu li a {
+.navbar_menu li a {
 		display: block;
-		color: #1e1e27;
+		
 		font-size: 20px;
 		font-weight: 500;
 		text-transform: uppercase;
@@ -578,7 +578,7 @@ section {
 		-ms-transition: color 0.3s ease;
 		-o-transition: color 0.3s ease;
 		transition: color 0.3s ease;
-	}
+}
 
 		.navbar_menu li a:hover {
 			color: #ffffff;

@@ -5,7 +5,7 @@
 
 <main >
     <!-- Slider -->
-    <div class="main_slider" style="background-image:url('@Url.Content("~/images/anhnenpizza.jpg")')">
+    <div class="main_slider" style="background-image:url('@Url.Content("~/images/anhnenpizza.jpg")');margin-top: 1px">
         <div class="container fill_height">
             <div class="row align-items-center fill_height">
                 <div class="col">
@@ -19,23 +19,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="banner_item align-items-center" style="background-image:url('@Url.Content("~/images/menu.jpg")')">
-                        <div class="banner_category">
-                            <a href="categories.html">menu</a>
-                        </div>
+                    <div class="banner_item align-items-center" style="background-image:url('@Url.Content("~/images/menu.jpg")');">
+                   
+
+                    <div class="banner_category">
+                        <a href="@Url.Action("Menu", "Home")">menu</a>
                     </div>
+                </div>
                 </div>
                 <div class="col-md-4">
                     <div class="banner_item align-items-center" style="background-image:url('@Url.Content("~/images/pizzabox.jpg")')">
                         <div class="banner_category">
-                            <a href="categories.html">Đặt hàng</a>
+                            <a href="@Url.Action("Index", "DatHang")">Đặt hàng</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="banner_item align-items-center" style="background-image:url('@Url.Content("~/images/tuyendung.jpg")')">
                         <div class="banner_category">
-                            <a href="categories.html">Tuyển dụng</a>
+                            <a href="@Url.Action("Index", "TuyenDung")">tuyển dụng </a>
                         </div>
                     </div>
                 </div>

@@ -31,30 +31,30 @@
 
         <div class="main_nav_container">
             <div class="container">
-                <div class="row">
+                <div class="row" style="margin-left: 40px">
                     <div class="col-lg-12 text-right">
                         <div class="logo_container">
-                            <a href="#">Hot<span>Pizza</span></a>
+                            <a href="@Url.Action("Index", "Home")">Hot<span>Pizza</span></a>
                         </div>
                         <nav class="navbar">
                             <ul class="navbar_menu">
-                                <li><a href="#">Trang Chủ</a></li>
-                                <li><a href="#">menu</a></li>
-                                <li><a href="@Url.Action("Index","DatHang")">Đặt Hàng</a></li>
-
-                                <li><a href="@Url.Action("Index", "TuyenDung")">Tuyển dụng</a></li>
-                                
-                                <li><a href="contact.html">liên hệ</a></li>
+                                <li><a href="@Url.Action("Index", "Home")" style="color: #f9e9c6; font-size: 20px; ; text-decoration: none;">Trang chủ</a></li>
+                                <li><a href="@Url.Action("Menu", "Home")" style="color: #f9e9c6; font-size: 20px;  text-decoration: none; ">Menu</a></li>
+                                <li><a href="@Url.Action("Index", "DatHang")" style="color: #f9e9c6; font-size: 20px;  text-decoration: none; ">Đặt hàng</a></li>
+                                <li><a href="@Url.Action("Index", "TuyenDung")" style="color: #f9e9c6; font-size: 20px; text-decoration: none; ">Tuyển dụng</a></li>
+                                <li><a href="contact.html" style="color: #f9e9c6; font-size: 20px;  text-decoration: none; ">Liên hệ</a></li>
                             </ul>
+
                             <ul class="navbar_user">
-                                <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                              
                                 <li><a href="@Url.Action("DangNhap","User")"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                                <li><a href="@Url.Action("DangKy","User")"><i class="fa fa-user" aria-hidden="true"></i></a></li>
                                 <li class="checkout">
                                     @Html.Action("GioHangPartial", "GioHang", new { @class = "giohang" })
 
                                     @*<i class="fa fa-shopping-cart" aria-hidden="true"></i>*@
                                     @*<span id="checkout_items" class="checkout_items">@ViewBag.TongSoLuong</span>*@
-                                    
+
                                 </li>
                             </ul>
                             <div class="hamburger_container">
