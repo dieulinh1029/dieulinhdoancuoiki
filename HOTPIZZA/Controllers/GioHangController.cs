@@ -191,7 +191,7 @@ namespace HOTPIZZA.Controllers
                 DiaChiNguoiNhan = diachi,
                 DienThoaiNguoiNhan = phone,
                 NgayGiao = ngaygiao,
-                TinhTrangDonHang = 1,
+                TinhTrangDonHang = 2,
                 TriGia=totalValue,
                 HinhThucThanhToan = payment == "cod" ? 1 : 2, // Assuming 1 is COD, 2 is card
             };
