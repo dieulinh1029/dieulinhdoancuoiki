@@ -219,14 +219,14 @@ sup {
 
 a {
     font-family: 'Times New Roman', Times, serif;
-    color: #f79b1e;
+    color: #fff;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects
 }
 
     a:hover {
-        color: #0056b3;
+        color: #961b1e;
         text-decoration: underline
     }
 
@@ -643,7 +643,7 @@ pre {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-right: -15px;
-    margin-left: 40px
+    margin-left: -20px
 }
 
 .no-gutters {
@@ -3584,7 +3584,7 @@ tbody.collapse.show {
     align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: .5rem 1rem
+    padding: .1rem 1rem
 }
 
     .navbar > .container, .navbar > .container-fluid {
