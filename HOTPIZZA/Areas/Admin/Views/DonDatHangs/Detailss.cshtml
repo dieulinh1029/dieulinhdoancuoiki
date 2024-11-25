@@ -1,0 +1,44 @@
+﻿@model IEnumerable<HOTPIZZA.Models.CTDonDatHang>
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chi tiết đơn hàng</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Sản phẩm
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Đơn giá / 1 sản phẩm
+        </th>
+        <th>
+            Thành tiền
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MonAn.TenMon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @String.Format("{0:#,##0} VNĐ", item.DonGia)
+            </td>
+            <td>
+                @String.Format("{0:#,##0} VNĐ", item.ThanhTien)
+            </td>
+        </tr>
+    }
+
+</table>
+
