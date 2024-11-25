@@ -36,7 +36,20 @@ namespace HOTPIZZA.Areas.Admin.Controllers
             }
             return View(donDatHang);
         }
-
+        public ActionResult Detailss(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DonDatHang donhang = db.DonDatHangs.Find(id);
+            var chitiet = db.CTDonDatHangs.Include(d => d.MonAn).Where(d => d.MaDon == id).ToList();
+            if (donhang == null)
+            {
+                return HttpNotFound();
+            }
+            return View(chitiet);
+        }
         // GET: Admin/DonDatHangs/Create
         public ActionResult Create()
         {

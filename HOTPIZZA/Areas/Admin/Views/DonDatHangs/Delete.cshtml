@@ -5,11 +5,11 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+
+<h3>Bạn chắc chắn muốn xóa đơn hàng này?</h3>
 <div>
-    <h4>DonDatHang</h4>
+    <h4>Đơn đặt hàng</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -61,11 +61,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CTDonDatHang.MaMon)
+            @Html.DisplayNameFor(model => model.MaDon)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CTDonDatHang.MaMon)
+            @Html.DisplayFor(model => model.MaDon)
         </dd>
 
         <dt>
@@ -99,7 +99,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Quay về danh sách", "Index")
         </div>
     }
 </div>

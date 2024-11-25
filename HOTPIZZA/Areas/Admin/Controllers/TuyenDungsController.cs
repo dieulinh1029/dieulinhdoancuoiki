@@ -9,6 +9,9 @@ using System.Web;
 using System.Web.Mvc;
 using HOTPIZZA.Models;
 
+
+using Ganss.XSS;
+
 namespace HOTPIZZA.Areas.Admin.Controllers
 {
     public class TuyenDungsController : Controller
@@ -63,37 +66,49 @@ namespace HOTPIZZA.Areas.Admin.Controllers
         }
 
         // GET: Admin/TuyenDungs/Edit/5
+        // Đảm bảo đã cài thư viện HtmlSanitizer qua NuGet
+
+        // GET: Admin/TuyenDungs/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             TuyenDung tuyenDung = await db.TuyenDungs.FindAsync(id);
             if (tuyenDung == null)
             {
                 return HttpNotFound();
             }
+
+            // Tạo lại SelectList cho dropdown MaAdmin và chọn giá trị hiện tại
             ViewBag.MaAdmin = new SelectList(db.Admins, "MaAdmin", "HovaTen", tuyenDung.MaAdmin);
             return View(tuyenDung);
         }
 
+
         // POST: Admin/TuyenDungs/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "IdBaiTuyenDung,DiaChiTuyenDung,ViTriLamViec,EmailLienLac,MoTacCongViec,MaAdmin")] TuyenDung tuyenDung)
         {
             if (ModelState.IsValid)
             {
+                // Làm sạch nội dung MoTacCongViec
+                var sanitizer = new HtmlSanitizer();
+                tuyenDung.MoTacCongViec = sanitizer.Sanitize(tuyenDung.MoTacCongViec);
+
                 db.Entry(tuyenDung).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
+
             ViewBag.MaAdmin = new SelectList(db.Admins, "MaAdmin", "HovaTen", tuyenDung.MaAdmin);
             return View(tuyenDung);
         }
+
+
 
         // GET: Admin/TuyenDungs/Delete/5
         public async Task<ActionResult> Delete(int? id)

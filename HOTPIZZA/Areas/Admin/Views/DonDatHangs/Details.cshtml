@@ -5,10 +5,10 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Chi tiết đơn hàng</h2>
 
 <div>
-    <h4>DonDatHang</h4>
+    
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -60,11 +60,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CTDonDatHang.MaMon)
+            @Html.DisplayNameFor(model => model.MaDon)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CTDonDatHang.MaMon)
+            @Html.DisplayFor(model => model.MaDon)
         </dd>
 
         <dt>
@@ -90,10 +90,17 @@
         <dd>
             @Html.DisplayFor(model => model.HinhThucThanhToan1.tenHTTT)
         </dd>
+        <dt>
+            Chi Tiết Món
+        </dt>
 
+        <dd>
+            @Html.ActionLink("Chi Tiết Món", "Detailss", new { id = Model.MaDon })
+        </dd>
     </dl>
 </div>
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaDon }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.MaDon }) |
+    @Html.ActionLink("Quay về danh sách", "Index")
 </p>

@@ -1188,3 +1188,11 @@ C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\obj\Debug\HOTPIZZA.csproj.CoreCompile
 C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\obj\Debug\HOTPIZZA.csproj.Up2Date
 C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\obj\Debug\HOTPIZZA.dll
 C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\obj\Debug\HOTPIZZA.pdb
+C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\bin\AngleSharp.Css.dll
+C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\bin\AngleSharp.dll
+C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\bin\HtmlSanitizer.dll
+C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\bin\System.Text.Encoding.CodePages.dll
+C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\bin\AngleSharp.xml
+C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\bin\AngleSharp.Css.xml
+C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\bin\HtmlSanitizer.xml
+C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\bin\System.Text.Encoding.CodePages.xml

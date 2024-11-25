@@ -9,10 +9,12 @@
     <meta name="author" content="" />
     <title>Dashboard - SB Admin</title>
     <link href="~/Content/PagedList.css" rel="stylesheet" />
-   <link href="~/Areas/Assets/dist/css/styles.css" rel="stylesheet" />
+    <link href="~/Areas/Assets/dist/css/styles.css" rel="stylesheet" />
+    <!-- Thêm CKEditor từ CDN -->
+    <script src="//cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
-
+    
     <style type="text/css">
         .menu1 {
             color: black;
@@ -57,40 +59,11 @@
                             @Html.ActionLink("Đơn đặt hàng", "Index", "DonDatHangs")
                         </div>
                         <br />
-                        <div class="dropdown">
-                            <button class="dropbtn">
-                                <div style="padding-left:20px">
-                                    @Html.ActionLink("Danh mục món", "Index", "DanhMucMons")
-                                </div>
-                                <br />
-                            </button>
-                            <div class="dropdown-content">
-                                <div style="padding-left:20px">
-                                    @Html.ActionLink("Món khai vị và salad", "Index", "KhaiVivaSalads")
-                                </div>
-                                <br />
-                                <div style="padding-left:20px">
-                                    @Html.ActionLink("Món chính và mì ý", "Index", "MonChinhvaMiYs")
-                                </div>
-                                <br />
-                                <div style="padding-left:20px">
-                                    @Html.ActionLink("Pizza", "Index", "Pizzas")
-                                </div>
-                                <br />
-                                <div style="padding-left:20px">
-                                    @Html.ActionLink("Đồ uống", "Index", "ThucUongs")
-                                </div>
-                                <br />
-                                <div style="padding-left:20px">
-                                    @Html.ActionLink("Món tráng miệng", "Index", "TrangMiengs")
-                                </div>
-                                <br />
-                            </div>
-                        </div>
-                        @*<div style="padding-left:20px">
+                        
+                        <div style="padding-left:20px">
                             @Html.ActionLink("Danh mục món", "Index", "DanhMucMons")
                         </div>
-                        <br />*@
+                        <br />
                         @*<div style="padding-left:20px">
                             @Html.ActionLink("Món khai vị và salad", "Index", "KhaiVivaSalads")
                         </div>
@@ -119,9 +92,9 @@
                             @Html.ActionLink("Tuyển dụng", "Index", "TuyenDungs")
                         </div>
                         <br />
-                        <div style="padding-left:20px">
+                        @*<div style="padding-left:20px">
                             @Html.ActionLink("Phân quyền", "Index", "Phanquyens")
-                        </div>
+                        </div>*@
                     </div>
                 </div>
 
