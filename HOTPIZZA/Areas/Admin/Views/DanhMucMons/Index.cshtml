@@ -5,10 +5,10 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Danh mục món</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Tạo thêm danh mục", "Create")
 </p>
 <table class="table">
     <tr>
@@ -26,9 +26,9 @@
         </td>
         
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdDanhMuc }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdDanhMuc }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdDanhMuc })
+            @Html.ActionLink("Điều chỉnh", "Edit", new { id=item.IdDanhMuc }) |
+           
+            @Html.ActionLink("Xóa", "Delete", new { id=item.IdDanhMuc })
         </td>
     </tr>
 }
