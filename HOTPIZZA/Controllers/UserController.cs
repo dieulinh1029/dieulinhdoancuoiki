@@ -27,7 +27,7 @@ namespace HOTPIZZA.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DangKy(NguoiDung khh)
+        public ActionResult DangKy(NguoiDung khh, DateTime ngaysinh)
         {
             _nd = (NguoiDung)Session["user"];
             if (_nd != null)
@@ -40,7 +40,7 @@ namespace HOTPIZZA.Controllers
             }
             _nd = new NguoiDung();
             _nd.HovaTen = khh.HovaTen;
-            _nd.NgaySinh = khh.NgaySinh;
+            _nd.NgaySinh = ngaysinh;
             _nd.Phone = khh.Phone;
             _nd.Email = khh.Email;
             _nd.TenDN = khh.TenDN;
