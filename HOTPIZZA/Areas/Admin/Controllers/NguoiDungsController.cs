@@ -1,12 +1,14 @@
-﻿using HOTPIZZA.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
-using System.Net;
 using System.Threading.Tasks;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using HOTPIZZA.Models;
+
 
 namespace HOTPIZZA.Areas.Admin.Controllers
 {
@@ -38,67 +40,101 @@ namespace HOTPIZZA.Areas.Admin.Controllers
         // GET: Admin/NguoiDungs/Create
         public ActionResult Create()
         {
+            ViewBag.MaDon = new SelectList(db.DonDatHangs, "MaDon", "MaKH");
+            ViewBag.GopYKhachHang = new SelectList(db.GopYKhachHangs, "IdGopY", "IdKH");
+            ViewBag.PhanQuyen = new SelectList(db.PhanQuyens, "IdPhanQuyen", "TenPhanQuyen");
             return View();
         }
 
-        // POST: Admin/NguoiDungs/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Create([Bind(Include = "MaKhachHang,HovaTen,Email,Phone,NgaySinh,TenDN,MatKhau,IdPhanQuyen")] NguoiDung nd)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
+                db.NguoiDungs.Add(nd);
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
-        }
 
+            ViewBag.MaDon = new SelectList(db.DonDatHangs, "MaDon", "MaKH");
+            ViewBag.GopYKhachHang = new SelectList(db.GopYKhachHangs, "IdGopY", "IdKH");
+            ViewBag.PhanQuyen = new SelectList(db.PhanQuyens, "IdPhanQuyen", "TenPhanQuyen");
+            return View(nd);
+        }
         // GET: Admin/NguoiDungs/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+           NguoiDung nd = await db.NguoiDungs.FindAsync(id);
+            if (nd == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.MaDon = new SelectList(db.DonDatHangs, "MaDon", "MaKH");
+            ViewBag.GopYKhachHang = new SelectList(db.GopYKhachHangs, "IdGopY", "IdKH");
+            ViewBag.PhanQuyen = new SelectList(db.PhanQuyens, "IdPhanQuyen", "TenPhanQuyen");
+            return View(nd);
         }
 
-        // POST: Admin/NguoiDungs/Edit/5
+        
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit([Bind(Include = "MaKhachHang,HovaTen,Email,Phone,NgaySinh,TenDN,MatKhau,IdPhanQuyen")] NguoiDung nd)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                db.Entry(nd).State = EntityState.Modified;
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            ViewBag.MaDon = new SelectList(db.DonDatHangs, "MaDon", "MaKH");
+            ViewBag.GopYKhachHang = new SelectList(db.GopYKhachHangs, "IdGopY", "IdKH");
+            ViewBag.PhanQuyen = new SelectList(db.PhanQuyens, "IdPhanQuyen", "TenPhanQuyen");
+            return View(nd);
         }
+
 
         // GET: Admin/NguoiDungs/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+           NguoiDung nd = await db.NguoiDungs.FindAsync(id);
+            if (nd == null)
+            {
+                return HttpNotFound();
+            }
+            return View(nd);
         }
 
-        // POST: Admin/NguoiDungs/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
+           NguoiDung nd = await db.NguoiDungs.FindAsync(id);
+            db.NguoiDungs.Remove(nd);
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
 
-                return RedirectToAction("Index");
-            }
-            catch
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
             {
-                return View();
+                db.Dispose();
             }
+            base.Dispose(disposing);
         }
     }
 }

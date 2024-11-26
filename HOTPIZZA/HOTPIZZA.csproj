@@ -216,6 +216,7 @@
     <Compile Include="Areas\Admin\Controllers\DanhMucMonsController.cs" />
     <Compile Include="Areas\Admin\Controllers\DonDatHangsController.cs" />
     <Compile Include="Areas\Admin\Controllers\NguoiDungsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PhanQuyensController.cs" />
     <Compile Include="Areas\Admin\Controllers\TuyenDungsController.cs" />
     <Compile Include="Areas\Admin\PhanQuyensController.cs" />
     <Compile Include="Controllers\DatHangController.cs" />
