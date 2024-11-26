@@ -17,3 +17,4 @@
 /HOTPIZZA/Views/User/DangKy.cshtml
 /HOTPIZZA/Views/User/DangKy.cshtml
 /HOTPIZZA/Controllers/TuyenDungController.cs
+/HOTPIZZA/Areas/Admin/Controllers/DanhMucMonsController.cs
