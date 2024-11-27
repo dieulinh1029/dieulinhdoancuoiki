@@ -1196,3 +1196,7 @@ C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\bin\AngleSharp.xml
 C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\bin\AngleSharp.Css.xml
 C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\bin\HtmlSanitizer.xml
 C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\bin\System.Text.Encoding.CodePages.xml
+C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\bin\PagedList.dll
+C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\bin\PagedList.Mvc.dll
+C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\bin\PagedList.xml
+C:\Users\LAPTOP\source\repos\rsrs\HOTPIZZA\bin\PagedList.Mvc.xml

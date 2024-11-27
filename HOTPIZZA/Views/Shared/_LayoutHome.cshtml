@@ -36,23 +36,11 @@
         <!-- Header -->
         <header class="header trans_300">
 
-            <!-- Top Navigation -->
-            @*<div class="top_nav">
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-md-6 text-right">
-                                <div class="top_nav_right">
-                                    <ul class="top_nav_menu">
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>*@
-
+            
         </header>
-
+        @{
+            var u = Session["user"] as HOTPIZZA.Models.NguoiDung;
+        }
         <div class="main_nav_container">
             <div class="container">
                 <div class="row">
@@ -62,18 +50,26 @@
                         </div>
                         <nav class="navbar">
                             <ul class="navbar_menu">
-                                <li><a href="@Url.Action("Index", "Home")" >Trang chủ</a></li>
-                                <li><a href="@Url.Action("Menu", "Home")" >Menu</a></li>
-                                <li><a href="@Url.Action("Index", "DatHang")"  >Đặt hàng</a></li>
-                                <li><a href="@Url.Action("Index", "TuyenDung")" >Tuyển dụng</a></li>
-                                <li><a href="@Url.Action("Index", "XuatDon")"  >Đơn hàng</a></li>
-                                <li><a href="contact.html"  >Liên hệ</a></li>
+                                <li><a href="@Url.Action("Index", "Home")">Trang chủ</a></li>
+                                <li><a href="@Url.Action("Menu", "Home")">Menu</a></li>
+                                <li><a href="@Url.Action("Index", "DatHang")">Đặt hàng</a></li>
+                                <li><a href="@Url.Action("Index", "TuyenDung")">Tuyển dụng</a></li>
+                                <li><a href="@Url.Action("Index", "XuatDon")">Đơn hàng</a></li>
+                                <li><a href="contact.html">Liên hệ</a></li>
                             </ul>
 
 
                             <ul class="navbar_user">
-                                
+
                                 <li><a href="@Url.Action("DangNhap","User")"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                                @{
+                                    if (u != null)
+                                    {
+
+                                        <a style="color:red" href="@Url.Action("DangXuat","User")"><i class="fa-solid fa-right-from-bracket" style="color:#f9e9c6"></i></a>
+
+                                    }
+                                }
                                 <li class="checkout">
                                     @Html.Action("GioHangPartial", "GioHang")
 
@@ -91,7 +87,7 @@
             </div>
         </div>
 
-        </header>
+        
 
 
         <div class="fs_menu_overlay"></div>
