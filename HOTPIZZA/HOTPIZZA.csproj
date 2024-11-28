@@ -221,8 +221,8 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DanhMucMonsController.cs" />
     <Compile Include="Areas\Admin\Controllers\DonDatHangsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GopYKhachHangsController.cs" />
     <Compile Include="Areas\Admin\Controllers\NguoiDungsController.cs" />
-    <Compile Include="Areas\Admin\Controllers\PhanQuyensController.cs" />
     <Compile Include="Areas\Admin\Controllers\TuyenDungsController.cs" />
     <Compile Include="Areas\Admin\PhanQuyensController.cs" />
     <Compile Include="Controllers\DatHangController.cs" />
@@ -543,11 +543,6 @@
     <Content Include="Areas\Admin\Views\DanhMucMons\Details.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMucMons\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\DanhMucMons\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\PhanQuyens\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\PhanQuyens\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\PhanQuyens\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\PhanQuyens\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\PhanQuyens\Index.cshtml" />
     <Content Include="Areas\Admin\Views\DonDatHangs\Create.cshtml" />
     <Content Include="Areas\Admin\Views\DonDatHangs\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\DonDatHangs\Details.cshtml" />
@@ -864,6 +859,8 @@
     <Content Include="Scripts\ckeditor\package.json" />
     <Content Include="Scripts\ckeditor\LICENSE.md" />
     <Content Include="Scripts\ckeditor\CHANGES.md" />
+    <Content Include="Areas\Admin\Views\GopYKhachHangs\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\GopYKhachHangs\Details.cshtml" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
