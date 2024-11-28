@@ -12,7 +12,7 @@
 
     /* Container của toàn bộ nội dung */
     .container {
-        max-width: 960px;
+        max-width: auto;
         margin: 0 auto;
     }
 
@@ -133,7 +133,28 @@
         justify-content: center;
         align-items: center;
         /*        margin: 50px auto;*/
+
     }
+    .password__toggle {
+        position: relative;
+    }
+
+    .btn-toggle-password {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 18px; /* Kích thước biểu tượng con mắt */
+        color: #007bff;
+    }
+
+        .btn-toggle-password:focus {
+            outline: none;
+        }
+
 </style>
 @using (Html.BeginForm("DangNhap", "User", FormMethod.Post))
 {
@@ -187,14 +208,19 @@
                         <div class="form-box__single-group">
                             <label for="form-register-username-password">Mật khẩu</label>
                             <div class="password__toggle">
-                                @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @id = "form-register-username-password" }, @required = "required" })
+                                @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @id = "form-register-username-password", type = "password" }, @required = "required" })
                                 @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
 
+                                <!-- Nút Hiện Mật Khẩu với biểu tượng con mắt -->
+                                
                             </div>
                         </div>
 
+                      
 
-                        <button class="btn btn--box btn--medium btn--radius btn--black btn--black-hover-green btn--uppercase font--semi-bold" type="submit">REGISTER</button>
+
+
+                        <button class="btn btn--box btn--medium btn--radius btn--black btn--black-hover-green btn--uppercase font--semi-bold" type="submit">Đăng ký</button>
                     </form>
                 </div>
 
@@ -206,3 +232,32 @@
         </div>
    
 }
+<script>
+    // JavaScript để bật/tắt việc hiển thị mật khẩu
+    document.getElementById('toggle-password').addEventListener('click', function () {
+        var passwordField = document.getElementById('form-register-username-password');
+        var icon = this.querySelector('i'); // Lấy biểu tượng con mắt
+
+        // Thay đổi type của mật khẩu giữa "password" và "text"
+        var type = passwordField.type === 'password' ? 'text' : 'password';
+        passwordField.type = type;
+
+        // Cập nhật biểu tượng con mắt
+        icon.classList.toggle('fa-eye'); // Thêm/loại bỏ icon con mắt
+        icon.classList.toggle('fa-eye-slash'); // Thêm/loại bỏ icon con mắt bị gạch chéo
+    });
+
+    document.getElementById('toggle-confirm-password').addEventListener('click', function () {
+        var confirmPasswordField = document.getElementById('form-register-username-confirm-password');
+        var icon = this.querySelector('i'); // Lấy biểu tượng con mắt
+
+        // Thay đổi type của mật khẩu giữa "password" và "text"
+        var type = confirmPasswordField.type === 'password' ? 'text' : 'password';
+        confirmPasswordField.type = type;
+
+        // Cập nhật biểu tượng con mắt
+        icon.classList.toggle('fa-eye'); // Thêm/loại bỏ icon con mắt
+        icon.classList.toggle('fa-eye-slash'); // Thêm/loại bỏ icon con mắt bị gạch chéo
+    });
+
+</script>

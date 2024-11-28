@@ -219,7 +219,7 @@ sup {
 
 a {
     font-family: 'Times New Roman', Times, serif;
-    color: #fff;
+    color: #f79b1e;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects
@@ -643,7 +643,7 @@ pre {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-right: -15px;
-    margin-left: -20px
+    margin-left: 30px
 }
 
 .no-gutters {
