@@ -9,6 +9,7 @@
 
 namespace HOTPIZZA.Models
 {
+    using global::HOTPIZZA.Models.HOTPIZZA.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
