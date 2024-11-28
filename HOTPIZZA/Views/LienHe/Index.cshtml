@@ -1,0 +1,75 @@
+﻿@model HOTPIZZA.Models.GopYKhachHang
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Gửi Góp Ý Cho Chúng Tôi</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg p-4">
+                @using (Html.BeginForm("Index", "LienHe", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group mb-4">
+                        <label for="EmailKH" class="form-label">Địa chỉ Email</label>
+                        @Html.TextBoxFor(m => m.EmailKH, new { @class = "form-control form-control-lg", placeholder = "Nhập email của bạn", required = "required" })
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label for="NoiDung" class="form-label">Nội Dung Góp Ý</label>
+                        @Html.TextAreaFor(m => m.NoiDung, new { @class = "form-control form-control-lg", rows = 5, placeholder = "Nhập nội dung góp ý của bạn", required = "required" })
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg w-100">Gửi Góp Ý</button>
+                }
+
+                @if (ViewBag.Message != null)
+                {
+                    <div class="alert alert-success mt-4 text-center">
+                        <strong>@ViewBag.Message</strong>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Custom CSS -->
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .card {
+        border-radius: 15px;
+        background: #ffffff;
+    }
+
+    .form-control-lg {
+        border-radius: 10px;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #007bff, #0056d2);
+        border: none;
+    }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0056d2, #003a9f);
+        }
+
+    h2 {
+        font-weight: bold;
+        color: #343a40;
+    }
+
+    label {
+        font-weight: 600;
+        color: #495057;
+    }
+</style>
