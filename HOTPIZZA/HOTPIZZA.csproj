@@ -228,7 +228,7 @@
     <Compile Include="Controllers\DatHangController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\LienHeController.cs" />
     <Compile Include="Controllers\TuyenDungController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\XuatDonController.cs" />
@@ -1450,6 +1450,8 @@
     <Content Include="Scripts\tinymce\license.md" />
     <Content Include="Scripts\tinymce\langs\README.md" />
     <Content Include="Views\Shared\EditorTemplates\Html.cshtml" />
+    <Content Include="Views\LienHe\Index.cshtml" />
+    <Content Include="Views\LienHe\GuiGopY.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

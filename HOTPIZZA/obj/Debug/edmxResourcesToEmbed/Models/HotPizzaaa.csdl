@@ -85,7 +85,6 @@
     <Property Name="EmailKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="NgayGopY" Type="DateTime" Precision="0" />
     <Property Name="IdGopY" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <NavigationProperty Name="NguoiDung" Relationship="Self.FK_GopYKhachHang_ToTable" FromRole="GopYKhachHang" ToRole="NguoiDung" />
   </EntityType>
   <EntityType Name="HinhThucThanhToan">
     <Key>

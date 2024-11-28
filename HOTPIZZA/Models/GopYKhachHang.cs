@@ -19,7 +19,5 @@ namespace HOTPIZZA.Models
         public string EmailKH { get; set; }
         public Nullable<System.DateTime> NgayGopY { get; set; }
         public int IdGopY { get; set; }
-    
-        public virtual NguoiDung NguoiDung { get; set; }
     }
 }
