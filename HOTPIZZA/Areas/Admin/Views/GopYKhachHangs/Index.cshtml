@@ -1,0 +1,50 @@
+﻿@model IEnumerable<HOTPIZZA.Models.GopYKhachHang>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h2>Góp ý khách hàng</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoiDung)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayGopY)
+        </th>
+
+        <th>
+
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoiDung)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayGopY)
+            </td>
+
+            <td>
+              
+
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.IdGopY })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
