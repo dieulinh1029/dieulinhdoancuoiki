@@ -29,30 +29,33 @@ namespace HOTPIZZA.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DangKy(NguoiDung khh, DateTime ngaysinh)
         {
-            _nd = (NguoiDung)Session["user"];
-            if (_nd != null)
+            if (Session["user"] != null)
             {
                 return RedirectToAction("Index", "Home");
             }
+
             if (!ModelState.IsValid)
             {
                 return View(khh);
             }
-            _nd = new NguoiDung();
-            _nd.HovaTen = khh.HovaTen;
-            _nd.NgaySinh = ngaysinh;
-            _nd.Phone = khh.Phone;
-            _nd.Email = khh.Email;
-            _nd.TenDN = khh.TenDN;
-            _nd.MatKhau = khh.MatKhau;
-            _nd.IdPhanQuyen = 1;
 
+            NguoiDung newUser = new NguoiDung
+            {
+                HovaTen = khh.HovaTen,
+                NgaySinh = ngaysinh,
+                Phone = khh.Phone,
+                Email = khh.Email,
+                TenDN = khh.TenDN,
+                MatKhau = khh.MatKhau, // Mã hóa mật khẩu
+                IdPhanQuyen = 1
+            };
 
             try
             {
-                db.NguoiDungs.Add(_nd);
+                db.NguoiDungs.Add(newUser);
                 db.SaveChanges();
-                return RedirectToAction("Index","Home");
+                Session["user"] = newUser; // Đăng nhập tự động sau khi đăng ký thành công
+                return RedirectToAction("Index", "Home");
             }
             catch (DbEntityValidationException ex)
             {
@@ -64,11 +67,10 @@ namespace HOTPIZZA.Controllers
                     }
                 }
             }
-            //db.NguoiDungs.Add(_nd);
-            //db.SaveChanges();
-            //Session.Add("user", _nd);
-            return RedirectToAction("Index", "Home");
+
+            return View(khh);
         }
+
 
         //dang nhap
         public ActionResult DangNhap()

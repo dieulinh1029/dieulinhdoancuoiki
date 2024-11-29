@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HOTPIZZA.Models;
+using PaypalServerSdk.Standard.Models;
 
 namespace HOTPIZZA.Areas.Admin.Controllers
 {
@@ -44,6 +45,11 @@ namespace HOTPIZZA.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "IdDanhMuc,TenDanhMuc")] DanhMucMon dmm)
         {
+            if (db.DanhMucMons.Any(m => m.TenDanhMuc == dmm.TenDanhMuc))
+            {
+                ModelState.AddModelError("TenDanhMuc", "Tên danh mục đã tồn tại.");
+                return View(dmm);
+            }
             if (ModelState.IsValid)
             {
                 db.DanhMucMons.Add(dmm);

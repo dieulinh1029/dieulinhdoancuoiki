@@ -9,6 +9,8 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Text;
+using System.Net.Mail;
 
 namespace HOTPIZZA.Controllers
 {
@@ -165,92 +167,69 @@ namespace HOTPIZZA.Controllers
         }
 
 
+       // Import namespace
+
+
         [HttpPost]
-        public ActionResult DatHang(string tennguoinhan,string diachi, string phone,string payment, DateTime ngaygiao)
+    public ActionResult DatHang(string tennguoinhan, string diachi, string phone, string payment, DateTime ngaygiao, Giohang dl)
+    {
+        NguoiDung nd = (NguoiDung)Session["user"];
+        if (nd == null)
         {
-            // Get current user's information from session
-            NguoiDung nd = (NguoiDung)Session["user"];
-            if (nd == null)
-            {
-                // If the user is not logged in, redirect to the login page
-                return RedirectToAction("DangNhap", "User");
-            }
-            List<Giohang> lstGioHang = Session["GIOHANG"] as List<Giohang>;
-            if (lstGioHang == null || !lstGioHang.Any())
-            {
-                ModelState.AddModelError("", "Giỏ hàng trống. Vui lòng thêm sản phẩm trước khi đặt hàng.");
-                return RedirectToAction("GioHang");
-            }
-            decimal totalValue = lstGioHang.Sum(item => item.DonGia * item.SoLuong).GetValueOrDefault();
-            // Create an order object
-            DonDatHang order = new DonDatHang
-            {
-                NgayDat = DateTime.Now,
-                MaKH = nd.MaKhachHang,  // Use MaKhachHang as the foreign key
-                TenNguoiNhan = tennguoinhan,
-                DiaChiNguoiNhan = diachi,
-                DienThoaiNguoiNhan = phone,
-                NgayGiao = ngaygiao,
-                TinhTrangDonHang = 2,
-                TriGia=totalValue,
-                HinhThucThanhToan = payment == "cod" ? 1 : 2, // Assuming 1 is COD, 2 is card
-            };
-           
-
-            // Add order to the database
-            db.DonDatHangs.Add(order);
-            db.SaveChanges(); // Save to generate the MaDon (order ID)
-            
-            foreach (var item in lstGioHang)
-            {
-                // Ensure valid item exists in the database
-                MonAn monAn = db.MonAns.SingleOrDefault(m => m.IdMon == item.IdMon);
-                if (monAn == null)
-                {
-                    ModelState.AddModelError("", $"IdMon {item.IdMon} khong tồn tại..");
-                    return View(lstGioHang); // Return with error message if product is invalid
-                }
-
-                // Check if the product has a valid category
-                if (monAn.IdDanhMuc == null)
-                {
-                    ModelState.AddModelError("", $"IDmon {item.IdMon} k khả zụng.");
-                    return View(lstGioHang); // Return with error message if category is invalid
-                }
-
-                // Ensure that the category exists in the DanhMucMon table
-                var category = db.DanhMucMons.SingleOrDefault(c => c.IdDanhMuc == monAn.IdDanhMuc);
-                if (category == null)
-                {
-                    ModelState.AddModelError("", $"Danh mục IdMon  {item.IdMon} khong tồn tại.");
-                    return View(lstGioHang); // Return with error message if category does not exist
-                }
-
-                // Create and add order details
-                CTDonDatHang orderDetail = new CTDonDatHang
-                {
-                    MaDon = order.MaDon,  // Link order with MaDon
-                    MaMon = item.IdMon,
-                    SoLuong = item.SoLuong,
-                    DonGia = item.DonGia
-                };
-
-                db.CTDonDatHangs.Add(orderDetail);
-            }
-
-            // Save order details
-            db.SaveChanges();
-
-            // Clear the cart (session)
-            Session["GIOHANG"] = null;
-
-            // Redirect to the order confirmation page
-            return RedirectToAction("XacNhanDatHang", "Giohang");
+            return RedirectToAction("DangNhap", "User");
         }
 
+        List<Giohang> lstGioHang = Session["GIOHANG"] as List<Giohang>;
+        if (lstGioHang == null || !lstGioHang.Any())
+        {
+            ModelState.AddModelError("", "Giỏ hàng trống. Vui lòng thêm sản phẩm trước khi đặt hàng.");
+            return RedirectToAction("GioHang");
+        }
 
+        decimal totalValue = lstGioHang.Sum(item => item.DonGia * item.SoLuong).GetValueOrDefault();
+        DonDatHang order = new DonDatHang
+        {
+            NgayDat = DateTime.Now,
+            MaKH = nd.MaKhachHang,
+            TenNguoiNhan = tennguoinhan,
+            DiaChiNguoiNhan = diachi,
+            DienThoaiNguoiNhan = phone,
+            NgayGiao = ngaygiao,
+            TinhTrangDonHang = 2,
+            TriGia = totalValue,
+            HinhThucThanhToan = payment == "cod" ? 1 : 2,
+        };
 
+        db.DonDatHangs.Add(order);
+        db.SaveChanges();
 
+        foreach (var item in lstGioHang)
+        {
+            MonAn monAn = db.MonAns.SingleOrDefault(m => m.IdMon == item.IdMon);
+            if (monAn == null || monAn.IdDanhMuc == null || db.DanhMucMons.SingleOrDefault(c => c.IdDanhMuc == monAn.IdDanhMuc) == null)
+            {
+                ModelState.AddModelError("", $"Sản phẩm {item.IdMon} không hợp lệ.");
+                return View(lstGioHang);
+            }
+
+            CTDonDatHang orderDetail = new CTDonDatHang
+            {
+                MaDon = order.MaDon,
+                MaMon = item.IdMon,
+                SoLuong = item.SoLuong,
+                DonGia = item.DonGia
+            };
+
+            db.CTDonDatHangs.Add(orderDetail);
+        }
+
+        db.SaveChanges();
+        Session["GIOHANG"] = null;
+
+            
+
+            return RedirectToAction("XacNhanDatHang", "Giohang");
+    }
         // Xac Nhan Dat Hang (Order Confirmation)
         public ActionResult XacNhanDatHang()
         {

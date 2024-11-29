@@ -1,263 +1,118 @@
 ﻿@model HOTPIZZA.Models.NguoiDung
 @{
-    ViewBag.Title = "DangNhap";
+    ViewBag.Title = "Đăng ký";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
+
+<div class="register-container">
+    <h2 class="register-title">Đăng ký tài khoản</h2>
+    @using (Html.BeginForm("DangKy", "User", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.HovaTen, "Họ và tên")
+            @Html.TextBoxFor(model => model.HovaTen, new { @class = "form-control", placeholder = "Nhập họ và tên" })
+            @Html.ValidationMessageFor(model => model.HovaTen, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NgaySinh, "Ngày sinh")
+            @Html.TextBoxFor(model => model.NgaySinh, new { @class = "form-control", type = "date" })
+            @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, "Email")
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Nhập email" })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Phone, "Số điện thoại")
+            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", placeholder = "Nhập số điện thoại" })
+            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TenDN, "Tên đăng nhập")
+            @Html.TextBoxFor(model => model.TenDN, new { @class = "form-control", placeholder = "Nhập tên đăng nhập" })
+            @Html.ValidationMessageFor(model => model.TenDN, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MatKhau, "Mật khẩu")
+            @Html.PasswordFor(model => model.MatKhau, new { @class = "form-control", placeholder = "Nhập mật khẩu" })
+            @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+        </div>
+
+        <button type="submit" class="btn-submit">Đăng ký</button>
+    }
+</div>
 <style>
-    /* Thiết lập chung cho phần chính */
-    #main-container {
-        padding: 10px 0;
-        background-color: #f9f9f9; /* Màu nền nhẹ nhàng */
-    }
-
-    /* Container của toàn bộ nội dung */
-    .container {
-        max-width: auto;
+    .register-container {
+        max-width: 500px;
         margin: 0 auto;
-    }
-
-    /* Tiêu đề trang */
-    .wrapbox-heading-account {
-        margin-bottom: 20px;
-    }
-
-    .header-page {
-        text-align: center; /* Canh giữa tiêu đề */
-        padding: 10px 0;
-        border-bottom: 2px solid #28a745; /* Đường kẻ màu xanh lá */
-        margin-bottom: 20px;
-    }
-
-        .header-page h1 {
-            font-size: 23px;
-            color: #333;
-            text-transform: uppercase; /* Chữ in hoa */
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bold;
-            margin: 0;
-        }
-
-    /* Dành cho cột trên thiết bị nhỏ */
-    .col-xs-12 {
-        padding: 10px;
-    }
-    /* Thiết lập form container */
-    .login-form-container {
-        max-width: 400px;
-        margin: 40px auto;
         padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
         background-color: #fff;
+        border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    /* Tiêu đề lỗi và thông báo */
-    .text-danger {
-        color: #dc3545;
-        font-size: 0.875rem;
-        margin-top: 5px;
-    }
-
-    /* Các nhóm form */
-    .form-box__single-group {
+    .register-title {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
         margin-bottom: 20px;
+        color: #333;
     }
 
-    .form-label {
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
         display: block;
         font-weight: bold;
-        color: #333;
         margin-bottom: 5px;
+        color: #555;
     }
 
-    /* Input và các trường nhập liệu */
     .form-control {
         width: 100%;
         padding: 10px;
-        font-size: 1rem;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        transition: border-color 0.3s ease;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: all 0.3s ease;
     }
 
         .form-control:focus {
             border-color: #28a745;
-            box-shadow: 0 0 5px rgba(40, 167, 69, 0.2);
+            box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
             outline: none;
         }
 
-    /* Nút đăng nhập */
-    .btn {
-        display: inline-block;
-        background-color: #000;
+    .btn-submit {
+        width: 100%;
+        padding: 10px 15px;
+        font-size: 18px;
+        font-weight: bold;
         color: #fff;
-        padding: 10px 20px;
-        font-size: 1rem;
-        text-transform: uppercase;
+        background-color: #28a745;
         border: none;
-        border-radius: 4px;
+        border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
 
-        .btn:hover {
-            background-color: #28a745;
+        .btn-submit:hover {
+            background-color: #218838;
         }
 
-    /* Checkbox và liên kết */
-    .d-flex.align-items-center {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 15px;
+    .text-danger {
+        color: #dc3545;
+        font-size: 14px;
+        margin-top: 5px;
     }
-
-    .link--gray {
-        color: #6c757d;
-        font-size: 0.875rem;
-        text-decoration: none;
-    }
-
-        .link--gray:hover {
-            color: #28a745;
-        }
-
-    .split-container {
-        display: inline-block;
-        width: 100%;
-        height: 120vh;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        justify-content: center;
-        align-items: center;
-        /*        margin: 50px auto;*/
-
-    }
-    .password__toggle {
-        position: relative;
-    }
-
-    .btn-toggle-password {
-        position: absolute;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: 18px; /* Kích thước biểu tượng con mắt */
-        color: #007bff;
-    }
-
-        .btn-toggle-password:focus {
-            outline: none;
-        }
-
 </style>
-@using (Html.BeginForm("DangNhap", "User", FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
-    <div class="split-container">
-        @*<div class="col-md-6 col-xs-12 wrapbox-heading-account">
-                <div class="header-page clearfix">
-                    <h1>Đăng nhập</h1>
-                </div>
-            </div>*@
-
-
-
-        <div class="col-md-6 col-xs-12 login-form-container">
-            <div class="login-register-form">
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="text-danger">@ViewBag.Message</div>
-                <h4 style="color:#961b1e">Chào mừng đến với HOTPIZZA</h4>
-
-                    <div class="text-danger">@ViewBag.Message</div>
-                    <form>
-                        <div class="form-box__single-group">
-                            <label for="form-register-username">Họ và tên</label>
-                            @Html.EditorFor(model => model.HovaTen, new { htmlAttributes = new { @class = "form-control" }, @required = "required" })
-                            @Html.ValidationMessageFor(model => model.HovaTen, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-box__single-group">
-                            <label for="form-register-birthdate">Ngày sinh</label>
-                            @Html.TextBox("ngaysinh", null, new { type = "datetime-local", @required = "required" })
-
-                            @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="form-box__single-group">
-                            <label for="form-uregister-sername-email">Địa chỉ Email</label>
-                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" }, @required = "required" })
-                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-
-                        </div>
-                        <div class="form-box__single-group">
-                            <label for="form-uregister-sername-email">Số điện thoại</label>
-                            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" }, @required = "required" })
-                            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-
-                        </div>
-                        <div class="form-box__single-group">
-                            <label for="form-uregister-sername-email">Tên đăng nhập</label>
-                            @Html.EditorFor(model => model.TenDN, new { htmlAttributes = new { @class = "form-control" }, @required = "required" })
-                            @Html.ValidationMessageFor(model => model.TenDN, "", new { @class = "text-danger" })
-
-                        </div>
-                        <div class="form-box__single-group">
-                            <label for="form-register-username-password">Mật khẩu</label>
-                            <div class="password__toggle">
-                                @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @id = "form-register-username-password", type = "password" }, @required = "required" })
-                                @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
-
-                                <!-- Nút Hiện Mật Khẩu với biểu tượng con mắt -->
-                                
-                            </div>
-                        </div>
-
-                      
-
-
-
-                        <button class="btn btn--box btn--medium btn--radius btn--black btn--black-hover-green btn--uppercase font--semi-bold" type="submit">Đăng ký</button>
-                    </form>
-                </div>
-
-
-
-                <br><br>
-                <a class="link--gray" href="@Url.Action("DangNhap", "User")">Nếu bạn đã có tài khoản? Đăng nhập tại đây.</a>
-            </div>
-        </div>
-   
-}
-<script>
-    // JavaScript để bật/tắt việc hiển thị mật khẩu
-    document.getElementById('toggle-password').addEventListener('click', function () {
-        var passwordField = document.getElementById('form-register-username-password');
-        var icon = this.querySelector('i'); // Lấy biểu tượng con mắt
-
-        // Thay đổi type của mật khẩu giữa "password" và "text"
-        var type = passwordField.type === 'password' ? 'text' : 'password';
-        passwordField.type = type;
-
-        // Cập nhật biểu tượng con mắt
-        icon.classList.toggle('fa-eye'); // Thêm/loại bỏ icon con mắt
-        icon.classList.toggle('fa-eye-slash'); // Thêm/loại bỏ icon con mắt bị gạch chéo
-    });
-
-    document.getElementById('toggle-confirm-password').addEventListener('click', function () {
-        var confirmPasswordField = document.getElementById('form-register-username-confirm-password');
-        var icon = this.querySelector('i'); // Lấy biểu tượng con mắt
-
-        // Thay đổi type của mật khẩu giữa "password" và "text"
-        var type = confirmPasswordField.type === 'password' ? 'text' : 'password';
-        confirmPasswordField.type = type;
-
-        // Cập nhật biểu tượng con mắt
-        icon.classList.toggle('fa-eye'); // Thêm/loại bỏ icon con mắt
-        icon.classList.toggle('fa-eye-slash'); // Thêm/loại bỏ icon con mắt bị gạch chéo
-    });
-
-</script>
