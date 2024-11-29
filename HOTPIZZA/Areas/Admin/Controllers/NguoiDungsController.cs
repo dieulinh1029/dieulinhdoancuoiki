@@ -61,7 +61,8 @@ namespace HOTPIZZA.Areas.Admin.Controllers
 
             ViewBag.MaDon = new SelectList(db.DonDatHangs, "MaDon", "MaKH");
             ViewBag.GopYKhachHang = new SelectList(db.GopYKhachHangs, "IdGopY", "IdKH");
-            ViewBag.PhanQuyen = new SelectList(db.PhanQuyens, "IdPhanQuyen", "TenPhanQuyen");
+            ViewBag.IdPhanQuyen = new SelectList(db.PhanQuyens, "IdPhanQuyen", "TenPhanQuyen");
+
             return View(nd);
         }
         // GET: Admin/NguoiDungs/Edit/5

@@ -12,16 +12,10 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>TuyenDung</h4>
+       
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.IdBaiTuyenDung, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.IdBaiTuyenDung, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.IdBaiTuyenDung, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        
 
         <div class="form-group">
             @Html.LabelFor(model => model.DiaChiTuyenDung, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -50,9 +44,12 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MoTacCongViec, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MoTacCongViec, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.MoTacCongViec, new { htmlAttributes = new { @class = "form-control" } }) })
                 @Html.ValidationMessageFor(model => model.MoTacCongViec, "", new { @class = "text-danger" })
             </div>
+            <script>
+    CKEDITOR.replace("MoTacCongViec");
+            </script>
         </div>
 
         <div class="form-group">

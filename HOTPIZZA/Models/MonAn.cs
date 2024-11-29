@@ -12,6 +12,9 @@ namespace HOTPIZZA.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
+
     public partial class MonAn
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,16 +24,27 @@ namespace HOTPIZZA.Models
         }
         [DisplayName("Mã Món")]
         public string IdMon { get; set; }
-        [DisplayName("Mã Món")]
+        [DisplayName("Tên Món")]
+        [Required(ErrorMessage = "Tên Món is required")]
         public string TenMon { get; set; }
-        [DisplayName("Mã Danh Mục")]
-        public string IdDanhMuc { get; set; }
+
         [DisplayName("Mô Tả")]
+        [AllowHtml]
         public string MoTa { get; set; }
+
         [DisplayName("Hình Minh Họa")]
         public string HinhMinhHoa { get; set; }
+
         [DisplayName("Đơn Giá")]
+        [Required(ErrorMessage = "Đơn Giá is required")]
+        [Range(0, double.MaxValue, ErrorMessage = "Đơn Giá must be a positive value")]
         public Nullable<decimal> DonGia { get; set; }
+
+        
+        [DisplayName("Tên Danh Mục")]
+        [Required(ErrorMessage = "Danh Mục is required")]
+        public string IdDanhMuc { get; set; }
+
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTDonDatHang> CTDonDatHangs { get; set; }

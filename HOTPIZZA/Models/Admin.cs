@@ -23,7 +23,7 @@ namespace HOTPIZZA.Models
         [DisplayName("Mã Admin")]
         public int MaAdmin { get; set; }
 
-        [DisplayName("Họ và Tên")]
+        [DisplayName("Họ và Tên Admin")]
         public string HovaTen { get; set; }
         [DisplayName("Email")]
         public string Email { get; set; }

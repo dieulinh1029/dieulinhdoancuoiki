@@ -91,13 +91,17 @@ namespace HOTPIZZA.Areas.Admin.Controllers
         // POST: Admin/TuyenDungs/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public async Task<ActionResult> Edit([Bind(Include = "IdBaiTuyenDung,DiaChiTuyenDung,ViTriLamViec,EmailLienLac,MoTacCongViec,MaAdmin")] TuyenDung tuyenDung)
         {
             if (ModelState.IsValid)
             {
-                // Làm sạch nội dung MoTacCongViec
+                // Làm sạch thẻ <p> hoặc các thẻ HTML khác
                 var sanitizer = new HtmlSanitizer();
                 tuyenDung.MoTacCongViec = sanitizer.Sanitize(tuyenDung.MoTacCongViec);
+
+                // Nếu bạn muốn loại bỏ tất cả thẻ <p>, có thể làm như sau:
+                tuyenDung.MoTacCongViec = tuyenDung.MoTacCongViec.Replace("<p>", "").Replace("</p>", "");
 
                 db.Entry(tuyenDung).State = EntityState.Modified;
                 await db.SaveChangesAsync();
@@ -107,6 +111,7 @@ namespace HOTPIZZA.Areas.Admin.Controllers
             ViewBag.MaAdmin = new SelectList(db.Admins, "MaAdmin", "HovaTen", tuyenDung.MaAdmin);
             return View(tuyenDung);
         }
+
 
 
 

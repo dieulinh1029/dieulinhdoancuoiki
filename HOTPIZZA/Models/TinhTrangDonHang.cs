@@ -23,7 +23,7 @@ namespace HOTPIZZA.Models
 
         [DisplayName("Mã Tình Trạng Đơn Hàng")]
         public int IdTTDH { get; set; }
-        [DisplayName("Tên Tình Trạng Đơn Hàng")]
+        [DisplayName("Tình Trạng Đơn Hàng")]
         public string tenTTDH { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

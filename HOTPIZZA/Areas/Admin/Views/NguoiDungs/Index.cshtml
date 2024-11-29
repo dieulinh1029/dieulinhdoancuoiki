@@ -24,9 +24,7 @@
         <th>
             @Html.DisplayNameFor(model => model.NgaySinh)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MatKhau)
-        </th>
+        
         <th>
             @Html.DisplayNameFor(model => model.PhanQuyen.TenPhanQuyen)
         </th>
@@ -47,15 +45,15 @@
         <td>
             @Html.DisplayFor(modelItem => item.NgaySinh)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MatKhau)
-        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.PhanQuyen.TenPhanQuyen)
         </td>
         <td>
            
             @Html.ActionLink("Chi tiết", "Details", new { id=item.MaKhachHang }) |
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaKhachHang }) | 
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaKhachHang }) 
            
         </td>
     </tr>

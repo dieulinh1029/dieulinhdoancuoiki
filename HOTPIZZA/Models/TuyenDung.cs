@@ -18,16 +18,21 @@ namespace HOTPIZZA.Models
     {
         [DisplayName("Mã Tuyển Dụng")]
         public int IdBaiTuyenDung { get; set; }
-        [DisplayName("Mã Tuyển Dụng")]
+
+        [DisplayName("Địa Chỉ Tuyển Dụng")]
         public string DiaChiTuyenDung { get; set; }
-        [DisplayName("Mã Tuyển Dụng")]
+
+        [DisplayName("Vị Trí Làm Việc")]
         public string ViTriLamViec { get; set; }
-        [DisplayName("Mã Tuyển Dụng")]
+
+        [DisplayName("Email Liên Lạc")]
         public string EmailLienLac { get; set; }
-        [DisplayName("Mã Tuyển Dụng")]
+
+        [DisplayName("Mô Tả Công Việc")]
         [AllowHtml]
         public string MoTacCongViec { get; set; }
-        [DisplayName("Mã Tuyển Dụng")]
+
+        [DisplayName("Mã Admin")]
         public int MaAdmin { get; set; }
 
         public virtual Admin Admin { get; set; }

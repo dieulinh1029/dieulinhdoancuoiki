@@ -222,6 +222,7 @@
     <Compile Include="Areas\Admin\Controllers\DanhMucMonsController.cs" />
     <Compile Include="Areas\Admin\Controllers\DonDatHangsController.cs" />
     <Compile Include="Areas\Admin\Controllers\GopYKhachHangsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MonAnsController.cs" />
     <Compile Include="Areas\Admin\Controllers\NguoiDungsController.cs" />
     <Compile Include="Areas\Admin\Controllers\TuyenDungsController.cs" />
     <Compile Include="Areas\Admin\PhanQuyensController.cs" />
@@ -861,6 +862,9 @@
     <Content Include="Scripts\ckeditor\CHANGES.md" />
     <Content Include="Areas\Admin\Views\GopYKhachHangs\Index.cshtml" />
     <Content Include="Areas\Admin\Views\GopYKhachHangs\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\MonAns\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MonAns\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\MonAns\Create.cshtml" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
