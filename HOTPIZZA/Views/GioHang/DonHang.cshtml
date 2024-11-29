@@ -10,80 +10,80 @@
     <!-- Form đặt hàng -->
     <div class="checkout-left">
         <h1>Thanh Toán</h1>
-        
-            <!-- Thông tin khách hàng -->
-            @{
-                HOTPIZZA.Models.NguoiDung nd = (HOTPIZZA.Models.NguoiDung)Session["user"];
 
-            }
-            @using (Html.BeginForm("DatHang", "GioHang", FormMethod.Post))
-            {
-                <form>
-    @Html.ValidationSummary(true)
-    <div>
-        <div class="section">
-            <h2>Thông Tin Khách Đặt Hàng</h2>
+        <!-- Thông tin khách hàng -->
+        @{
+            HOTPIZZA.Models.NguoiDung nd = (HOTPIZZA.Models.NguoiDung)Session["user"];
 
-
-            <label for="name">Họ và Tên</label>
-            <p style="font-size:20px; color:#962525;"> @nd.HovaTen </p>
-            <label for="email">Email</label>
-            <p style="font-size:20px; color:#962525;"> @nd.Email </p>
-            <label for="phone">Số Điện Thoại</label>
-            <p style="font-size:20px; color:#962525;"> @nd.Phone </p>
+        }
+        @using (Html.BeginForm("DatHang", "GioHang", FormMethod.Post))
+        {
+            <form>
+                @Html.ValidationSummary(true)
+                <div>
+                    <div class="section">
+                        <h2>Thông Tin Khách Đặt Hàng</h2>
 
 
-        </div>
-    </div>
-
-    <!-- Thông tin giao hàng -->
-    <div class="section">
-        <h2>Thông Tin Giao Hàng</h2>
-
-        <label for="name">Họ và Tên Người Nhận</label>
-
-        @Html.TextBox("tennguoinhan", null, new { @required = "required" })
+                        <label for="name">Họ và Tên</label>
+                        <p style="font-size:20px; color:#962525;"> @nd.HovaTen </p>
+                        <label for="email">Email</label>
+                        <p style="font-size:20px; color:#962525;"> @nd.Email </p>
+                        <label for="phone">Số Điện Thoại</label>
+                        <p style="font-size:20px; color:#962525;"> @nd.Phone </p>
 
 
-        <label for="address">Địa Chỉ Nhận Hàng</label>
+                    </div>
+                </div>
 
-        @Html.TextBox("diachi", null, new { @required = "required" })
+                <!-- Thông tin giao hàng -->
+                <div class="section">
+                    <h2>Thông Tin Giao Hàng</h2>
 
-        <label for="phone">Số Điện Thoại Người Nhận</label>
+                    <label for="name">Họ và Tên Người Nhận</label>
 
-        @Html.TextBox("phone", null, new { @required = "required" })
+                    @Html.TextBox("tennguoinhan", null, new { @required = "required" })
 
-        <label for="date">Ngày Đặt</label>
-        <p style="font-size:20px; color:#962525;"> @DateTime.Now.ToShortDateString() </p>
 
-        <label for="date">Ngày Giao</label>
+                    <label for="address">Địa Chỉ Nhận Hàng</label>
 
-        @Html.TextBox("ngaygiao", null, new { type = "datetime-local", @required = "required" })
+                    @Html.TextBox("diachi", null, new { @required = "required" })
 
-       
-    </div>
+                    <label for="phone">Số Điện Thoại Người Nhận</label>
 
-    <!-- Phương thức thanh toán -->
-    <div class="section">
-        <h2>Phương Thức Thanh Toán</h2>
-        <div class="payment-options">
-            <label>
-                <input type="radio" name="payment" value="cod" checked> Thanh toán khi nhận hàng
-            </label>
-            @*<label>
-                <input type="radio" name="payment" value="card"> Thẻ tín dụng/ghi nợ
-            </label>*@
-            <label>
-                <a href="~/GioHang/PaymentWithPayPal">Thanh toán qua PayPal</a>
-                
-            </label>
-        </div>
-    </div>
-    <!-- Nút Xác Nhận -->
-    <input type="submit" value="Đặt hàng" class="btn-danger" />
-    
-</form>}
-        
+                    @Html.TextBox("phone", null, new { @required = "required" })
+
+                    <label for="date">Ngày Đặt</label>
+                    <p style="font-size:20px; color:#962525;"> @DateTime.Now.ToShortDateString() </p>
+
+                    <label for="date">Ngày Giao</label>
+
+                    @Html.TextBox("ngaygiao", null, new { type = "datetime-local", @required = "required" })
+
+
+                </div>
+
+                <!-- Phương thức thanh toán -->
+                <div class="section">
+                    <h2>Phương Thức Thanh Toán</h2>
+                    <div class="payment-options">
+                        <label>
+                            <input type="radio" name="payment" value="cod" checked> Thanh toán khi nhận hàng
+                        </label>
+                        @*<label>
+                                <input type="radio" name="payment" value="card"> Thẻ tín dụng/ghi nợ
+                            </label>*@
+                        <label>
+                            <a href="~/GioHang/PaymentWithPayPal">Thanh toán qua PayPal</a>
+
+                        </label>
+                    </div>
+                </div>
+                <!-- Nút Xác Nhận -->
+                <input type="submit" value="Đặt hàng" class="btn-danger" />
+
+            </form>}
+
     </div>
 
     <!-- Giỏ hàng -->
@@ -91,9 +91,9 @@
         <h2>Giỏ Hàng Của Bạn</h2>
 
         <ul class="cart-items">
-        
-                @foreach (var item in Model)
-                {
+
+            @foreach (var item in Model)
+            {
                 <li class="cart-item">
                     <img src="@Url.Content("~/images/Menu/" + item.HinhMinhHoa)" alt="" class="product-image" />
                     <div class="item-details">
@@ -101,9 +101,9 @@
                         <span class="item-price">  @String.Format("{0:#,##0} VNĐ", item.ThanhTien)</span>
                     </div>
                 </li>
-                    }
-                
-            </ul>
+            }
+
+        </ul>
         <div class="cart-total">
             <span>Tổng Cộng:</span>
             <span class="total-price"> @String.Format("{0:#,##0} VNĐ", Model.Sum(item => item.DonGia * item.SoLuong))</span>

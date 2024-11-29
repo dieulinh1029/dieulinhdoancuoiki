@@ -161,22 +161,22 @@
                         <ul class="timer">
                             <li class="d-inline-flex flex-column justify-content-center align-items-center">
                                 <div id="day" class="timer_num">01</div>
-                                <div class="timer_unit">Day</div>
+                                <div class="timer_unit">Ngày</div>
                             </li>
                             <li class="d-inline-flex flex-column justify-content-center align-items-center">
                                 <div id="hour" class="timer_num">15</div>
-                                <div class="timer_unit">Hours</div>
+                                <div class="timer_unit">Giờ</div>
                             </li>
                             <li class="d-inline-flex flex-column justify-content-center align-items-center">
                                 <div id="minute" class="timer_num">45</div>
-                                <div class="timer_unit">Mins</div>
+                                <div class="timer_unit">Phút</div>
                             </li>
                             <li class="d-inline-flex flex-column justify-content-center align-items-center">
                                 <div id="second" class="timer_num">23</div>
-                                <div class="timer_unit">Sec</div>
+                                <div class="timer_unit">Giây</div>
                             </li>
                         </ul>
-                        <div class="red_button deal_ofthe_week_button"><a href="#">Đặt Món</a></div>
+                        <div class="red_button deal_ofthe_week_button"><a href="@Url.Action("Index", "DatHang")">Đặt Món</a></div>
                     </div>
                 </div>
             </div>
@@ -222,7 +222,7 @@
                         <div class="benefit_icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
                         <div class="benefit_content">
                             <h6>Mở các ngày trong tuần</h6>
-                            <p>8AM - 09PM</p>
+                            <p>08AM - 09PM</p>
                         </div>
                     </div>
                 </div>
@@ -240,18 +240,20 @@
                         <ul class="footer_nav">
                             <li><a href="#">Blog</a></li>
                             <li><a href="#">FAQs</a></li>
-                            <li><a href="contact.html">Contact us</a></li>
+                            <li><a href="@Url.Action("Index", "LienHe")">Contact us</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
                         <ul>
-                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                            
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                           
                         </ul>
                     </div>
                 </div>
@@ -266,7 +268,7 @@
         </div>
     </footer>
 
-    </div>
+    
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="styles/bootstrap4/popper.js"></script>

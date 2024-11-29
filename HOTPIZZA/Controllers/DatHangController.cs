@@ -19,20 +19,20 @@ namespace HOTPIZZA.Controllers
         private HOTPIZZAEntity db = new HOTPIZZAEntity();
         private List<MonAn> ShowMon(int count)
         {
-            return db.MonAns.OrderByDescending(a=>a.TenMon).Take(count).ToList();
+            return db.MonAns.OrderByDescending(a => a.TenMon).Take(count).ToList();
         }
         public ActionResult Index()
         {
             var gg = ShowMon(9);
             if (gg != null)
             {
-                return View(gg);    
+                return View(gg);
             }
             else
-            { 
+            {
                 return View();
             }
-           
+
         }
         public ActionResult Chitiet(string id)
         {
@@ -51,8 +51,8 @@ namespace HOTPIZZA.Controllers
         public ActionResult SXDanhMuc(string id)
         {
             var mon = from d in db.MonAns
-                     where d.IdDanhMuc == id
-                     select d;
+                      where d.IdDanhMuc == id
+                      select d;
             return PartialView(mon);
         }
 

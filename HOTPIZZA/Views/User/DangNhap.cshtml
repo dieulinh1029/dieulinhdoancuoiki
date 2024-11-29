@@ -121,7 +121,6 @@
 
         .link--gray:hover {
             color: #28a745;
-
         }
 
     .split-container {
@@ -135,10 +134,11 @@
         align-items: center;
         /*        margin: 50px auto;*/
     }
-    .h4{
-        text-align:center;
-    }
 
+    .h4 {
+        text-align: center;
+    }
+    
 </style>
 
 @using (Html.BeginForm("DangNhap", "User", FormMethod.Post))
@@ -147,17 +147,17 @@
     <div class="split-container">
         <!-- Phần chữ "Đăng nhập" -->
         @*<div class="col-md-6 col-xs-12 wrapbox-heading-account">
-            <div class="header-page clearfix">
-                <h1>ĐĂNG NHẬP</h1>
-            </div>
-        </div>*@
+                <div class="header-page clearfix">
+                    <h1>ĐĂNG NHẬP</h1>
+                </div>
+            </div>*@
 
         <!-- Form đăng nhập -->
         <div class="col-md-6 col-xs-12 login-form-container">
             <div class="login-register-form">
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="text-danger">@ViewBag.Message</div>
-                <h4 style="color:#961b1e"  >Chào mừng đến với HOTPIZZA</h4>
+                <h4 style="color:#961b1e">Chào mừng đến với HOTPIZZA</h4>
                 <div class="form-box__single-group">
                     @Html.LabelFor(model => model.TenDN, "Tên đăng nhập", htmlAttributes: new { @class = "form-label" })
                     @Html.EditorFor(model => model.TenDN, new { htmlAttributes = new { @class = "form-control", @id = "form-username", @placeholder = "Nhập tên đăng nhập" } })
@@ -189,3 +189,4 @@
     </div>
 
 }
+

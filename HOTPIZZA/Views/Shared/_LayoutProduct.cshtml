@@ -38,11 +38,12 @@
                         </div>
                         <nav class="navbar">
                             <ul class="navbar_menu">
-                                <li><a href="@Url.Action("Index", "Home")" style="color: #f9e9c6; font-size: 20px; ; text-decoration: none;">Trang chủ</a></li>
-                                <li><a href="@Url.Action("Menu", "Home")" style="color: #f9e9c6; font-size: 20px;  text-decoration: none; ">Menu</a></li>
-                                <li><a href="@Url.Action("Index", "DatHang")" style="color: #f9e9c6; font-size: 20px;  text-decoration: none; ">Đặt hàng</a></li>
-                                <li><a href="@Url.Action("Index", "TuyenDung")" style="color: #f9e9c6; font-size: 20px; text-decoration: none; ">Tuyển dụng</a></li>
-                                <li><a href="@Url.Action("Index", "LienHe")" style="color: #f9e9c6; font-size: 20px; text-decoration: none; ">Liên hệ</a></li>
+                                <li><a href="@Url.Action("Index", "Home")">Trang chủ</a></li>
+                                <li><a href="@Url.Action("Menu", "Home")">Menu</a></li>
+                                <li><a href="@Url.Action("Index", "DatHang")">Đặt hàng</a></li>
+                                <li><a href="@Url.Action("Index", "TuyenDung")">Tuyển dụng</a></li>
+                                <li><a href="@Url.Action("Index", "XuatDon")">Đơn hàng</a></li>
+                                <li><a href="@Url.Action("Index", "LienHe")"> Liên hệ</a></li>
                             </ul>
 
                             <ul class="navbar_user">
@@ -126,21 +127,18 @@
     <div id="body">
         <article>
             <aside id="left"> 
-                @*<div id="menu">*@
+               
                     <div class="menu"> 
 
-                        @*<p><b> Món theo danh mục </b></p>*@
+                        
                         @Html.Action("DanhMuc", "DatHang")
 
                     </div>
-                @*</div>*@
+                
             </aside>
-            @*<section>*@
-               
-                @*<div>*@
+            
                     @RenderBody()
-                @*</div>*@
-            @*</section>*@
+              
 </article>
 
 
@@ -164,22 +162,22 @@
                                 <ul class="timer">
                                     <li class="d-inline-flex flex-column justify-content-center align-items-center">
                                         <div id="day" class="timer_num">01</div>
-                                        <div class="timer_unit">Day</div>
+                                        <div class="timer_unit">Ngày</div>
                                     </li>
                                     <li class="d-inline-flex flex-column justify-content-center align-items-center">
                                         <div id="hour" class="timer_num">15</div>
-                                        <div class="timer_unit">Hours</div>
+                                        <div class="timer_unit">Giờ</div>
                                     </li>
                                     <li class="d-inline-flex flex-column justify-content-center align-items-center">
                                         <div id="minute" class="timer_num">45</div>
-                                        <div class="timer_unit">Mins</div>
+                                        <div class="timer_unit">Phút</div>
                                     </li>
                                     <li class="d-inline-flex flex-column justify-content-center align-items-center">
                                         <div id="second" class="timer_num">23</div>
-                                        <div class="timer_unit">Sec</div>
+                                        <div class="timer_unit">Giây</div>
                                     </li>
                                 </ul>
-                                <div class="red_button deal_ofthe_week_button"><a href="@Url.Action("Index", "DatHang")">Đặt Món</a></div>
+                                <div class="red_button deal_ofthe_week_button"><a href="@Url.Action("Index", "DatHang")">Đặt Món Ngay</a></div>
                             </div>
                         </div>
                     </div>
