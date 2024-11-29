@@ -1,0 +1,68 @@
+﻿@model IEnumerable<HOTPIZZA.Models.MonAn>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Món Ăn</h2>
+
+<p>
+    @Html.ActionLink("Tạo Món", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenMon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HinhMinhHoa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DanhMucMon.TenDanhMuc)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenMon)
+            </td>
+            <td>
+                <!-- Display the image dynamically using HinhMinhHoa -->
+                @if (!string.IsNullOrEmpty(item.HinhMinhHoa))
+                {
+                    <img src="@Url.Content("~/images/Menu/" +item.HinhMinhHoa)" alt="@item.TenMon" style="width: 100px; height: 100px;" />
+                }
+                else
+                {
+                    <span>No Image</span>
+                }
+            </td>
+            <td>
+               
+                @String.Format("{0:#,##0} VNĐ", item.DonGia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DanhMucMon.TenDanhMuc)
+            </td>
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.IdMon }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.IdMon }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.IdMon })
+            </td>
+        </tr>
+    }
+
+</table>
