@@ -18,7 +18,7 @@ namespace HOTPIZZA.Controllers
 
         public ActionResult Index()
         {
-            var gg = Show(4);
+            var gg = Show(7);
             if (gg != null)
             {
                 return View(gg);

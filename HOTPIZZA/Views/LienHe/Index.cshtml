@@ -3,46 +3,98 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<div class="row">
+    <div class="col">
+        <div id="google_map" style="margin:15px">
 
-<div class="container mt-5">
-    <h2 class="text-center mb-4">Gửi Góp Ý Cho Chúng Tôi</h2>
+            <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.459025523469!2d106.67813237362837!3d10.776112189372641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f26616e6f71%3A0x4c57aa0ec39f3d13!2sVincom%20Plaza%203%2F2!5e0!3m2!1svi!2s!4v1731292643226!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
 
-    <div class="row justify-content-center">
-        <div class="col-md-8 col-lg-6">
-            <div class="card shadow-lg p-4">
-                @using (Html.BeginForm("Index", "LienHe", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                {
-                    @Html.AntiForgeryToken()
-
-                    <div class="form-group mb-4">
-                        <label for="EmailKH" class="form-label">Địa chỉ Email</label>
-                        @Html.TextBoxFor(m => m.EmailKH, new { @class = "form-control form-control-lg", placeholder = "Nhập email của bạn", required = "required" })
-                    </div>
-
-                    <div class="form-group mb-4">
-                        <label for="NoiDung" class="form-label">Nội Dung Góp Ý</label>
-                        @Html.TextAreaFor(m => m.NoiDung, new { @class = "form-control form-control-lg", rows = 5, placeholder = "Nhập nội dung góp ý của bạn", required = "required" })
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-lg w-100">Gửi Góp Ý</button>
-                }
-
-                @if (ViewBag.Message != null)
-                {
-                    <div class="alert alert-success mt-4 text-center">
-                        <strong>@ViewBag.Message</strong>
-                    </div>
-                }
-            </div>
         </div>
     </div>
 </div>
 
-<!-- Custom CSS -->
+<div class="row">
+
+    <div class="col-lg-6 contact_col">
+        <div class="contact_contents">
+            <h1 style="font-family: 'Poppins', sans-serif;">Liên hệ với chúng tôi</h1>
+            <p style="color:#f7901e; font-size:20px">Có rất nhiều cách để liên hệ với chúng tôi. Bạn có thể gọi điện, gửi email.</p>
+            <br />
+            <div>
+                <p>(84) 68686868</p>
+                <p>2224802010840@student.tdmu.eddu.vn</p>
+            </div>
+            <br />
+            <div>
+                <p>Giờ mở cửa: 8.00 - 21.00 </p>
+                <p>Thứ 2 - Chủ Nhật </p>
+            </div>
+        </div>
+
+        <!-- Follow Us -->
+
+        <div class="follow_us_contents">
+            <h1 style="font-family: 'Poppins', sans-serif;">Theo dõi chúng tôi</h1>
+            <div style="text-align: center; margin: 20px 0;">
+                <a href="#" style="display: inline-block; width: 60px; height: 60px; line-height: 60px; border-radius: 50%; background-color: #3b5998; color: white; font-size: 24px; text-align: center; margin: 0 10px; text-decoration: none;">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="#" style="display: inline-block; width: 60px; height: 60px; line-height: 60px; border-radius: 50%; background-color: #1da1f2; color: white; font-size: 24px; text-align: center; margin: 0 10px; text-decoration: none;">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="#" style="display: inline-block; width: 60px; height: 60px; line-height: 60px; border-radius: 50%; background-color: #db4437; color: white; font-size: 24px; text-align: center; margin: 0 10px; text-decoration: none;">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+                <a href="#" style="display: inline-block; width: 60px; height: 60px; line-height: 60px; border-radius: 50%; background-color: #e1306c; color: white; font-size: 24px; text-align: center; margin: 0 10px; text-decoration: none;">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-6 get_in_touch_col">
+        <div class="get_in_touch_contents">
+            <h1 style="font-family: 'Poppins', sans-serif;">Gửi góp ý cho chúng tôi </h1>
+            <p style="color: #f7901e; font-size: 20px">HotPizza luôn ghi nhận và cải thiện những đóng góp từ khách hàng</p>
+            @using (Html.BeginForm("Index", "LienHe", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-group mb-4" style="width:60%">
+                    <label for="EmailKH" class="form-label">Địa chỉ Email</label>
+                    @Html.TextBoxFor(m => m.EmailKH, new { @class = "form-control form-control-lg", placeholder = "Nhập email của bạn", required = "required" })
+                </div>
+
+                <div class="form-group mb-4" style="width:80%">
+                    <label for="NoiDung" class="form-label">Nội Dung Góp Ý</label>
+                    @Html.TextAreaFor(m => m.NoiDung, new { @class = "form-control form-control-lg", rows = 5, placeholder = "Nhập nội dung góp ý của bạn", required = "required" })
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg w-50" style="background-color:#961b1e">Gửi Góp Ý</button>
+            }
+
+            @if (ViewBag.Message != null)
+            {
+                <div class="alert alert-success mt-4 text-center">
+                    <strong>@ViewBag.Message</strong>
+                </div>
+            }
+        </div>
+    </div>
+
+</div>
+
+
 <style>
     body {
         background-color: #f8f9fa;
+        font-family: 'Poppins', sans-serif;
     }
 
     .card {

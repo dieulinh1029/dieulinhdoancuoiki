@@ -21,19 +21,24 @@ namespace HOTPIZZA.Controllers
         {
             return db.MonAns.OrderByDescending(a => a.TenMon).Take(count).ToList();
         }
-        public ActionResult Index()
+        public ActionResult Index(int page = 1, int pageSize = 9)
         {
-            var gg = ShowMon(9);
-            if (gg != null)
-            {
-                return View(gg);
-            }
-            else
-            {
-                return View();
-            }
+            var totalRecords = db.MonAns.Count(); // Tổng số món ăn
+            var totalPages = (int)Math.Ceiling((double)totalRecords / pageSize);
 
+            ViewBag.TotalPages = totalPages;
+            ViewBag.CurrentPage = page;
+
+            var monAnList = db.MonAns
+                             .OrderByDescending(a => a.TenMon)
+                             .Skip((page - 1) * pageSize)
+                             .Take(pageSize)
+                             .ToList();
+
+            return View(monAnList);
         }
+
+
         public ActionResult Chitiet(string id)
         {
             var mon = from s in db.MonAns
