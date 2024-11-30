@@ -1,0 +1,77 @@
+﻿@model HOTPIZZA.Models.MonAn
+
+@{
+    ViewBag.Title = "Chỉnh sửa món ăn";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chỉnh sửa món ăn</h2>
+
+@using (Html.BeginForm("Edit", "MonAns", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TenMon, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TenMon, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenMon, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DonGia, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DonGia, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DonGia, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MoTa, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.MoTa, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
+            </div>
+            <script>
+                CKEDITOR.replace("MoTa");
+            </script>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.HinhMinhHoa, "Hình minh họa hiện tại", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <img src="~/images/Menu/@Model.HinhMinhHoa" alt="Hình minh họa" style="max-width: 200px;" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.HinhMinhHoa, "Cập nhật hình minh họa", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="file" class="form-control" />
+                @Html.ValidationMessageFor(model => model.HinhMinhHoa, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IdDanhMuc, "Danh mục", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.IdDanhMuc, (SelectList)ViewBag.IdDanhMuc, "-- Chọn Danh Mục --", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IdDanhMuc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Lưu thay đổi" class="btn btn-primary" />
+                @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    </div>
+}

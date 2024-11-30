@@ -1,0 +1,63 @@
+﻿@model HOTPIZZA.Models.MonAn
+
+@{
+    ViewBag.Title = "Xóa món ăn";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Xóa món ăn</h2>
+
+<div class="alert alert-warning">
+    <strong>Bạn có chắc chắn muốn xóa món ăn này?</strong>
+</div>
+
+<div class="form-horizontal">
+    <hr />
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Tên món:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Html.DisplayFor(model => model.TenMon)</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Đơn giá:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Html.DisplayFor(model => model.DonGia)</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Mô tả:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Html.DisplayFor(model => model.MoTa)</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Danh mục:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Html.DisplayFor(model => model.DanhMucMon.TenDanhMuc)</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Hình minh họa:</label>
+        <div class="col-md-10">
+            <img src="~/images/Menu/@Model.HinhMinhHoa" alt="Hình minh họa" style="max-width: 200px;" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            @using (Html.BeginForm("Delete", "MonAns", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+               
+                <input type="submit" value="Xóa" class="btn btn-danger" />
+                @Html.ActionLink("Hủy", "Index", null, new { @class = "btn btn-default" })
+            }
+        </div>
+    </div>
+</div>
