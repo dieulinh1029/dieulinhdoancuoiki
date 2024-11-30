@@ -11,6 +11,7 @@ using HOTPIZZA.Models;
 using System.IO;
 using Ganss.XSS;
 using System.Data.Entity.Validation;
+using PaypalServerSdk.Standard.Models;
 
 namespace HOTPIZZA.Areas.Admin.Controllers
 {
@@ -42,95 +43,161 @@ namespace HOTPIZZA.Areas.Admin.Controllers
 
 
         // GET: Admin/MonAns/Create
-       
-            public ActionResult Create()
-            {
-                // Pass available categories (DanhMucMon) to the view for the dropdown
-                ViewBag.IdDanhMuc = new SelectList(db.DanhMucMons, "IdDanhMuc", "TenDanhMuc");
-                return View();
-            }
+
+        public ActionResult Create()
+        {
+            // Load danh sách danh mục món ăn
+            ViewBag.IdDanhMuc = new SelectList(db.DanhMucMons, "IdDanhMuc", "TenDanhMuc");
+            return View();
+        }
 
         // POST: MonAns/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "TenMon, HinhMinhHoa, DonGia, MoTa, IdDanhMuc")] MonAn monAn, HttpPostedFileBase file)
+        public async Task<ActionResult> Create([Bind(Include = "TenMon, DonGia, MoTa, IdDanhMuc")] MonAn monAn, HttpPostedFileBase file)
         {
-            // Validate the IdDanhMuc field
+            // Kiểm tra danh mục
             if (string.IsNullOrEmpty(monAn.IdDanhMuc))
             {
-                ModelState.AddModelError("IdDanhMuc", "Danh Mục is required");
+                ModelState.AddModelError("IdDanhMuc", "Vui lòng chọn danh mục.");
             }
 
-            // File upload validation
+            // Xử lý file upload
             if (file != null && file.ContentLength > 0)
             {
                 var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
                 var fileExtension = Path.GetExtension(file.FileName).ToLower();
+
                 if (!allowedExtensions.Contains(fileExtension))
                 {
-                    ModelState.AddModelError("HinhMinhHoa", "Invalid file type. Please upload an image.");
+                    ModelState.AddModelError("HinhMinhHoa", "Chỉ chấp nhận các định dạng ảnh: .jpg, .jpeg, .png, .gif.");
                 }
                 else
                 {
-                    var fileName = Path.GetFileName(file.FileName);
-                    var filePath = Path.Combine(Server.MapPath("~/images/Menu"), fileName);
-                    file.SaveAs(filePath);
+                    var fileName = Guid.NewGuid().ToString() + fileExtension;
+                    var path = Path.Combine(Server.MapPath("~/images/Menu"), fileName);
+
+                    if (!Directory.Exists(Server.MapPath("~/images/Menu")))
+                    {
+                        Directory.CreateDirectory(Server.MapPath("~/images/Menu"));
+                    }
+
+                    file.SaveAs(path);
                     monAn.HinhMinhHoa = fileName;
                 }
             }
             else
             {
-                ModelState.AddModelError("HinhMinhHoa", "Please upload an image.");
+                ModelState.AddModelError("HinhMinhHoa", "Vui lòng tải lên hình ảnh.");
             }
 
-            // Check for model state errors
-            if (ModelState.IsValid)
+            // Kiểm tra nếu có lỗi thì return lại view với dữ liệu cũ
+            if (!ModelState.IsValid)
             {
-                db.MonAns.Add(monAn);
-                await db.SaveChangesAsync();
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                // If validation fails, log errors
-                var validationErrors = db.GetValidationErrors();
-                foreach (var validationError in validationErrors)
-                {
-                    foreach (var error in validationError.ValidationErrors)
-                    {
-                        Console.WriteLine($"Property: {error.PropertyName}, Error: {error.ErrorMessage}");
-                    }
-                }
+                ViewBag.IdDanhMuc = new SelectList(db.DanhMucMons, "IdDanhMuc", "TenDanhMuc", monAn.IdDanhMuc);
+                return View(monAn);
             }
 
-            // Re-populate dropdown in case of errors
+            // Lưu vào CSDL nếu hợp lệ
+            db.MonAns.Add(monAn);
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+
+        // GET: Admin/MonAns/Edit/5
+        // GET: MonAns/Edit/5
+        public async Task<ActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var monAn = await db.MonAns.FindAsync(id);
+            if (monAn == null)
+            {
+                return HttpNotFound();
+            }
+
             ViewBag.IdDanhMuc = new SelectList(db.DanhMucMons, "IdDanhMuc", "TenDanhMuc", monAn.IdDanhMuc);
             return View(monAn);
         }
 
-
-
-        // GET: Admin/MonAns/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Admin/MonAns/Edit/5
+        // POST: MonAns/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit([Bind(Include = "Id, TenMon, DonGia, MoTa, IdDanhMuc")] MonAn monAn, HttpPostedFileBase file)
         {
-            try
+            // Kiểm tra danh mục
+            if (string.IsNullOrEmpty(monAn.IdDanhMuc))
             {
-                // TODO: Add update logic here
+                ModelState.AddModelError("IdDanhMuc", "Vui lòng chọn danh mục.");
+            }
 
-                return RedirectToAction("Index");
-            }
-            catch
+            // Xử lý file upload
+            if (file != null && file.ContentLength > 0)
             {
-                return View();
+                var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
+                var fileExtension = Path.GetExtension(file.FileName).ToLower();
+
+                if (!allowedExtensions.Contains(fileExtension))
+                {
+                    ModelState.AddModelError("HinhMinhHoa", "Chỉ chấp nhận các định dạng ảnh: .jpg, .jpeg, .png, .gif.");
+                }
+                else
+                {
+                    var fileName = Guid.NewGuid().ToString() + fileExtension;
+                    var path = Path.Combine(Server.MapPath("~/images/Menu"), fileName);
+
+                    // Tạo thư mục nếu chưa tồn tại
+                    if (!Directory.Exists(Server.MapPath("~/images/Menu")))
+                    {
+                        Directory.CreateDirectory(Server.MapPath("~/images/Menu"));
+                    }
+
+                    file.SaveAs(path);
+                    monAn.HinhMinhHoa = fileName;
+                }
             }
+            else
+            {
+                // Giữ nguyên hình ảnh cũ nếu không upload ảnh mới
+                var existingMonAn = db.MonAns.AsNoTracking().FirstOrDefault(m => m.IdMon == monAn.IdMon);
+                monAn.HinhMinhHoa = existingMonAn?.HinhMinhHoa;
+            }
+
+            // Kiểm tra và lưu dữ liệu nếu hợp lệ
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    db.Entry(monAn).State = EntityState.Modified;
+                    await db.SaveChangesAsync();
+                    return RedirectToAction("Index");
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var validationErrors in ex.EntityValidationErrors)
+                    {
+                        foreach (var error in validationErrors.ValidationErrors)
+                        {
+                            ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                            System.Diagnostics.Debug.WriteLine($"Property: {error.PropertyName} Error: {error.ErrorMessage}");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", "Đã xảy ra lỗi: " + ex.Message);
+                }
+            }
+
+            // Nếu có lỗi, hiển thị lại view với dữ liệu đã nhập
+            ViewBag.IdDanhMuc = new SelectList(db.DanhMucMons, "IdDanhMuc", "TenDanhMuc", monAn.IdDanhMuc);
+            return View(monAn);
         }
+
 
         // GET: Admin/MonAns/Delete/5
         public async Task<ActionResult> Delete(int? id)
@@ -139,12 +206,12 @@ namespace HOTPIZZA.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TuyenDung tuyenDung = await db.TuyenDungs.FindAsync(id);
-            if (tuyenDung == null)
+            MonAn monan = await db.MonAns.FindAsync(id);
+            if (monan == null)
             {
                 return HttpNotFound();
             }
-            return View(tuyenDung);
+            return View(monan);
         }
 
         // POST: Admin/TuyenDungs/Delete/5
@@ -152,8 +219,8 @@ namespace HOTPIZZA.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            TuyenDung tuyenDung = await db.TuyenDungs.FindAsync(id);
-            db.TuyenDungs.Remove(tuyenDung);
+            MonAn monan = await db.MonAns.FindAsync(id);
+            db.MonAns.Remove(monan);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

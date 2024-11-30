@@ -30,9 +30,11 @@ namespace HOTPIZZA.Models
 
         [DisplayName("Mô Tả")]
         [AllowHtml]
+        [Required(ErrorMessage = "Mô tả is required")]
         public string MoTa { get; set; }
 
         [DisplayName("Hình Minh Họa")]
+      
         public string HinhMinhHoa { get; set; }
 
         [DisplayName("Đơn Giá")]

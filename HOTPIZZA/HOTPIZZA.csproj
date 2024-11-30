@@ -865,6 +865,8 @@
     <Content Include="Areas\Admin\Views\MonAns\Index.cshtml" />
     <Content Include="Areas\Admin\Views\MonAns\Details.cshtml" />
     <Content Include="Areas\Admin\Views\MonAns\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\MonAns\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\MonAns\Delete.cshtml" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
