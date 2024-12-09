@@ -1,51 +1,52 @@
 ﻿@model IEnumerable<HOTPIZZA.Models.TuyenDung>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tuyển dụng";
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
 
 <style>
     h2 {
-        font-size: 36px; /* Kích thước chữ */
-        font-weight: bold; /* Làm đậm chữ */
-        color: #2c3e50; /* Màu chữ */
-        text-align: center; /* Canh giữa nội dung */
-        margin-top: 20px; /* Khoảng cách trên */
-        margin-bottom: 20px; /* Khoảng cách dưới */
-        font-family: 'Arial', sans-serif; /* Font chữ */
-        text-transform: uppercase; /* Chữ hoa */
-        border-bottom: 2px solid #e74c3c; /* Thêm đường viền dưới */
-        padding-bottom: 10px; /* Khoảng cách dưới chữ */
+        font-size: 36px;
+        font-weight: bold;
+        color: #2c3e50;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-family: 'Arial', sans-serif;
+        text-transform: uppercase;
+        border-bottom: 2px solid #e74c3c;
+        padding-bottom: 10px;
     }
-
 
     .post-area {
-        display: inline;
-        padding: 20px;
-        width: 100%;
-        height: 10px;
-        justify-content: center; /* Căn giữa theo chiều ngang */
-        align-items: center; /* Căn giữa theo chiều dọc */
-        flex-direction: column; /* Sắp xếp theo cột */
-        padding: 50px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px 0;
         background-color: #f9f9f9;
-        min-height: 100vh; /* Chiều cao tối thiểu = toàn màn hình */
+        min-height: 10vh;
         margin: 0 auto;
+        width: 100%;
     }
-
 
     .single-post {
         display: flex;
-        padding: 20px;
-        margin-bottom: 20px;
+        flex-direction: row;
+        padding: 10px;
+        margin-bottom: 10px;
         background-color: #fff;
         border-radius: 8px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        max-width: 1000px;
+        align-items: center;
+        position: relative;
     }
 
         .single-post .thumb {
-            width: 150px;
-            margin-right: 20px;
+            width: 300px;
+            margin-right: 30px;
         }
 
             .single-post .thumb img {
@@ -53,67 +54,45 @@
                 border-radius: 8px;
             }
 
-            .single-post .thumb .tags {
-                display: flex;
-                margin-top: 10px;
-                flex-wrap: wrap;
-                list-style: none;
-                padding: 0;
-            }
-
-                .single-post .thumb .tags li {
-                    margin-right: 8px;
-                }
-
-                .single-post .thumb .tags a {
-                    display: inline-block;
-                    padding: 5px 10px;
-                    font-size: 0.9em;
-                    color: #fff;
-                    background-color: #d9534f;
-                    border-radius: 4px;
-                    text-decoration: none;
-                }
-
         .single-post .details {
             flex: 1;
+            position: relative;
         }
 
-        .single-post .title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .single-post .title .titles h4 {
+            font-size: 1.5em;
+            margin: 0;
+            color: #f79b1e;
+            font-family: 'Times New Roman', Times, serif;
         }
 
-            .single-post .title .titles h4 {
-                font-size: 1.5em;
-                margin: 0;
-                color: #333;
+        .single-post .title .titles h5 {
+            font-size: 1.2em;
+            color: #555;
+            margin-top: 10px;
+            font-weight: normal;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+
+        .single-post .apply-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            border: 2px solid #d9534f;
+            padding: 8px 15px;
+            color: #d9534f;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+            .single-post .apply-btn:hover {
+                background-color: #d9534f;
+                color: white;
             }
-
-            .single-post .title .titles h6 {
-                font-size: 1em;
-                color: #888;
-               
-                margin-top: 5px;
-            }
-
-            .single-post .title .btns {
-                list-style: none;
-                display: flex;
-                align-items: center;
-                padding: 0;
-            }
-
-                .single-post .title .btns li {
-                    margin-left: 10px;
-                }
-
-                .single-post .title .btns a {
-                    color: #d9534f;
-                    font-size: 1.2em;
-                    text-decoration: none;
-                }
 
         .single-post .details p {
             margin: 10px 0;
@@ -125,7 +104,6 @@
             font-size: 1em;
             font-weight: bold;
             color: #333;
-            post-area section-gap;
             margin-top: 10px;
         }
 
@@ -141,6 +119,7 @@
                 color: #d9534f;
             }
 </style>
+
 <main>
     <div class="column">
         <h2>Tuyển dụng</h2>
@@ -148,40 +127,24 @@
         {
             <!-- Start post Area -->
             <section class="post-area section-gap">
-                <div class="container">
-                    <div class="row justify-content-center d-flex">
-                        <div class="col-lg-8 post-list">
-                            <div class="single-post d-flex flex-row">
-                                <div class="thumb">
-                                    <img src="~/images/tuyendung.jpg" alt="">
-
-                                </div>
-                                <div class="details">
-                                    <div class="title d-flex flex-row justify-content-between">
-                                        <div class="titles">
-                                            <h4>@item.ViTriLamViec</h4>
-                                            <br />
-                                            <h5>@item.MoTacCongViec</h5>
-                                        </div>
-                                        <ul class="btns">
-                                            <li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-                                            <li><a href="https://docs.google.com/forms/d/1wFABFxtEHXtyAghrod6z9dYxq1KY20ZWIN8-4xGrueQ" target="_blank">Apply</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <h5>Tính chất công việc: Full time</h5>
-                                    <p class="address"><span class="lnr lnr-map"></span> Yêu cầu: Có kinh nghiệm</p>
-                                    <p class="address"><span class="lnr lnr-database"></span> Lương Thỏa Thuận</p>
-                                </div>
+                <div class="single-post">
+                    <div class="thumb">
+                        <img src="~/images/tuyendung.jpg" alt="Tuyển dụng">
+                    </div>
+                    <div class="details" style="font-family:'Times New Roman', Times, serif">
+                        <div class="title">
+                            <div class="titles">
+                                <h4>@item.ViTriLamViec</h4>
+                                <h5>@item.MoTacCongViec</h5>
                             </div>
-
-
                         </div>
+                        <h5>Tính chất công việc: Full time</h5>
+                        <p class="address"><span class="lnr lnr-map"></span> Yêu cầu: Có kinh nghiệm</p>
+                        <p class="address"><span class="lnr lnr-database"></span> Lương Thỏa Thuận</p>
+                        <a href="https://docs.google.com/forms/d/1wFABFxtEHXtyAghrod6z9dYxq1KY20ZWIN8-4xGrueQ" target="_blank" class="apply-btn">Apply</a>
                     </div>
                 </div>
             </section>
         }
     </div>
 </main>
-
-

@@ -230,6 +230,7 @@
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LienHeController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\TuyenDungController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\XuatDonController.cs" />
@@ -285,6 +286,7 @@
     <Compile Include="Models\NguoiDung.cs">
       <DependentUpon>HotPizzaaa.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Payment\VnPayLibrary.cs" />
     <Compile Include="Models\PaypalConfiguration.cs" />
     <Compile Include="Models\PhanQuyen.cs">
       <DependentUpon>HotPizzaaa.tt</DependentUpon>
@@ -1459,6 +1461,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Views\Payment\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
