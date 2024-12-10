@@ -107,7 +107,7 @@ namespace HOTPIZZA.Areas.Admin.Controllers
 
         // GET: Admin/MonAns/Edit/5
         // GET: MonAns/Edit/5
-        public async Task<ActionResult> Edit(int? id)
+        public async Task<ActionResult> Edit(string id)
         {
             if (id == null)
             {
@@ -200,7 +200,7 @@ namespace HOTPIZZA.Areas.Admin.Controllers
 
 
         // GET: Admin/MonAns/Delete/5
-        public async Task<ActionResult> Delete(int? id)
+        public async Task<ActionResult> Delete(string id)
         {
             if (id == null)
             {
@@ -217,7 +217,7 @@ namespace HOTPIZZA.Areas.Admin.Controllers
         // POST: Admin/TuyenDungs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(string id)
         {
             MonAn monan = await db.MonAns.FindAsync(id);
             db.MonAns.Remove(monan);
