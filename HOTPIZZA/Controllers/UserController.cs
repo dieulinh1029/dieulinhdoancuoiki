@@ -112,6 +112,7 @@ namespace HOTPIZZA.Controllers
                 return View("DangNhap");
             }
             return View(lg);
+            
         }
         public ActionResult DangXuat()
         {

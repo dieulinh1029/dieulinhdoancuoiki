@@ -363,6 +363,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Icon.ico" />
     <Content Include="images\anhnenpizza.jpg" />
     <Content Include="images\banner_1.jpg" />
     <Content Include="images\banner_2.jpg" />
